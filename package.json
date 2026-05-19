@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "yarn iframe && next build",
+    "build:static": "yarn build && next export",
     "postbuild": "next-sitemap",
     "iframe": "webpack",
     "start": "next start",
