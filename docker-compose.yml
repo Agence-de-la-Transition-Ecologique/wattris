@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wattris:app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: /usr/src/entrypoint.sh
+    environment:
+      NEXT_TELEMETRY_DISABLED: 1

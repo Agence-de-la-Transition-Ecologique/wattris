@@ -14,9 +14,9 @@ const Wrapper = styled.div`
   gap: 0.5rem;
   padding: 0.75rem 1.5rem 0.75rem 0.75rem;
   background-color: ${(props) =>
-    props.peakIsSameAsAppliance
+    props.$peakIsSameAsAppliance
       ? 'rgba(255, 255, 255, 0.2)'
-      : props.theme.colors[props.peak ? 'error' : 'main']};
+      : props.theme.colors[props.$peak ? 'error' : 'main']};
   border-radius: 1rem;
 
   > span {
@@ -48,8 +48,8 @@ export default function Occurence(props) {
 
   return (
     <Wrapper
-      peak={props.peak}
-      peakIsSameAsAppliance={props.allPeaks === props.peak}
+      $peak={props.peak}
+      $peakIsSameAsAppliance={props.allPeaks === props.peak}
     >
       {props.appliance.durationSelector ? (
         <>

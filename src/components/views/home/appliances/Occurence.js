@@ -15,10 +15,10 @@ const Wrapper = styled(Link)`
   padding-bottom: 1.5rem;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) =>
-    props.theme.colors[props.peak ? 'error' : 'main']};
+    props.theme.colors[props.$peak ? 'error' : 'main']};
   border-radius: 0.75rem;
-  opacity: ${(props) => (props.discret ? 0.4 : 1)};
-  transition: opacity ${(props) => props.discret && '200ms'} ease-out;
+  opacity: ${(props) => (props.$discret ? 0.4 : 1)};
+  transition: opacity ${(props) => props.$discret && '200ms'} ease-out;
   cursor: pointer;
 
   &:hover {
@@ -64,13 +64,12 @@ export default function Occurence(props) {
   return (
     <Wrapper
       href='#home'
-      discret={
+      $discret={
         active
           ? active?.occurence !== props.index
           : hover && hover.occurence !== props.index
       }
-      peak={peak}
-      allDay={props.occurence.duration === 24}
+      $peak={peak}
       onClick={() => {
         setActive({ appliance: appliance.slug })
         window?._paq?.push([
