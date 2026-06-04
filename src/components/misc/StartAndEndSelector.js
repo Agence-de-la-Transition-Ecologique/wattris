@@ -29,21 +29,22 @@ const Track = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background: ${(props) => props.background};
+    background: ${(props) => props.$background};
   }
 `
 const Thumb = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props) => (props.large ? 3.75 : 3)}rem;
+  width: ${(props) => (props.$large ? 3.75 : 3)}rem;
   height: 1.25rem;
   font-size: 0.75rem;
-  letter-spacing: ${(props) => (props.large ? -0.05 : 0)}em;
+  letter-spacing: ${(props) => (props.$large ? -0.05 : 0)}em;
   font-weight: 300;
   white-space: nowrap;
-  color: ${(props) => props.theme.colors[props.peak ? 'error' : 'main']};
-  background-color: ${(props) => props.color || props.theme.colors.background};
+  color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
+  background-color: ${(props) =>
+    props.$color || props.theme.colors.background};
   border-radius: 0.5rem;
   pointer-events: auto;
 `
@@ -59,7 +60,7 @@ const SmallThumb = styled.div`
 `
 const NumberLabel = styled.div`
   position: absolute;
-  top: ${(props) => (props.isMobile ? -1.75 : -1.5)}em;
+  top: ${(props) => (props.$isMobile ? -1.75 : -1.5)}em;
   left: ${(props) => props.labelStyle.left || '-1.75rem'};
   transform: ${(props) => props.labelStyle.transform};
   visibility: ${(props) => props.labelStyle.visibility};
@@ -69,8 +70,9 @@ const NumberLabel = styled.div`
   height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.75rem;
-  color: ${(props) => props.theme.colors[props.peak ? 'error' : 'main']};
-  background-color: ${(props) => props.color || props.theme.colors.background};
+  color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
+  background-color: ${(props) =>
+    props.$color || props.theme.colors.background};
   border-radius: 0.5rem;
   white-space: nowrap;
 `
@@ -94,10 +96,10 @@ const ThumbLabel = (props) => {
       <NumberLabel
         data-label={props.index}
         labelStyle={labelStyle}
-        color={props.color}
+        $color={props.color}
         aria-label={props.ariaLabel}
-        peak={props.peak}
-        isMobile={props.isMobile}
+        $peak={props.peak}
+        $isMobile={props.isMobile}
       >
         {props.isMobile && Object.entries(labelStyle).length === 0 ? (
           <>{props.index === 0 ? 'de' : 'à'} </>
@@ -134,7 +136,7 @@ export default function Slider(props) {
         renderTrack={({ props, children }) => (
           <Track
             {...props}
-            background={getTrackBackground({
+            $background={getTrackBackground({
               values: thumbs,
               colors:
                 thumbs[0] > thumbs[1]
@@ -151,14 +153,13 @@ export default function Slider(props) {
             {children}
           </Track>
         )}
-        renderThumb={({ index, props: anotherProps }) =>
-          isMobile ? (
+        renderThumb={({ index, props: anotherProps }) => {
+          const { key, ...rest } = anotherProps
+          return isMobile ? (
             <SmallThumb
-              {...anotherProps}
-              color={props.color}
+              key={key}
+              {...rest}
               aria-label={props.ariaLabel}
-              peak={props.peak}
-              large={props.large}
             >
               <ThumbLabel
                 rangeRef={rangeRef.current}
@@ -172,11 +173,12 @@ export default function Slider(props) {
             </SmallThumb>
           ) : !props.smallDuration ? (
             <Thumb
-              {...anotherProps}
-              color={props.color}
+              key={key}
+              {...rest}
+              $color={props.color}
               aria-label={props.ariaLabel}
-              peak={props.peak}
-              large={props.large}
+              $peak={props.peak}
+              $large={props.large}
             >
               <span>
                 {props.large ? <>{index === 0 ? 'de' : 'à'} </> : ''}
@@ -185,11 +187,9 @@ export default function Slider(props) {
             </Thumb>
           ) : (
             <SmallThumb
-              {...anotherProps}
-              color={props.color}
+              key={key}
+              {...rest}
               aria-label={props.ariaLabel}
-              peak={props.peak}
-              large={props.large}
             >
               <ThumbLabel
                 rangeRef={rangeRef.current}
@@ -203,7 +203,7 @@ export default function Slider(props) {
               />
             </SmallThumb>
           )
-        }
+        }}
       />
     </Wrapper>
   )

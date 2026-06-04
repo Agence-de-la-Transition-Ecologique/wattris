@@ -29,8 +29,6 @@ export default function ContactModal() {
           src={`https://airtable.com/embed/shrp4omaHLOXGZ2mu?prefill_simulation=${JSON.stringify(
             occurences
           )}&hide_simulation=true`}
-          frameborder='0'
-          onmousewheel=''
           width='100%'
           height='533'
         ></iframe>
