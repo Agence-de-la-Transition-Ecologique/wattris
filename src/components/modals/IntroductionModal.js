@@ -43,9 +43,6 @@ export default function IntroductionModal() {
         à limiter le changement climatique.
       </Text>
       <Button.Wrapper vertical>
-        <Button onClick={() => setIntroductionOpen(false)}>
-          Je sélectionne mes appareils
-        </Button>
         <Button
           hollow
           onClick={() => {
@@ -53,7 +50,7 @@ export default function IntroductionModal() {
             setProfilsOpen(true)
           }}
         >
-          Je pars d'un profil-type
+          Je paramètre mon profil
         </Button>
       </Button.Wrapper>
     </Modal>
