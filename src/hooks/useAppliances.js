@@ -5,7 +5,7 @@ import DataContext from 'components/providers/DataProvider'
 const stepDurationInMinute = 5
 const powerByBlocInKW = 10
 const peakSteps = () => {
-  const peaks = [8, 9, 10, 11, 12, 18, 19]
+  const peaks = [7, 8, 9, 10, 18, 19]
   const numStepsInAnHour = 60 / stepDurationInMinute
   return peaks
     .map((peak) =>
