@@ -343,5 +343,17 @@
     },
     "durationSelector": false,
     "description": "On considère une voiture électrique citadine qui se recharge sur une borne à domicile. L’appel de puissance est constant tout au long de la charge de la voiture (7000W)."
+  },
+  {
+    "slug": "trottinetteelectrique",
+    "name": "Trottinette électrique",
+    "power": 100,
+    "defaultOccurence": {
+      "start": 18,
+      "duration": 5,
+      "allDay": false
+    },
+    "durationSelector": false,
+    "description": "On considère une trottinette électrique avec une batterie de 500Wh qui se recharge sur une prise électrique. L’appel de puissance est constant tout au long de la charge de la trottinette (100W)."
   }
 ]
