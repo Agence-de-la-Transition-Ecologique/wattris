@@ -307,5 +307,17 @@
     },
     "durationSelector": false,
     "description": "Cela correspond à tous vos appareils en veille, vos appareils branchés. En moyenne, la puissance moyenne des appareils en veille est de 45 Watt par logement."
+  },
+  {
+    "slug": "voitureelectriquesurprise",
+    "name": "Voiture électrique (sur prise)",
+    "power": 2500,
+    "defaultOccurence": {
+      "start": 18,
+      "duration": 5,
+      "allDay": false
+    },
+    "durationSelector": false,
+    "description": "On considère une voiture électrique citadine qui se recharge sur une prise normale ou une prise renforcée. L’appel de puissance est constant tout au long de la charge de la voiture (2500W)."
   }
 ]
