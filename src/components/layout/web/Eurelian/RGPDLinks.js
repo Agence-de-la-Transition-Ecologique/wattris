@@ -72,7 +72,7 @@ export default function RGPDLinks(props) {
                     <a href='#tarteaucitron'>Gestion des cookies</a>
                 </RGPDItem>
                 <RGPDItem>
-                    <Link key={'PolitiqueCookies'} href={'/politique-cookies'}>Politique de cookies</Link>
+                    <Link key={'PolitiqueCookies'} href={'/politique-cookies'}>Politique des cookies</Link>
                 </RGPDItem>
                 <RGPDItem>
                     <Link key={'PlanDuSite'} href={'/plan-du-site'}>Plan du site</Link>
