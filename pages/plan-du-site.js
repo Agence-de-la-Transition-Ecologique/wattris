@@ -2,7 +2,7 @@ import Link from "next/link"
 import Section from "components/base/Section"
 import Web from "components/layout/Web"
 import styled from "styled-components"
-import { Paragraph, SubTitle, Title } from "components/layout/web/Eurelian/RGPDLinks"
+import { Paragraph, SubTitle, Title } from "utils/legal-styles"
 
 export default function PlanDuSite() {
     const LinkList = styled.ul`

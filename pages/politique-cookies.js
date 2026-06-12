@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Web from "../src/components/layout/Web";
 import Section from "../src/components/base/Section";
-import { BorderNoteText, ButtonEulerian, Paragraph, SubSubTitle, SubTitle, Title } from "components/layout/web/Eurelian/RGPDLinks";
+import { BorderNoteText, ButtonEulerian, Paragraph, SubSubTitle, SubTitle, Title } from "utils/legal-styles";
 
 export default function PolitiqueCookies() {
     const siteUrl = 'www.wattris.ademe.fr';
@@ -47,7 +47,7 @@ export default function PolitiqueCookies() {
                     <Paragraph>
                         Seul l’émetteur d’un cookie peut lire ou modifier les informations qui y sont contenues. Il existe différents types de cookies :
                     </Paragraph>
-                    <ul>
+                    <ul className={'mt-li'}>
                         <li>
                             des cookies de session qui disparaissent dès que vous quittez le Site ;
                         </li>
@@ -80,10 +80,10 @@ export default function PolitiqueCookies() {
 
                         Enfin, le Site utilise également des cookies de performance, dans le but :
                     </Paragraph>
-                    <ul>
+                    <ul className={'mt-li'}>
                         <li>
                            d’analyser la fréquentation et l’utilisation qui est faite du Site, afin de :
-                            <ul>
+                            <ul className={'mt-li'}>
                                 <li>
                                     le faire évoluer dans le sens d’une amélioration de l’expérience de navigation, dans l’objectif final de vous proposer un Site toujours plus adapté ;
                                 </li>
@@ -111,7 +111,7 @@ export default function PolitiqueCookies() {
                     <Paragraph>
                         Les cookies utilisés sur le Site sont :
                     </Paragraph>
-                    <ul>
+                    <ul className={'mt-li'}>
                         <li>
                             les cookies de l’ADEME ;
                         </li>
@@ -235,7 +235,7 @@ export default function PolitiqueCookies() {
                         Vous pouvez gérer et modifier à tout moment l’utilisation des cookies suivant les possibilités
                         rappelées ci-après :
                     </Paragraph>
-                    <ul>
+                    <ul className={'mt-li'}>
                         <li>directement sur le Site, sur le lien « Gestion des cookies » en bas de page ;</li>
                         <li>à partir de votre logiciel de navigation, ou</li>
                         <li>de modules ou de plateformes interprofessionnelles d’opposition.</li>

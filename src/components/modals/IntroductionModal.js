@@ -20,7 +20,7 @@ const Text = styled.p`
 export default function IntroductionModal() {
 
   const { pathname } = useRouter()
-  const excludeRoutes = ['/politique-cookies', '/mentions-legales', '/plan-du-site']
+  const excludeRoutes = ['/politique-cookies', '/mentions-legales', '/plan-du-site', '/politique-protection-donnees']
 
   const {
     introduction: introductionOpen,

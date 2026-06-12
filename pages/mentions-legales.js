@@ -1,6 +1,6 @@
 import Section from "components/base/Section"
 import Web from "components/layout/Web"
-import { Paragraph, SubTitle, Title } from "components/layout/web/Eurelian/RGPDLinks"
+import { Paragraph, SubTitle, Title } from "utils/legal-styles"
 
 export default function MentionsLegales() {
     return (
@@ -12,7 +12,7 @@ export default function MentionsLegales() {
                     <Paragraph>
                         <b>Mis à jour le 01/09/2024</b>
                     </Paragraph>
-                   
+
 
                     <SubTitle>1. Présentation du site</SubTitle>
                     <Paragraph>
@@ -20,20 +20,20 @@ export default function MentionsLegales() {
                     </Paragraph>
 
                     <Paragraph>
-                        Propriétaire et éditeur : Conformément aux dispositions de l’article 6-I 1° de la loi n°2004-575 du 21 juin 2004 relative à la confiance dans 
-                        l’économie numérique, l’éditeur des sites ademe.fr est l’Agence de l’Environnement et de la Maîtrise de l’Energie (ADEME). 
-                        Etablissement Public à caractère Industriel et Commercial (EPIC) régi par les articles L.131-3 à L.131-7 et R.131-1 à R.131-26 du Code de l’environnement, 
+                        Propriétaire et éditeur : Conformément aux dispositions de l’article 6-I 1° de la loi n°2004-575 du 21 juin 2004 relative à la confiance dans
+                        l’économie numérique, l’éditeur des sites ademe.fr est l’Agence de l’Environnement et de la Maîtrise de l’Energie (ADEME).
+                        Etablissement Public à caractère Industriel et Commercial (EPIC) régi par les articles L.131-3 à L.131-7 et R.131-1 à R.131-26 du Code de l’environnement,
                         ayant son siège social au :
                     </Paragraph>
 
                     <Paragraph>
-                        20, avenue du Grésillé BP 90406 <br/>
-                        49004 Angers Cedex 01 <br/> 
-                        Tél. : 02 41 20 41 20 <br/>
+                        20, avenue du Grésillé BP 90406 <br />
+                        49004 Angers Cedex 01 <br />
+                        Tél. : 02 41 20 41 20 <br />
                     </Paragraph>
 
                     <Paragraph>
-                        inscrit au registre du commerce d'Angers sous le n° 385 290 309, représentée par Sylvain Waserman, 
+                        inscrit au registre du commerce d'Angers sous le n° 385 290 309, représentée par Sylvain Waserman,
                         agissant en qualité de Président du conseil d'administration.
                     </Paragraph>
 
@@ -64,34 +64,34 @@ export default function MentionsLegales() {
 
                     <SubTitle>3. Description des services fournis</SubTitle>
                     <Paragraph>
-                        Les sites ademe.fr ont pour objet de fournir des informations concernant l’ensemble des éléments liés aux services de l’ADEME, 
-                        en particulier une information sur l’actualité de la transition écologique, l’expertise de l’ADEME, les actions mises en œuvre 
+                        Les sites ademe.fr ont pour objet de fournir des informations concernant l’ensemble des éléments liés aux services de l’ADEME,
+                        en particulier une information sur l’actualité de la transition écologique, l’expertise de l’ADEME, les actions mises en œuvre
                         au sein des territoires, l’action internationale de l’ADEME, les programmes de recherche et d’innovation.
                     </Paragraph>
 
                     <Paragraph>
-                        L’ADEME s’efforce de fournir sur les sites ademe.fr des informations aussi précises que possible. 
-                        Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes des carences dans la mise à jour ou de 
+                        L’ADEME s’efforce de fournir sur les sites ademe.fr des informations aussi précises que possible.
+                        Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes des carences dans la mise à jour ou de
                         tout autres manquements qu’ils soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
                     </Paragraph>
 
                     <Paragraph>
-                        Toutes les informations indiquées sur les sites ademe.fr sont données à titre indicatif, et sont susceptibles d’évoluer. 
-                        Par ailleurs, les renseignements figurant sur les sites ademe.fr ne sont pas exhaustifs. 
+                        Toutes les informations indiquées sur les sites ademe.fr sont données à titre indicatif, et sont susceptibles d’évoluer.
+                        Par ailleurs, les renseignements figurant sur les sites ademe.fr ne sont pas exhaustifs.
                         Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.
                     </Paragraph>
 
                     <SubTitle>4. Disponibilité du site</SubTitle>
-                    
+
                     <Paragraph>
-                        L’ADEME s’efforce de permettre l’accès au site 24 heures sur 24, 7 jours sur 7, sauf en cas de force majeure ou d’un événement 
-                        hors du contrôle de l’ADEME, et sous réserve des éventuelles pannes et interventions de maintenance nécessaires au bon 
+                        L’ADEME s’efforce de permettre l’accès au site 24 heures sur 24, 7 jours sur 7, sauf en cas de force majeure ou d’un événement
+                        hors du contrôle de l’ADEME, et sous réserve des éventuelles pannes et interventions de maintenance nécessaires au bon
                         fonctionnement du site et des services.
                     </Paragraph>
 
                     <Paragraph>
-                        Par conséquent, l’ADEME ne peut garantir une disponibilité du site et/ou des services, une fiabilité des 
-                        transmissions et des performances en termes de temps de réponse ou de qualité. Il n’est prévu aucune assistance 
+                        Par conséquent, l’ADEME ne peut garantir une disponibilité du site et/ou des services, une fiabilité des
+                        transmissions et des performances en termes de temps de réponse ou de qualité. Il n’est prévu aucune assistance
                         technique vis-à-vis de l’utilisateur que ce soit par des moyens électronique ou téléphonique.
                     </Paragraph>
 
@@ -100,11 +100,11 @@ export default function MentionsLegales() {
                     </Paragraph>
 
                     <Paragraph>
-                        L’ADEME peut être amenée à interrompre le site ou une partie des services, à tout moment sans préavis, le tout sans droit à indemnités. 
-                        L’utilisateur reconnaît et accepte que l’ADEME ne soit pas responsable des interruptions, et des conséquences qui 
+                        L’ADEME peut être amenée à interrompre le site ou une partie des services, à tout moment sans préavis, le tout sans droit à indemnités.
+                        L’utilisateur reconnaît et accepte que l’ADEME ne soit pas responsable des interruptions, et des conséquences qui
                         peuvent en découler pour l’utilisateur ou tout tiers.
                     </Paragraph>
-                    
+
                     <SubTitle>5. Liens hypertextes</SubTitle>
                     <Paragraph>
                         L'ADEME décline toute responsabilité quant au contenu des sites proposés en liens.
@@ -119,10 +119,10 @@ export default function MentionsLegales() {
                     </Paragraph>
 
                     <SubTitle>6. Cookies de navigation</SubTitle>
-                    
+
                     <Paragraph>
-                        Des cookies sont utilisés sur les sites ademe.fr pour différentes finalités : pour faciliter votre navigation, pour vous 
-                        proposer des contenus personnalisés ou pour réaliser des statistiques de visites. 
+                        Des cookies sont utilisés sur les sites ademe.fr pour différentes finalités : pour faciliter votre navigation, pour vous
+                        proposer des contenus personnalisés ou pour réaliser des statistiques de visites.
                         Pour connaître notre politique des cookies, vous êtes invités à cliquer sur le lien accessible dans le pied de page des sites ademe.fr.
                     </Paragraph>
 
@@ -140,55 +140,55 @@ export default function MentionsLegales() {
                     </Paragraph>
 
                     <Paragraph>
-                        L’ADEME ne pourra en revanche interdire la réutilisation de discours, dossiers de presse et communiqués, les circulaires, 
+                        L’ADEME ne pourra en revanche interdire la réutilisation de discours, dossiers de presse et communiqués, les circulaires,
                         directives et autres documents règlementaires.
                     </Paragraph>
 
                     <Paragraph>
-                        L’ADEME autorise la réutilisation non commerciale et pédagogique des informations disponibles sur son site, 
-                        à la condition de respecter l’intégrité des informations et de n’en altérer ni le sens, ni la portée, 
-                        ni l’application et de faire mention du nom de l’ADEME ou d’en préciser l’origine et la date de publication avec la mention 
+                        L’ADEME autorise la réutilisation non commerciale et pédagogique des informations disponibles sur son site,
+                        à la condition de respecter l’intégrité des informations et de n’en altérer ni le sens, ni la portée,
+                        ni l’application et de faire mention du nom de l’ADEME ou d’en préciser l’origine et la date de publication avec la mention
                         du crédit photo si tel est le cas.
                     </Paragraph>
 
                     <Paragraph>
-                        L’ADEME pourra autoriser la réutilisation d’informations à des fins commerciales ou promotionnelles par le biais d’une 
-                        licence de réutilisation de ses informations. Est considérée comme réutilisation à des fins commerciales ou promotionnelles, 
-                        l’élaboration à partir des informations publiques, d’un produit ou d’un service destiné à être mis à disposition de tiers, 
+                        L’ADEME pourra autoriser la réutilisation d’informations à des fins commerciales ou promotionnelles par le biais d’une
+                        licence de réutilisation de ses informations. Est considérée comme réutilisation à des fins commerciales ou promotionnelles,
+                        l’élaboration à partir des informations publiques, d’un produit ou d’un service destiné à être mis à disposition de tiers,
                         à titre gratuit ou onéreux.
                     </Paragraph>
-                    
+
                     <SubTitle>8. Gestion des données personnelles</SubTitle>
 
                     <Paragraph>
-                        Conformément à la Règlementation relative à la protection des données à caractère personnel, l'utilisateur est informé que l’ADEME, 
+                        Conformément à la Règlementation relative à la protection des données à caractère personnel, l'utilisateur est informé que l’ADEME,
                         en tant que responsable du traitement, met en œuvre un traitement de données à caractère personnel.
                     </Paragraph>
 
                     <Paragraph>
-                        L’ADEME est attachée au respect des règles de protection de la vie privée des utilisateurs de son site internet et de ses services. 
-                        L’ensemble des traitements de données personnelles mis en œuvre dans le cadre des services accessibles respecte la 
-                        réglementation applicable en matière de protection des données personnelles et notamment les dispositions de 
-                        la loi « Informatique et libertés » du 6 janvier 1978 modifiée et le Règlement général sur la 
+                        L’ADEME est attachée au respect des règles de protection de la vie privée des utilisateurs de son site internet et de ses services.
+                        L’ensemble des traitements de données personnelles mis en œuvre dans le cadre des services accessibles respecte la
+                        réglementation applicable en matière de protection des données personnelles et notamment les dispositions de
+                        la loi « Informatique et libertés » du 6 janvier 1978 modifiée et le Règlement général sur la
                         Protection des données (Règlement UE 2016/679) désigné par « RGPD ».
                     </Paragraph>
 
                     <Paragraph>
-                        Pour en savoir plus sur ce traitement de données à caractère personnel et sur l’étendue de leurs droits, 
-                        les utilisateurs sont invités à se reporter à la Politique de protection des données personnelles, accessible dans le pied de 
+                        Pour en savoir plus sur ce traitement de données à caractère personnel et sur l’étendue de leurs droits,
+                        les utilisateurs sont invités à se reporter à la Politique de protection des données personnelles, accessible dans le pied de
                         page des sites ademe.fr.
                     </Paragraph>
-                    
+
                     <SubTitle>9. Votre attention</SubTitle>
 
                     <Paragraph>
-                        Nous vous rappelons qu’il n’est pas possible de garantir la confidentialité des messages transmis sur le réseau Internet. 
-                        Aussi, si vous souhaitez transmettre un message dans de meilleures conditions de sécurité, nous vous recommandons d’utiliser 
-                        la voie postale. L’ADEME dégage toute responsabilité quant aux difficultés techniques que vous pourriez rencontrer 
+                        Nous vous rappelons qu’il n’est pas possible de garantir la confidentialité des messages transmis sur le réseau Internet.
+                        Aussi, si vous souhaitez transmettre un message dans de meilleures conditions de sécurité, nous vous recommandons d’utiliser
+                        la voie postale. L’ADEME dégage toute responsabilité quant aux difficultés techniques que vous pourriez rencontrer
                         sur le site qu’elles qu’en soient la cause et l’origine.
                     </Paragraph>
-                   
-                    
+
+
                     <SubTitle>10. Droit applicable en cas de litige</SubTitle>
 
                     <Paragraph>

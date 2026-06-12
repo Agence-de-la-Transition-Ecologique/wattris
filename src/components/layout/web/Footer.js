@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
-import RGPDLinks from "./Eurelian/RGPDLinks";
+import LegalLinks from "./footer/LegalLinks";
 
 const LogosWrapper = styled.div`
     display: flex;
@@ -31,7 +31,7 @@ export default function Footer(props) {
                     <Ademe/>
                 </Logos>
             </LogosWrapper>
-            <RGPDLinks/>
+            <LegalLinks/>
         </>
     )
 }
