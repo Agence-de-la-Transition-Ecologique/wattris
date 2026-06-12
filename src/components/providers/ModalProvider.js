@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import Co2eModal from 'components/modals/Co2eModal'
 import IntroductionModal from 'components/modals/IntroductionModal'
-import ContactModal from 'components/modals/ContactModal'
 import ProfilesModal from 'components/modals/ProfilesModal'
 
 const ModalContext = React.createContext({})
@@ -47,7 +46,6 @@ export function ModalProvider(props) {
       <Co2eModal />
       <IntroductionModal />
       <ProfilesModal />
-      <ContactModal />
     </ModalContext.Provider>
   )
 }
