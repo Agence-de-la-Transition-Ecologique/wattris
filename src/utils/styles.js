@@ -109,4 +109,46 @@ export const GlobalStyle = createGlobalStyle`
   input[type=number] {
     -moz-appearance: textfield;
   }
+
+  ul.mt-li li {
+    margin-top: .4rem;
+  }
+  
+.table-rgpd {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.table-rgpd th {
+  background-color: ${(props) => props.theme.colors.main};
+  color: #fff;
+  text-align: left;
+  padding: 6px 8px;
+  font-weight: normal;
+  border: 1px solid ${(props) => props.theme.colors.main};
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.table-rgpd td {
+  border: 1px solid ${(props) => props.theme.colors.main};
+  padding: 8px;
+  vertical-align: top;
+  line-height: 1.3;
+  text-align: justify;
+}
+.table-rgpd tr td:first-child {
+  width: 35%;
+}
+.table-rgpd tr td:last-child {
+  width: 65%;
+}
+.table-rgpd tr.section-gap td {
+  border-top: 2px solid ${(props) => props.theme.colors.main};
+}
+.table-rgpd td:first-child {
+  font-weight: 500;
+}
+.table-rgpd tr:nth-child(odd) {
+  background-color: ${(props) => props.theme.colors.textLight};
+}
 `

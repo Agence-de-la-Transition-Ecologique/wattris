@@ -27,10 +27,10 @@ const Wrapper = styled.div`
   padding: 1rem 1.25rem;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) =>
-    props.theme.colors[props.peak ? 'error' : 'main']};
+    props.theme.colors[props.$peak ? 'error' : 'main']};
   border-radius: 0.75rem;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
-  min-height: ${(props) => (props.appliancesListOpen ? '47rem' : 0)};
+  min-height: ${(props) => (props.$appliancesListOpen ? '47rem' : 0)};
   transition: all 300ms ease-out;
 
   ${(props) => props.theme.mq.small} {
@@ -84,8 +84,8 @@ export default function ApplianceModal() {
         }}
       />
       <Wrapper
-        peak={!appliancesListOpen && allPeaks}
-        appliancesListOpen={appliancesListOpen}
+        $peak={!appliancesListOpen && allPeaks}
+        $appliancesListOpen={appliancesListOpen}
       >
         {appliancesListOpen ? (
           <List />

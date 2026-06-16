@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 import ModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
@@ -17,14 +18,23 @@ const Text = styled.p`
 `
 
 export default function IntroductionModal() {
+
+  const { pathname } = useRouter()
+  const excludeRoutes = ['/politique-cookies', '/mentions-legales', '/plan-du-site', '/politique-protection-donnees']
+
   const {
     introduction: introductionOpen,
     setIntroduction: setIntroductionOpen,
     setProfils: setProfilsOpen,
   } = useContext(ModalContext)
 
+  const isExcludedRoute = excludeRoutes.includes(pathname)
+
   return (
-    <Modal open={introductionOpen} setOpen={setIntroductionOpen}>
+    <Modal
+      open={introductionOpen && !isExcludedRoute}
+      setOpen={setIntroductionOpen}
+    >
       <StyledLogo permanent />
       <Text>
         Consommer de l’électricité au bon moment, c’est utiliser ses appareils

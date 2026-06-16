@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import HeadScripts from "./header/HeadScripts";
 
 export default function Seo(props) {
   const router = useRouter()
@@ -18,6 +19,7 @@ export default function Seo(props) {
 
   return (
     <Head>
+      <HeadScripts />
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name='image' content={image} />
