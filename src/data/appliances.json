@@ -319,5 +319,17 @@
     },
     "durationSelector": false,
     "description": "On considère une voiture électrique citadine qui se recharge sur une prise normale ou une prise renforcée. L’appel de puissance est constant tout au long de la charge de la voiture (2500W)."
+  },
+  {
+    "slug": "velolectrique",
+    "name": "Vélo électrique",
+    "power": 100,
+    "defaultOccurence": {
+      "start": 18,
+      "duration": 5,
+      "allDay": false
+    },
+    "durationSelector": false,
+    "description": "On considère un vélo électrique de ville ou de randonnée avec une batterie de 500Wh qui se recharge sur une prise électrique. L’appel de puissance est constant tout au long de la charge du vélo (100W)."
   }
 ]
