@@ -331,5 +331,17 @@
     },
     "durationSelector": false,
     "description": "On considère un vélo électrique de ville ou de randonnée avec une batterie de 500Wh qui se recharge sur une prise électrique. L’appel de puissance est constant tout au long de la charge du vélo (100W)."
+  },
+  {
+    "slug": "voitureelectriquesurborne",
+    "name": "Voiture électrique (sur borne)",
+    "power": 7000,
+    "defaultOccurence": {
+      "start": 18,
+      "duration": 4.5,
+      "allDay": false
+    },
+    "durationSelector": false,
+    "description": "On considère une voiture électrique citadine qui se recharge sur une borne à domicile. L’appel de puissance est constant tout au long de la charge de la voiture (7000W)."
   }
 ]
