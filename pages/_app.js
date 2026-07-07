@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NextAdapter } from 'next-query-params'
 import { QueryParamProvider } from 'use-query-params'
 import localFont from 'next/font/local'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import { GlobalStyle } from 'utils/styles'
 
@@ -35,20 +36,24 @@ const marianne = localFont({
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
-
+  const gtmId = process.env.ID_GTM || 'GTM-5BVCVHL7'
+  
   return (
-    <QueryParamProvider className={marianne.className} adapter={NextAdapter}>
-      <QueryClientProvider client={queryClient}>
-        <StyleProvider>
-          <DataProvider>
-            <ModalProvider>
-              <GlobalStyle />
-              <Component {...pageProps} />
-            </ModalProvider>
-          </DataProvider>
-        </StyleProvider>
-      </QueryClientProvider>
-    </QueryParamProvider>
+    <>
+      <GoogleTagManager gtmId={gtmId} />
+      <QueryParamProvider className={marianne.className} adapter={NextAdapter}>
+        <QueryClientProvider client={queryClient}>
+          <StyleProvider>
+            <DataProvider>
+              <ModalProvider>
+                <GlobalStyle />
+                <Component {...pageProps} />
+              </ModalProvider>
+            </DataProvider>
+          </StyleProvider>
+        </QueryClientProvider>
+      </QueryParamProvider>
+    </>
   )
 }
 
