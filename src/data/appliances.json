@@ -372,5 +372,22 @@
     "allDayPeakStart": 6.5,
     "allDayPeakLength": 30,
     "description": "On considère une pompe à chaleur de technologie air/air, placée dans une pièce d'environ 40m², pour un logement bien isolé. La pompe à chaleur est réversible, c’est-à-dire qu’elle peut soit chauffer soit refroidir la pièce. L'appel de puissance est maximal à l'allumage pour que la température de la pièce soit amenée à la température demandée. Ensuite, la pompe à chaleur appelle une puissance constante par intermittence afin de maintenir la température de la pièce à la température de consigne. En fonction de la température extérieure, de l'isolation du bâtiment et de la taille de la pièce, ces appels de puissance peuvent être plus ou moins nombreux.<br/><br/>En particulier, si le logement est mal isolé, ces appels de puissance sont très nombreux, ce qui implique une puissance appelée importante sur l'ensemble de l’utilisation de la pompe à chaleur. Ce phénomène est renforcé les jours de grand froid ou de forte chaleur. Ainsi, la consommation de la pompe à chaleur est d’autant plus grande que la température demandée est différente de la température extérieure. <br/><br/>Nous avons choisi de simplifier sa représentation avec une puissance appelée de 1500W à l'allumage pendant une durée de 30 minutes, suivi d’une consommation constante de 400W pour la suite de l’utilisation. Si la pompe à chaleur (air/air) est utilisée en continu (ce qui peut être le cas pour une utilisation en mode “chauffage”), son appel de puissance est constant à 400W avec un pic de 1000W d’une demi-heure à 6h30. Ce pic de puissance est plus faible en utilisation continue car la température de la pièce est tout au long de la journée"
+  },
+  {
+    "slug": "pompeachaleuraireau",
+    "name": "Pompe à chaleur (air/eau)",
+    "initialPower": 1500,
+    "initialPowerLength": 30,
+    "power": 400,
+    "defaultOccurence": {
+      "start": 0,
+      "duration": 24,
+      "allDay": true
+    },
+    "durationSelector": false,
+    "allDayPowerPeak": 1000,
+    "allDayPeakStart": 6.5,
+    "allDayPeakLength": 30,
+    "description": "On considère une pompe à chaleur de technologie air/eau, placée dans une pièce d'environ 40m², pour un logement bien isolé. Nous considérons une pompe à chaleur dédiée uniquement au chauffage de la pièce et ne permettant pas de produire de l’eau chaude sanitaire. Les pompes à chaleur air/eau sont généralement utilisées en continu. En fonction de la température extérieure, de l'isolation du bâtiment et de la taille de la pièce, les appels de puissance permettant de maintenir la température de consigne peuvent être plus ou moins nombreux. <br/><br/>En particulier, si le logement est mal isolé, ces appels sont très nombreux ce qui implique une puissance appelée importante sur l'ensemble de l’utilisation de la pompe à chaleur. Ce phénomène est renforcé les jours de grand froid. Ainsi, la consommation de la pompe à chaleur est d’autant plus importante que la température demandée est différente de la température extérieure. <br/><br/>Nous avons choisi de simplifier sa représentation en modélisant un appel de puissance constant à 400W, avec un pic de 1000W à 6h30 du matin. Si l’utilisation de la pompe à chaleur est discontinue, ce pic de puissance est plus important (1500W) car la température de la pièce n’est pas maintenue à un certain niveau tout au long de la journée." 
   }
 ]
