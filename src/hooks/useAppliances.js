@@ -140,6 +140,13 @@ export function getAllBlocsForStep({
 // Sorry about this
 export function getPowerForStep({ step, appliance, start, duration }) {
   if (start === 0 && duration === 24) {
+    if (appliance.allDayPowerPeak) {
+      const peakStartInStep = Math.floor(appliance.allDayPeakStart * (60 / stepDurationInMinute))
+      const peakEndInStep = Math.ceil((appliance.allDayPeakStart + appliance.allDayPeakLength / 60) * (60 / stepDurationInMinute))
+      if (step >= peakStartInStep && step < peakEndInStep) {
+        return appliance.allDayPowerPeak
+      }
+    }
     return appliance.power
   }
 
