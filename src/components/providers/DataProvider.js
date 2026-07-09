@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-
 import appliances from 'data/appliances.json'
 import initDefaultAppliances from 'data/initDefaultAppliances.json'
+import dataCategoryAppliances from 'data/categoryAppliances.json'
 
 const DataContext = React.createContext({})
 
@@ -22,6 +22,24 @@ export function DataProvider(props) {
     slug,
     name: appliances.find((a) => a.slug === slug)?.name ?? slug,
     ...occurrence,
+  }))
+
+  const categoryAppliances = dataCategoryAppliances.map((category) => ({
+    ...category,
+    items: category.items
+      .map((slug) => {
+        const appliance = appliances.find((a) => a.slug === slug)
+        if (!appliance) return null
+        return {
+          slug,
+          name: appliance.name,
+          icon: appliance.icon,
+          start: appliance.defaultOccurence.start,
+          duration: appliance.defaultOccurence.duration,
+        }
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.name.localeCompare(b.name)),
   }))
 
   const addOccurence = (occurence) => {
@@ -53,6 +71,7 @@ export function DataProvider(props) {
     <DataContext.Provider
       value={{
         appliances,
+        categoryAppliances,
         occurences,
         setOccurences,
         hover,

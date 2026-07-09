@@ -1,6 +1,7 @@
 [
   {
     "slug": "lavelinge",
+    "icon": "",
     "name": "Lave-linge",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -15,6 +16,7 @@
   },
   {
     "slug": "radiateur",
+    "icon": "",
     "name": "Radiateur électrique",
     "initialPower": 2000,
     "initialPowerLength": 90,
@@ -28,6 +30,7 @@
   },
   {
     "slug": "four",
+    "icon": "",
     "name": "Four électrique",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -42,6 +45,7 @@
   },
   {
     "slug": "aspirateur",
+    "icon": "",
     "name": "Aspirateur",
     "power": 700,
     "defaultOccurence": {
@@ -54,6 +58,7 @@
   },
   {
     "slug": "lavevaisselle",
+    "icon": "",
     "name": "Lave-vaisselle",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -70,6 +75,7 @@
   },
   {
     "slug": "sechelinge",
+    "icon": "",
     "name": "Sèche-linge",
     "power": 1800,
     "defaultOccurence": {
@@ -82,6 +88,7 @@
   },
   {
     "slug": "microonde",
+    "icon": "",
     "name": "Micro-onde",
     "power": 1000,
     "defaultOccurence": {
@@ -94,6 +101,7 @@
   },
   {
     "slug": "plaque",
+    "icon": "",
     "name": "Plaque électrique",
     "power": 750,
     "defaultOccurence": {
@@ -106,6 +114,7 @@
   },
   {
     "slug": "bouilloire",
+    "icon": "",
     "name": "Bouilloire",
     "power": 1300,
     "defaultOccurence": {
@@ -118,6 +127,7 @@
   },
   {
     "slug": "cafetiere",
+    "icon": "",
     "name": "Cafetière",
     "power": 800,
     "defaultOccurence": {
@@ -130,6 +140,7 @@
   },
   {
     "slug": "sechecheveux",
+    "icon": "",
     "name": "Sèche-cheveux",
     "power": 2000,
     "defaultOccurence": {
@@ -142,6 +153,7 @@
   },
   {
     "slug": "television",
+    "icon": "",
     "name": "Télévision",
     "power": 80,
     "defaultOccurence": {
@@ -154,6 +166,7 @@
   },
   {
     "slug": "ferarepasser",
+    "icon": "",
     "name": "Fer à repasser",
     "power": 1000,
     "defaultOccurence": {
@@ -166,6 +179,7 @@
   },
   {
     "slug": "ballondeauchaude",
+    "icon": "",
     "name": "Ballon d'eau chaude",
     "power": 2250,
     "defaultOccurence": {
@@ -178,6 +192,7 @@
   },
   {
     "slug": "ampouleled",
+    "icon": "",
     "name": "Ampoule LED",
     "power": 7,
     "defaultOccurence": {
@@ -190,6 +205,7 @@
   },
   {
     "slug": "ampoulehalogene",
+    "icon": "",
     "name": "Ampoule halogène",
     "power": 45,
     "defaultOccurence": {
@@ -202,6 +218,7 @@
   },
   {
     "slug": "refrigerateur",
+    "icon": "",
     "name": "Réfrigérateur",
     "power": 19,
     "defaultOccurence": {
@@ -214,6 +231,7 @@
   },
   {
     "slug": "refrigerateurcombine",
+    "icon": "",
     "name": "Réfrigérateur combiné",
     "power": 39,
     "defaultOccurence": {
@@ -226,6 +244,7 @@
   },
   {
     "slug": "congelateur",
+    "icon": "",
     "name": "Congélateur",
     "power": 33,
     "defaultOccurence": {
@@ -238,6 +257,7 @@
   },
   {
     "slug": "boxinternet",
+    "icon": "",
     "name": "Box internet",
     "power": 12,
     "defaultOccurence": {
@@ -250,6 +270,7 @@
   },
   {
     "slug": "boxtv",
+    "icon": "",
     "name": "Box TV",
     "power": 13,
     "defaultOccurence": {
@@ -262,6 +283,7 @@
   },
   {
     "slug": "chargeurtelephoneportable",
+    "icon": "",
     "name": "Chargeur téléphone portable",
     "power": 5,
     "defaultOccurence": {
@@ -274,6 +296,7 @@
   },
   {
     "slug": "chargeurordinateur",
+    "icon": "",
     "name": "Chargeur ordinateur portable",
     "power": 19,
     "defaultOccurence": {
@@ -286,6 +309,7 @@
   },
   {
     "slug": "ordinateurfixe",
+    "icon": "",
     "name": "Ordinateur fixe",
     "power": 76,
     "defaultOccurence": {
@@ -298,6 +322,7 @@
   },
   {
     "slug": "appareilsenveille",
+    "icon": "",
     "name": "Appareils en veille",
     "power": 45,
     "defaultOccurence": {
@@ -310,6 +335,7 @@
   },
   {
     "slug": "voitureelectriquesurprise",
+    "icon": "",
     "name": "Voiture électrique (sur prise)",
     "power": 2500,
     "defaultOccurence": {
@@ -322,6 +348,7 @@
   },
   {
     "slug": "velolectrique",
+    "icon": "",
     "name": "Vélo électrique",
     "power": 100,
     "defaultOccurence": {
@@ -334,6 +361,7 @@
   },
   {
     "slug": "voitureelectriquesurborne",
+    "icon": "",
     "name": "Voiture électrique (sur borne)",
     "power": 7000,
     "defaultOccurence": {
@@ -346,6 +374,7 @@
   },
   {
     "slug": "trottinetteelectrique",
+    "icon": "",
     "name": "Trottinette électrique",
     "power": 100,
     "defaultOccurence": {
