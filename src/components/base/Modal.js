@@ -29,10 +29,11 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: ${(props) => props.width || '40em'};
+  height: ${(props) => props.height || 'auto'};
   max-width: 90vw;
   max-height: 90vh;
   margin: 1rem;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.backgroundColor || props.theme.colors.background};
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
   visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
@@ -65,6 +66,7 @@ export default function Modal(props) {
       <Content
         open={props.open}
         width={props.width}
+        height={props.height}
         textColor={props.textColor}
         backgroundColor={props.backgroundColor}
         noAnimation={props.noAnimation}

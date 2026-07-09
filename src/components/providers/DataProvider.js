@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import appliances from 'data/appliances.json'
+import initDefaultAppliances from 'data/initDefaultAppliances.json'
 
 const DataContext = React.createContext({})
 
@@ -16,6 +17,12 @@ export function DataProvider(props) {
   const sortedAppliances = sortAppliancesByPower
     ? appliances.sort((a, b) => b.power - a.power)
     : appliances.sort((a, b) => a.name.localeCompare(b.name))
+
+  const defaultOccurences = Object.entries(initDefaultAppliances).map(([slug, occurrence]) => ({
+    slug,
+    name: appliances.find((a) => a.slug === slug)?.name ?? slug,
+    ...occurrence,
+  }))
 
   const addOccurence = (occurence) => {
     setOccurences((prevOccurences) => [...prevOccurences, occurence])
@@ -61,6 +68,7 @@ export function DataProvider(props) {
         sortAppliancesByPower,
         setSortAppliancesByPower,
         sortedAppliances,
+        defaultOccurences,
       }}
     >
       {props.children}

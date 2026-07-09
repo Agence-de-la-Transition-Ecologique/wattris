@@ -31,6 +31,15 @@ export const themes = {
 
 export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
+  
+  :root {
+    --color-main: ${(props) => props.theme.colors.main};
+    --color-main-dark: ${(props) => props.theme.colors.mainDark};
+    --color-text: ${(props) => props.theme.colors.text};
+    --color-text-light: ${(props) => props.theme.colors.textLight};
+    --color-text-lighter: ${(props) => props.theme.colors.textLighter};
+    --color-background: ${(props) => props.theme.colors.background};
+  }
 
   html {
     box-sizing: border-box;

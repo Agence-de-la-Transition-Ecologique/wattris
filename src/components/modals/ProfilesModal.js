@@ -5,7 +5,6 @@ import profils from 'data/profiles.json'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
-import Button from 'components/base/Button'
 
 const Title = styled.h2`
   text-align: center;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-
+import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import Logo from 'components/base/Logo'
@@ -25,8 +25,11 @@ export default function IntroductionModal() {
   const {
     introduction: introductionOpen,
     setIntroduction: setIntroductionOpen,
-    setProfils: setProfilsOpen,
+    setSetupProfile: setSetupProfileOpen,
+    setSetupProfileOccurences,
   } = useContext(ModalContext)
+
+  const { defaultOccurences } = useContext(DataContext)
 
   const isExcludedRoute = excludeRoutes.includes(pathname)
 
@@ -57,7 +60,8 @@ export default function IntroductionModal() {
           hollow
           onClick={() => {
             setIntroductionOpen(false)
-            setProfilsOpen(true)
+            setSetupProfileOpen(true)
+            setSetupProfileOccurences(defaultOccurences)
           }}
         >
           Je paramètre mon profil

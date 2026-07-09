@@ -1,0 +1,126 @@
+.setupProfileModalContainer {
+  width: 100%;
+  height: calc(85vh - 70px);
+  background-color: var(--color-text-light, #C4C4C4);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.setupProfileModalHeader {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.setupProfileModalTitle {
+  font-size: 1.7rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: var(--color-main, #476C9B);
+}
+
+.setupProfileModalSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-lighter, #C4C4C4);
+}
+
+.setupProfileModalBody {
+  height: calc(100% - 115px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.setupProfileModalBloc {
+  width: 48%;
+  height: 100%;
+  border: 1px solid var(--color-text-lighter, #C4C4C4);
+  border-radius: 25px;
+  overflow-y: hidden;
+  color: var(--color-text-lighter, #C4C4C4);
+  background-color: var(--color-background, #FFFFFF);
+  padding: 0.5rem;
+}
+
+.setupProfileModalBlocTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: var(--color-main, #476C9B);
+  padding: 0.8rem;
+}
+
+.setupProfileModalBlocContent {
+  padding: 0.2rem 0.8rem 0.8rem;
+  max-height: calc(100% - 70px);
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: var(--color-text, #383838);
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-main, #476C9B) var(--color-text-light, #C4C4C4);
+}
+
+.setupProfileModalFooter {
+  margin-top: 1.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setupProfileModalButton {
+  background-color: var(--color-main, #476C9B);
+  color: var(--color-background, #FFFFFF);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.setupProfileModalButtonIcon {
+  margin-left: 0.5rem;
+  height: 1.3rem;  
+  width: auto;
+}
+
+/* Chrome, Edge, Safari */
+.setupProfileModalBlocContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.setupProfileModalBlocContent::-webkit-scrollbar-track {
+  background: var(--color-text-light, #C4C4C4);
+  border-radius: 999px;
+}
+
+.setupProfileModalBlocContent::-webkit-scrollbar-thumb {
+  background: var(--color-main, #476C9B);
+  border-radius: 999px;
+}
+
+.setupProfileModalBlocContent::-webkit-scrollbar-thumb:hover {
+  background: var(--color-main-dark, #1D625E);
+}
+
+.setupProfileModalSelectedItem {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-text, #FFFFFF);
+    border: 1px solid var(--color-text-lighter, #C4C4C4);
+    border-radius: 8px;
+    padding: 0.5rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.setupProfileModalSelectedItem svg {
+    margin-left: 1.2rem;
+    cursor: pointer;
+    height: 1.2rem;
+}
