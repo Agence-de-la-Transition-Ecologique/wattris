@@ -4,9 +4,7 @@ import { NextAdapter } from 'next-query-params'
 import { QueryParamProvider } from 'use-query-params'
 import localFont from 'next/font/local'
 import { GoogleTagManager } from '@next/third-parties/google'
-
 import { GlobalStyle } from 'utils/styles'
-
 import { StyleProvider } from 'components/providers/StyleProvider'
 import { ModalProvider } from 'components/providers/ModalProvider'
 import { DataProvider } from 'components/providers/DataProvider'
@@ -36,7 +34,7 @@ const marianne = localFont({
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
-  const gtmId = process.env.ID_GTM || 'GTM-5BVCVHL7'
+  const gtmId = process.env.NEXT_PUBLIC_ID_GTM || 'GTM-5BVCVHL7'
   
   return (
     <>
