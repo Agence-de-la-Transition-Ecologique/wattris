@@ -1,10 +1,9 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import Occurence from 'components/views/home/appliances/Occurence'
-import Link from 'next/link'
 import Button from 'components/base/Button'
 
 const blink = keyframes`
@@ -77,30 +76,12 @@ const AddOccurenceButton = styled(Button)`
   }
 `
 
-const ProfileButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0;
-  font-size: 0.75rem;
-  color: ${(props) => props.theme.colors.main};
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  path {
-    fill: ${(props) => props.theme.colors.background};
-  }
-`
-
 export default function Appliances() {
   const { occurences, appliancesListOpen, setAppliancesListOpen } =
     useContext(DataContext)
   const {
     introduction,
-    profils,
-    setProfils: setProfilsOpen,
+    profils
   } = useContext(ModalContext)
 
   const occurencesByAppliance =
@@ -145,13 +126,6 @@ export default function Appliances() {
           <br />
           un appareil
         </AddOccurenceButton>
-        <ProfileButton
-          onClick={() => {
-            setProfilsOpen(true)
-          }}
-        >
-          Voir les profils-type
-        </ProfileButton>
       </AddOccurenceWrapper>
     </Wrapper>
   )
