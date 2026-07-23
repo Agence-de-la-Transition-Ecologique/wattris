@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
-
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import Occurrence from 'components/views/home/appliances/Occurrence'
@@ -80,8 +79,7 @@ export default function Appliances() {
   const { occurrences, appliancesListOpen, setAppliancesListOpen } =
     useContext(DataContext)
   const {
-    introductionOpen,
-    profilsOpen
+    introductionOpen
   } = useContext(ModalContext)
 
   const occurrencesByAppliance =
@@ -111,7 +109,7 @@ export default function Appliances() {
       )}
       <AddOccurrenceWrapper
         visible={
-          (!introductionOpen && !profilsOpen) || (profilsOpen && occurrences.length > 0)
+          !introductionOpen || occurrences.length > 0
         }
       >
         <AddOccurrenceButton

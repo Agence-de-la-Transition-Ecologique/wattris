@@ -129,7 +129,7 @@ const StyledMagicLink = styled(MagicLink)`
 `
 export default function Score() {
   const { occurrences } = useContext(DataContext)
-  const { introductionOpen, profilsOpen } = useContext(ModalContext)
+  const { introductionOpen } = useContext(ModalContext)
 
   const power = useAllPowerOfPeaks()
 
@@ -138,7 +138,7 @@ export default function Score() {
   return (
     <Wrapper
       visible={
-        (!introductionOpen && !profilsOpen) || (profilsOpen && occurrences.length > 0)
+        !introductionOpen || occurrences.length > 0
       }
     >
       <Gauge
