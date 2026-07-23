@@ -7,10 +7,10 @@ import Modal from 'components/base/Modal'
 const Title = styled.h2``
 const Text = styled.p``
 export default function Co2eModal() {
-  const { co2e: open, setCo2e: setOpen } = useContext(ModalContext)
+  const { co2eOpen, setCo2eOpen } = useContext(ModalContext)
 
   return (
-    <Modal open={open} setOpen={setOpen}>
+    <Modal open={co2eOpen} setOpen={setCo2eOpen}>
       <Title>
         L&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
       </Title>

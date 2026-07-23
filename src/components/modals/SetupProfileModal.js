@@ -9,26 +9,26 @@ import AvailableAppliances from './setupProfileModal/AvailableAppliances'
 
 export default function SetupProfileModal() {
   const {
-    setupProfile: setupProfileOpen,
-    setSetupProfile: setSetupProfileOpen,
-    setupProfileOccurences,
-    setSetupProfileOccurences,
+    setupProfileOpen,
+    setSetupProfileOpen,
+    setupProfileOccurrences,
+    setSetupProfileOccurrences,
   } = useContext(ModalContext)
 
-  const { categoryAppliances, setOccurences } = useContext(DataContext)
+  const { categoryAppliances, setOccurrences } = useContext(DataContext)
 
-  const addOccurence = (item) => {
-    setSetupProfileOccurences([...setupProfileOccurences, item])
+  const addOccurrence = (item) => {
+    setSetupProfileOccurrences([...setupProfileOccurrences, item])
   }
 
-  const deleteOccurence = ({ occurenceIndex }) => {
-    setSetupProfileOccurences((prevOccurences) =>
-      prevOccurences.filter((_, index) => index !== occurenceIndex)
+  const deleteOccurrence = ({ occurrenceIndex }) => {
+    setSetupProfileOccurrences((prevOccurrences) =>
+      prevOccurrences.filter((_, index) => index !== occurrenceIndex)
     )
   }
 
   const start = () => {
-    setOccurences(setupProfileOccurences)
+    setOccurrences(setupProfileOccurrences)
     setSetupProfileOpen(false)
   }
 
@@ -41,8 +41,8 @@ export default function SetupProfileModal() {
         </div>
 
         <div className={styles.setupProfileModalBody}>
-          <SelectedAppliances occurences={setupProfileOccurences} onDelete={deleteOccurence} />
-          <AvailableAppliances categoryAppliances={categoryAppliances} onAdd={addOccurence} />
+          <SelectedAppliances occurrences={setupProfileOccurrences} onDelete={deleteOccurrence} />
+          <AvailableAppliances categoryAppliances={categoryAppliances} onAdd={addOccurrence} />
         </div>
 
         <footer className={styles.setupProfileModalFooter}>

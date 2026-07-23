@@ -23,13 +23,13 @@ export default function IntroductionModal() {
   const excludeRoutes = ['/politique-cookies', '/mentions-legales', '/plan-du-site', '/politique-protection-donnees']
 
   const {
-    introduction: introductionOpen,
-    setIntroduction: setIntroductionOpen,
-    setSetupProfile: setSetupProfileOpen,
-    setSetupProfileOccurences,
+    introductionOpen,
+    setIntroductionOpen,
+    setSetupProfileOpen,
+    setSetupProfileOccurrences,
   } = useContext(ModalContext)
 
-  const { defaultOccurences } = useContext(DataContext)
+  const { defaultOccurrences } = useContext(DataContext)
 
   const isExcludedRoute = excludeRoutes.includes(pathname)
 
@@ -61,7 +61,7 @@ export default function IntroductionModal() {
           onClick={() => {
             setIntroductionOpen(false)
             setSetupProfileOpen(true)
-            setSetupProfileOccurences(defaultOccurences)
+            setSetupProfileOccurrences(defaultOccurrences)
           }}
         >
           Je paramètre mon profil

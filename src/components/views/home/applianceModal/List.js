@@ -61,8 +61,8 @@ const SortButton = styled(ButtonLink)`
 export default function List() {
   const {
     setAppliancesListOpen,
-    occurences,
-    addOccurence,
+    occurrences,
+    addOccurrence,
     sortAppliancesByPower,
     setSortAppliancesByPower,
     sortedAppliances,
@@ -77,11 +77,6 @@ export default function List() {
         <SortButton
           onClick={() => {
             setSortAppliancesByPower(!sortAppliancesByPower)
-            window?._paq?.push([
-              'trackEvent',
-              'Interaction',
-              'Ordonner la liste des appareils',
-            ])
           }}
         >
           {sortAppliancesByPower ? 'ordre alphabétique' : 'puissance maximale'}
@@ -91,22 +86,16 @@ export default function List() {
         {sortedAppliances.map((appliance) => (
           <Appliance
             key={appliance.slug}
-            hollow={occurences.find(
-              (occurence) => occurence.slug === appliance.slug
+            hollow={occurrences.find(
+              (occurrence) => occurrence.slug === appliance.slug
             )}
             onClick={() => {
-              addOccurence({
+              addOccurrence({
                 slug: appliance.slug,
-                start: appliance.defaultOccurence.start,
-                duration: appliance.defaultOccurence.duration,
+                start: appliance.defaultOccurrence.start,
+                duration: appliance.defaultOccurrence.duration,
               })
               setAppliancesListOpen(false)
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Ajouter appareil',
-                appliance.slug,
-              ])
             }}
           >
             {appliance.name}

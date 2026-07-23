@@ -6,7 +6,7 @@
     "initialPower": 2000,
     "initialPowerLength": 15,
     "power": 64,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 15,
       "duration": 1.5,
       "allDay": false
@@ -21,7 +21,7 @@
     "initialPower": 2000,
     "initialPowerLength": 90,
     "power": 200,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 8,
       "duration": 14
     },
@@ -35,7 +35,7 @@
     "initialPower": 2000,
     "initialPowerLength": 15,
     "power": 450,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 19,
       "duration": 1,
       "allDay": false
@@ -48,7 +48,7 @@
     "icon": "",
     "name": "Aspirateur",
     "power": 700,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 18,
       "duration": 0.25,
       "allDay": false
@@ -65,7 +65,7 @@
     "endPower": 2000,
     "endPowerLength": 15,
     "power": 140,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 10,
       "duration": 1.5,
       "allDay": false
@@ -78,7 +78,7 @@
     "icon": "",
     "name": "Sèche-linge",
     "power": 1800,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 15,
       "duration": 1.5,
       "allDay": false
@@ -91,7 +91,7 @@
     "icon": "",
     "name": "Micro-onde",
     "power": 1000,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 18,
       "duration": 0.0833333333333339,
       "allDay": false
@@ -104,7 +104,7 @@
     "icon": "",
     "name": "Plaque électrique",
     "power": 750,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 19,
       "duration": 0.5,
       "allDay": false
@@ -117,7 +117,7 @@
     "icon": "",
     "name": "Bouilloire",
     "power": 1300,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 12,
       "duration": 0.0833333333333339,
       "allDay": false
@@ -130,7 +130,7 @@
     "icon": "",
     "name": "Cafetière",
     "power": 800,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 10,
       "duration": 0.0833333333333339,
       "allDay": false
@@ -143,7 +143,7 @@
     "icon": "",
     "name": "Sèche-cheveux",
     "power": 2000,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 8,
       "duration": 0.0833333333333339,
       "allDay": false
@@ -156,7 +156,7 @@
     "icon": "",
     "name": "Télévision",
     "power": 80,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 20,
       "duration": 1,
       "allDay": false
@@ -169,7 +169,7 @@
     "icon": "",
     "name": "Fer à repasser",
     "power": 1000,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 14,
       "duration": 0.5,
       "allDay": false
@@ -182,7 +182,7 @@
     "icon": "",
     "name": "Ballon d'eau chaude",
     "power": 2250,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 23.5,
       "duration": 2,
       "allDay": false
@@ -195,7 +195,7 @@
     "icon": "",
     "name": "Ampoule LED",
     "power": 7,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 19,
       "duration": 4,
       "allDay": false
@@ -208,7 +208,7 @@
     "icon": "",
     "name": "Ampoule halogène",
     "power": 45,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 19,
       "duration": 4,
       "allDay": false
@@ -221,7 +221,7 @@
     "icon": "",
     "name": "Réfrigérateur",
     "power": 19,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": true
@@ -234,7 +234,7 @@
     "icon": "",
     "name": "Réfrigérateur combiné",
     "power": 39,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": true
@@ -247,7 +247,7 @@
     "icon": "",
     "name": "Congélateur",
     "power": 33,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": true
@@ -260,7 +260,7 @@
     "icon": "",
     "name": "Box internet",
     "power": 12,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": true
@@ -273,7 +273,7 @@
     "icon": "",
     "name": "Box TV",
     "power": 13,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": true
@@ -286,7 +286,7 @@
     "icon": "",
     "name": "Chargeur téléphone portable",
     "power": 5,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 21,
       "duration": 3,
       "allDay": false
@@ -299,7 +299,7 @@
     "icon": "",
     "name": "Chargeur ordinateur portable",
     "power": 19,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 9,
       "duration": 7,
       "allDay": false
@@ -312,7 +312,7 @@
     "icon": "",
     "name": "Ordinateur fixe",
     "power": 76,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 9,
       "duration": 7,
       "allDay": false
@@ -325,7 +325,7 @@
     "icon": "",
     "name": "Appareils en veille",
     "power": 45,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": false
@@ -338,7 +338,7 @@
     "icon": "",
     "name": "Voiture électrique (sur prise)",
     "power": 2500,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 18,
       "duration": 5,
       "allDay": false
@@ -351,7 +351,7 @@
     "icon": "",
     "name": "Vélo électrique",
     "power": 100,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 18,
       "duration": 5,
       "allDay": false
@@ -364,7 +364,7 @@
     "icon": "",
     "name": "Voiture électrique (sur borne)",
     "power": 7000,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 18,
       "duration": 4.5,
       "allDay": false
@@ -377,7 +377,7 @@
     "icon": "",
     "name": "Trottinette électrique",
     "power": 100,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 18,
       "duration": 5,
       "allDay": false
@@ -391,7 +391,7 @@
     "initialPower": 1500,
     "initialPowerLength": 30,
     "power": 400,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 14,
       "duration": 8,
       "allDay": false
@@ -408,7 +408,7 @@
     "initialPower": 1500,
     "initialPowerLength": 30,
     "power": 400,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 0,
       "duration": 24,
       "allDay": true
@@ -423,7 +423,7 @@
     "slug": "climatiseurmobile",
     "name": "Climatiseur mobile",
     "power": 1500,
-    "defaultOccurence": {
+    "defaultOccurrence": {
       "start": 14,
       "duration": 7,
       "allDay": false

@@ -45,10 +45,10 @@ export default function ApplianceModal() {
     active,
     setActive,
     appliances,
-    occurences,
-    addOccurence,
-    deleteOccurence,
-    deleteAllOccurencesOfAppliance,
+    occurrences,
+    addOccurrence,
+    deleteOccurrence,
+    deleteAllOccurrencesOfAppliance,
   } = useContext(DataContext)
 
   const appliance = useMemo(
@@ -56,19 +56,19 @@ export default function ApplianceModal() {
     [active, appliances]
   )
 
-  const occurencesOfAppliance = useMemo(
+  const occurrencesOfAppliance = useMemo(
     () =>
-      occurences
-        .map((occurence, index) => ({ ...occurence, index }))
-        .filter((occurence) => occurence.slug === appliance?.slug),
-    [appliance, occurences]
+      occurrences
+        .map((occurrence, index) => ({ ...occurrence, index }))
+        .filter((occurrence) => occurrence.slug === appliance?.slug),
+    [appliance, occurrences]
   )
 
-  const peaks = usePeaks(occurencesOfAppliance)
+  const peaks = usePeaks(occurrencesOfAppliance)
 
   const allPeaks = useMemo(() => !peaks.includes(false), [peaks])
 
-  return (appliance && occurencesOfAppliance?.length) || appliancesListOpen ? (
+  return (appliance && occurrencesOfAppliance?.length) || appliancesListOpen ? (
     <>
       <Background
         onClick={() => {
@@ -76,7 +76,7 @@ export default function ApplianceModal() {
             setAppliancesListOpen(false)
           } else {
             active.new &&
-              deleteAllOccurencesOfAppliance({
+              deleteAllOccurrencesOfAppliance({
                 appliance,
               })
             setActive(null)
@@ -93,13 +93,13 @@ export default function ApplianceModal() {
           <Appliance
             active={active}
             setActive={setActive}
-            occurencesOfAppliance={occurencesOfAppliance}
+            occurrencesOfAppliance={occurrencesOfAppliance}
             appliance={appliance}
             peaks={peaks}
             allPeaks={allPeaks}
-            addOccurence={addOccurence}
-            deleteOccurence={deleteOccurence}
-            deleteAllOccurencesOfAppliance={deleteAllOccurencesOfAppliance}
+            addOccurrence={addOccurrence}
+            deleteOccurrence={deleteOccurrence}
+            deleteAllOccurrencesOfAppliance={deleteAllOccurrencesOfAppliance}
           />
         )}
       </Wrapper>

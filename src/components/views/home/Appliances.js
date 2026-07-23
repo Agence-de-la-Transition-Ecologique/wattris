@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import Occurence from 'components/views/home/appliances/Occurence'
+import Occurrence from 'components/views/home/appliances/Occurrence'
 import Button from 'components/base/Button'
 
 const blink = keyframes`
@@ -32,13 +32,13 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 `
-const AddOccurenceWrapper = styled.div`
+const AddOccurrenceWrapper = styled.div`
   opacity: ${(props) => (props.visible ? 1 : 0)};
   display: flex;
   flex-direction: column;
 `
 
-const AddOccurenceButton = styled(Button)`
+const AddOccurrenceButton = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,17 +77,17 @@ const AddOccurenceButton = styled(Button)`
 `
 
 export default function Appliances() {
-  const { occurences, appliancesListOpen, setAppliancesListOpen } =
+  const { occurrences, appliancesListOpen, setAppliancesListOpen } =
     useContext(DataContext)
   const {
-    introduction,
-    profils
+    introductionOpen,
+    profilsOpen
   } = useContext(ModalContext)
 
-  const occurencesByAppliance =
-    occurences.length &&
-    occurences
-      .map((occurence, index) => ({ ...occurence, index }))
+  const occurrencesByAppliance =
+    occurrences.length &&
+    occurrences
+      .map((occurrence, index) => ({ ...occurrence, index }))
       .reduce(
         (acc, cur) =>
           acc[cur.slug]
@@ -98,26 +98,26 @@ export default function Appliances() {
 
   return (
     <Wrapper>
-      {Object.entries(occurencesByAppliance).map((key) =>
-        key[1].map((occurence, index) => (
-          <Occurence
+      {Object.entries(occurrencesByAppliance).map((key) =>
+        key[1].map((occurrence, index) => (
+          <Occurrence
             key={key[0] + index}
-            index={occurence.index}
+            index={occurrence.index}
             indexInAppliance={key[1].length > 1 ? index + 1 : null}
-            occurence={occurence}
+            occurrence={occurrence}
             small
           />
         ))
       )}
-      <AddOccurenceWrapper
+      <AddOccurrenceWrapper
         visible={
-          (!introduction && !profils) || (profils && occurences.length > 0)
+          (!introductionOpen && !profilsOpen) || (profilsOpen && occurrences.length > 0)
         }
       >
-        <AddOccurenceButton
+        <AddOccurrenceButton
           to='#home'
           onClick={() => setAppliancesListOpen(true)}
-          blink={!occurences.length && !appliancesListOpen}
+          blink={!occurrences.length && !appliancesListOpen}
         >
           <svg width='14' height='15' viewBox='0 0 14 15'>
             <path d='M14 6.16472V8.83528C14 9.03631 13.8371 9.19945 13.6358 9.19945H8.69947V14.1358C8.69947 14.3371 8.53634 14.5 8.3353 14.5H5.66474C5.46382 14.5 5.30057 14.3371 5.30057 14.1358V9.19945H0.364169C0.162972 9.19945 0 9.03631 0 8.83528V6.16472C0 5.96364 0.162972 5.80055 0.364169 5.80055H5.30057V0.864146C5.30057 0.662869 5.46378 0.499977 5.66474 0.499977H8.3353C8.53634 0.499977 8.69947 0.662869 8.69947 0.864146V5.80055H13.6358C13.8371 5.80055 14 5.96364 14 6.16472Z' />
@@ -125,8 +125,8 @@ export default function Appliances() {
           Ajouter
           <br />
           un appareil
-        </AddOccurenceButton>
-      </AddOccurenceWrapper>
+        </AddOccurrenceButton>
+      </AddOccurrenceWrapper>
     </Wrapper>
   )
 }

@@ -6,7 +6,7 @@ import dataCategoryAppliances from 'data/categoryAppliances.json'
 const DataContext = React.createContext({})
 
 export function DataProvider(props) {
-  const [occurences, setOccurences] = useState([])
+  const [occurrences, setOccurrences] = useState([])
 
   const [hover, setHover] = useState(null)
   const [active, setActive] = useState(null)
@@ -18,11 +18,18 @@ export function DataProvider(props) {
     ? appliances.sort((a, b) => b.power - a.power)
     : appliances.sort((a, b) => a.name.localeCompare(b.name))
 
-  const defaultOccurences = Object.entries(initDefaultAppliances).map(([slug, occurrence]) => ({
+  const defaultOccurrences = Object.entries(initDefaultAppliances).map(([slug, occurrence]) => ({
     slug,
     name: appliances.find((a) => a.slug === slug)?.name ?? slug,
     ...occurrence,
   }))
+
+  const mapOccurrencesListWithNames = (occurrencesList) => {
+    return occurrencesList.map((occurrence) => ({
+      ...occurrence,
+      name: appliances.find((a) => a.slug === occurrence.slug)?.name ?? occurrence.slug,
+    }))
+  }
 
   const categoryAppliances = dataCategoryAppliances.map((category) => ({
     ...category,
@@ -34,36 +41,36 @@ export function DataProvider(props) {
           slug,
           name: appliance.name,
           icon: appliance.icon,
-          start: appliance.defaultOccurence.start,
-          duration: appliance.defaultOccurence.duration,
+          start: appliance.defaultOccurrence.start,
+          duration: appliance.defaultOccurrence.duration,
         }
       })
       .filter(Boolean)
       .sort((a, b) => a.name.localeCompare(b.name)),
   }))
 
-  const addOccurence = (occurence) => {
-    setOccurences((prevOccurences) => [...prevOccurences, occurence])
-    setActive({ appliance: occurence.slug, new: true })
+  const addOccurrence = (occurrence) => {
+    setOccurrences((prevOccurrences) => [...prevOccurrences, occurrence])
+    setActive({ appliance: occurrence.slug, new: true })
   }
 
-  const editOccurence = ({ occurenceIndex, newOccurence }) => {
-    setOccurences((prevOccurences) =>
-      prevOccurences.map((occurence, index) =>
-        index === occurenceIndex ? newOccurence : occurence
+  const editOccurrence = ({ occurrenceIndex, newOccurrence }) => {
+    setOccurrences((prevOccurrences) =>
+      prevOccurrences.map((occurrence, index) =>
+        index === occurrenceIndex ? newOccurrence : occurrence
       )
     )
   }
 
-  const deleteOccurence = ({ occurenceIndex }) => {
-    setOccurences((prevOccurences) =>
-      prevOccurences.filter((occurence, index) => index !== occurenceIndex)
+  const deleteOccurrence = ({ occurrenceIndex }) => {
+    setOccurrences((prevOccurrences) =>
+      prevOccurrences.filter((occurrence, index) => index !== occurrenceIndex)
     )
   }
 
-  const deleteAllOccurencesOfAppliance = ({ appliance }) => {
-    setOccurences((prevOccurences) =>
-      prevOccurences.filter((occurence) => occurence.slug !== appliance.slug)
+  const deleteAllOccurrencesOfAppliance = ({ appliance }) => {
+    setOccurrences((prevOccurrences) =>
+      prevOccurrences.filter((occurrence) => occurrence.slug !== appliance.slug)
     )
   }
 
@@ -72,22 +79,23 @@ export function DataProvider(props) {
       value={{
         appliances,
         categoryAppliances,
-        occurences,
-        setOccurences,
+        occurrences,
+        setOccurrences,
         hover,
         setHover,
         active,
         setActive,
-        addOccurence,
-        editOccurence,
-        deleteOccurence,
-        deleteAllOccurencesOfAppliance,
+        addOccurrence,
+        editOccurrence,
+        deleteOccurrence,
+        deleteAllOccurrencesOfAppliance,
         appliancesListOpen,
         setAppliancesListOpen,
         sortAppliancesByPower,
         setSortAppliancesByPower,
         sortedAppliances,
-        defaultOccurences,
+        defaultOccurrences,
+        mapOccurrencesListWithNames
       }}
     >
       {props.children}

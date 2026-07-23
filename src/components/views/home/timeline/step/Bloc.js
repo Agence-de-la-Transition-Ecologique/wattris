@@ -24,18 +24,12 @@ export default function Bloc(props) {
       $discret={
         active
           ? active?.appliance !== props.bloc.appliance.slug
-          : hover && hover.occurence !== props.bloc.index
+          : hover && hover.occurrence !== props.bloc.index
       }
-      onMouseEnter={() => setHover({ occurence: props.bloc.index })}
+      onMouseEnter={() => setHover({ occurrence: props.bloc.index })}
       onMouseLeave={() => setHover(null)}
       onClick={() => {
         setActive({ appliance: props.bloc.appliance.slug })
-        window?._paq?.push([
-          'trackEvent',
-          'Interaction',
-          'Click graphique',
-          `${props.bloc.appliance.slug} (${props.bloc.index})`,
-        ])
       }}
     ></Wrapper>
   )
