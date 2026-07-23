@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to Semantic Versioning.
 
+## [1.1.2] TMA Socle - I26J - 2026-07-23
+
+### Added
+- [WAT-50](https://ademe.atlassian.net/browse/WAT-50) - Ajouter l'usage "Pompe à chaleur (air/air)"
+- [WAT-51](https://ademe.atlassian.net/browse/WAT-51) - Ajouter l'usage "Pompe à chaleur (air/eau)"
+- [WAT-52](https://ademe.atlassian.net/browse/WAT-52) - Ajouter l'usage "Climatiseur mobile"
+
 ## [1.1.1] TMA Socle - I26H - 2026-07-07
 
 ### Fixed
