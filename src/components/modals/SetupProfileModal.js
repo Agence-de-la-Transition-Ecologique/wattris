@@ -48,7 +48,7 @@ export default function SetupProfileModal() {
         <footer className={styles.setupProfileModalFooter}>
           <button type="button" className={styles.setupProfileModalButton} onClick={start}>
             Commencer
-            <ArrowRightIcon className={styles.setupProfileModalButtonIcon} />
+            <ArrowRightIcon strokeWidth={10} className={styles.setupProfileModalButtonIcon} />
           </button>
         </footer>
       </div>

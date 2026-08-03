@@ -1,12 +1,20 @@
 import React from 'react'
+import { DEFAULT_ICON_STROKE_WIDTH } from './constants'
 
-export default function PlusIcon({ fill = 'currentColor', className, ...props }) {
+export default function PlusIcon({
+    fill = 'currentColor',
+    className,
+    strokeWidth = DEFAULT_ICON_STROKE_WIDTH,
+    ...props
+}) {
     return (
         <svg
             className={className}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 81 81"
             fill={fill}
+            stroke={fill}
+            strokeWidth={strokeWidth}
             aria-hidden="true"
             {...props}
         >
