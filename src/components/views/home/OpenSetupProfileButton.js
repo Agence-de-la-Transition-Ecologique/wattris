@@ -20,7 +20,7 @@ export default function OpenSetupProfileButton() {
           setProfileOccurrences()
         }}
       >
-        Modifier le profil
+        Modifier mon profil
       </Button>
     </Button.Wrapper>
   )
