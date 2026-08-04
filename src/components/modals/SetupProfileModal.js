@@ -4,6 +4,7 @@ import DataContext from 'components/providers/DataProvider'
 import Modal from 'components/base/Modal'
 import ArrowRightIcon from 'components/icons/ArrowRightIcon'
 import styles from 'styles/SetupProfileModal.module.css'
+import useWindowSize from 'hooks/useWindowSize'
 import SelectedAppliances from './setupProfileModal/SelectedAppliances'
 import AvailableAppliances from './setupProfileModal/AvailableAppliances'
 
@@ -16,6 +17,9 @@ export default function SetupProfileModal() {
   } = useContext(ModalContext)
 
   const { categoryAppliances, setOccurrences } = useContext(DataContext)
+
+  const { width } = useWindowSize()
+  const modalHeight = width < 768 ? '95vh' : '85vh'
 
   const addOccurrence = (item) => {
     setSetupProfileOccurrences([...setupProfileOccurrences, item])
@@ -33,7 +37,7 @@ export default function SetupProfileModal() {
   }
 
   return (
-    <Modal open={setupProfileOpen} setOpen={setSetupProfileOpen} width="95vw" height="85vh" backgroundColor={(props) => props.theme.colors.textLight}>
+    <Modal className={styles.setupProfileModal} open={setupProfileOpen} setOpen={setSetupProfileOpen} width="95vw" height={modalHeight} backgroundColor={(props) => props.theme.colors.textLight}>
       <div className={styles.setupProfileModalContainer}>
         <div className={styles.setupProfileModalHeader}>
           <h3 className={styles.setupProfileModalTitle}>Configurez votre profil</h3>

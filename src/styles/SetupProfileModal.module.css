@@ -175,3 +175,36 @@
   height: 1.5rem;
   cursor: pointer;
 }
+
+/* Css for mobile view */
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  .setupProfileModal {
+    overflow-y: hidden;
+  }
+
+  .setupProfileModalContainer {
+    height: calc(90vh - 70px);
+    padding: 0.5rem;
+    overflow-y: auto;
+  }
+
+  .setupProfileModalBody {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .setupProfileModalBloc {
+    width: 100%;
+    margin-bottom: 1rem;
+    min-height: 220px;
+    max-height: calc(45vh - 70px);
+  }
+
+  .setupProfileModalBlocContent {
+    max-height: calc(100% - 45px);
+  }
+}
