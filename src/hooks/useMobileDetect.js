@@ -11,6 +11,8 @@ export default function useDeviceDetect() {
         /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
       )
     )
+    // window.location n'est disponible qu'après hydratation
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobile(mobile)
   }, [])
 

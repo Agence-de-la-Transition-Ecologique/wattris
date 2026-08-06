@@ -59,6 +59,8 @@ export default function Code() {
   const [script, setScript] = useState(null)
 
   useEffect(() => {
+    // window.location n'est disponible qu'après hydratation
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setScript(
       `<script id="wattris-ademe" src="${window?.location.origin}/iframe.js"></script>`
     )
