@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to Semantic Versioning.
 
+## [1.2.0] TMA Socle - I26K - 2026-08-11
+
+### Added
+- [WAT-100](https://ademe.atlassian.net/browse/WAT-100) - Design des boutons "Voir les profils-type" dans Wattris
+- [WAT-104](https://ademe.atlassian.net/browse/WAT-104) - Adapter l'échelle de l'histogramme en fonction de la puissance maximale des usages ajoutés
+- [WAT-105](https://ademe.atlassian.net/browse/WAT-105) - Règles et gestion du compartiment de gauche de la pop-in
+- [WAT-106](https://ademe.atlassian.net/browse/WAT-106) - Architecture de la pop-in permettant de construire le profil utilisateur
+- [WAT-107](https://ademe.atlassian.net/browse/WAT-107) - Règles et gestion du compartiment de droite de la pop-in
+- [WAT-108](https://ademe.atlassian.net/browse/WAT-108) - Interactions au sein de la pop-in
+- [WAT-126](https://ademe.atlassian.net/browse/WAT-126) - Renvoi du bouton "Modifier mon profil" vers la pop-in de construction du profil utilisateur
+- [WAT-131](https://ademe.atlassian.net/browse/WAT-131) - Version mobile pour l'agencement de la pop in du profil
+
+
 ## [1.1.2] TMA Socle - I26J - 2026-07-23
 
 ### Added
