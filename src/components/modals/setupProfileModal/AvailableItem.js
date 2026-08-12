@@ -7,7 +7,7 @@ export default function AvailableItem({ item, onAdd }) {
   return (
     <div className={styles.setupProfileModalAvailableItem}>
       <span className={styles.setupProfileModalAvailableItemLabelIcon}>
-        <DynamicIcon name={item.icon} />
+        <DynamicIcon name={item.boldIcon} />
         <span>{item.name}</span>
       </span>
       <PlusIcon className={styles.setupProfileModalAvailableItemAddIcon} onClick={onAdd} />

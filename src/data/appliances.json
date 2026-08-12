@@ -1,7 +1,8 @@
 [
   {
     "slug": "lavelinge",
-    "icon": "",
+    "icon": "WasherDryerBoldIcon",
+    "boldIcon": "WasherDryerBoldIcon",
     "name": "Lave-linge",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -16,7 +17,8 @@
   },
   {
     "slug": "radiateur",
-    "icon": "",
+    "icon": "AirHotBoldIcon",
+    "boldIcon": "AirHotBoldIcon",
     "name": "Radiateur électrique",
     "initialPower": 2000,
     "initialPowerLength": 90,
@@ -30,7 +32,8 @@
   },
   {
     "slug": "four",
-    "icon": "",
+    "icon": "CulteryBoldIcon",
+    "boldIcon": "CulteryBoldIcon",
     "name": "Four électrique",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -45,7 +48,8 @@
   },
   {
     "slug": "aspirateur",
-    "icon": "",
+    "icon": "HomeCleaningBoldIcon",
+    "boldIcon": "HomeCleaningBoldIcon",
     "name": "Aspirateur",
     "power": 700,
     "defaultOccurrence": {
@@ -58,7 +62,8 @@
   },
   {
     "slug": "lavevaisselle",
-    "icon": "",
+    "icon": "WasherDryerBoldIcon",
+    "boldIcon": "WasherDryerBoldIcon",
     "name": "Lave-vaisselle",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -75,7 +80,8 @@
   },
   {
     "slug": "sechelinge",
-    "icon": "",
+    "icon": "WasherDryerBoldIcon",
+    "boldIcon": "WasherDryerBoldIcon",
     "name": "Sèche-linge",
     "power": 1800,
     "defaultOccurrence": {
@@ -88,7 +94,8 @@
   },
   {
     "slug": "microonde",
-    "icon": "",
+    "icon": "CulteryBoldIcon",
+    "boldIcon": "CulteryBoldIcon",
     "name": "Micro-onde",
     "power": 1000,
     "defaultOccurrence": {
@@ -101,7 +108,8 @@
   },
   {
     "slug": "plaque",
-    "icon": "",
+    "icon": "CulteryBoldIcon",
+    "boldIcon": "CulteryBoldIcon",
     "name": "Plaque électrique",
     "power": 750,
     "defaultOccurrence": {
@@ -114,7 +122,8 @@
   },
   {
     "slug": "bouilloire",
-    "icon": "",
+    "icon": "KettleBoldIcon",
+    "boldIcon": "KettleBoldIcon",
     "name": "Bouilloire",
     "power": 1300,
     "defaultOccurrence": {
@@ -127,7 +136,8 @@
   },
   {
     "slug": "cafetiere",
-    "icon": "",
+    "icon": "KettleBoldIcon",
+    "boldIcon": "KettleBoldIcon",
     "name": "Cafetière",
     "power": 800,
     "defaultOccurrence": {
@@ -140,7 +150,8 @@
   },
   {
     "slug": "sechecheveux",
-    "icon": "",
+    "icon": "HairDryerBoldIcon",
+    "boldIcon": "HairDryerBoldIcon",
     "name": "Sèche-cheveux",
     "power": 2000,
     "defaultOccurrence": {
@@ -153,7 +164,8 @@
   },
   {
     "slug": "television",
-    "icon": "",
+    "icon": "TvBoldIcon",
+    "boldIcon": "TvBoldIcon",
     "name": "Télévision",
     "power": 80,
     "defaultOccurrence": {
@@ -166,7 +178,8 @@
   },
   {
     "slug": "ferarepasser",
-    "icon": "",
+    "icon": "IronBoldIcon",
+    "boldIcon": "IronBoldIcon",
     "name": "Fer à repasser",
     "power": 1000,
     "defaultOccurrence": {
@@ -179,7 +192,8 @@
   },
   {
     "slug": "ballondeauchaude",
-    "icon": "",
+    "icon": "FlushBoldIcon",
+    "boldIcon": "FlushBoldIcon",
     "name": "Ballon d'eau chaude",
     "power": 2250,
     "defaultOccurrence": {
@@ -192,7 +206,8 @@
   },
   {
     "slug": "ampouleled",
-    "icon": "",
+    "icon": "BulbBoldIcon",
+    "boldIcon": "BulbBoldIcon",
     "name": "Ampoule LED",
     "power": 7,
     "defaultOccurrence": {
@@ -205,7 +220,8 @@
   },
   {
     "slug": "ampoulehalogene",
-    "icon": "",
+    "icon": "BulbBoldIcon",
+    "boldIcon": "BulbBoldIcon",
     "name": "Ampoule halogène",
     "power": 45,
     "defaultOccurrence": {
@@ -218,7 +234,8 @@
   },
   {
     "slug": "refrigerateur",
-    "icon": "",
+    "icon": "FreezerBoldIcon",
+    "boldIcon": "FreezerBoldIcon",
     "name": "Réfrigérateur",
     "power": 19,
     "defaultOccurrence": {
@@ -231,7 +248,8 @@
   },
   {
     "slug": "refrigerateurcombine",
-    "icon": "",
+    "icon": "FreezerBoldIcon",
+    "boldIcon": "FreezerBoldIcon",
     "name": "Réfrigérateur combiné",
     "power": 39,
     "defaultOccurrence": {
@@ -244,7 +262,8 @@
   },
   {
     "slug": "congelateur",
-    "icon": "",
+    "icon": "FreezerBoldIcon",
+    "boldIcon": "FreezerBoldIcon",
     "name": "Congélateur",
     "power": 33,
     "defaultOccurrence": {
@@ -257,7 +276,8 @@
   },
   {
     "slug": "boxinternet",
-    "icon": "",
+    "icon": "TvBoldIcon",
+    "boldIcon": "TvBoldIcon",
     "name": "Box internet",
     "power": 12,
     "defaultOccurrence": {
@@ -270,7 +290,8 @@
   },
   {
     "slug": "boxtv",
-    "icon": "",
+    "icon": "TvBoldIcon",
+    "boldIcon": "TvBoldIcon",
     "name": "Box TV",
     "power": 13,
     "defaultOccurrence": {
@@ -283,7 +304,8 @@
   },
   {
     "slug": "chargeurtelephoneportable",
-    "icon": "",
+    "icon": "ChargeBoldIcon",
+    "boldIcon": "ChargeBoldIcon",
     "name": "Chargeur téléphone portable",
     "power": 5,
     "defaultOccurrence": {
@@ -296,7 +318,8 @@
   },
   {
     "slug": "chargeurordinateur",
-    "icon": "",
+    "icon": "ChargeBoldIcon",
+    "boldIcon": "ChargeBoldIcon",
     "name": "Chargeur ordinateur portable",
     "power": 19,
     "defaultOccurrence": {
@@ -309,7 +332,8 @@
   },
   {
     "slug": "ordinateurfixe",
-    "icon": "",
+    "icon": "TvBoldIcon",
+    "boldIcon": "TvBoldIcon",
     "name": "Ordinateur fixe",
     "power": 76,
     "defaultOccurrence": {
@@ -322,7 +346,8 @@
   },
   {
     "slug": "appareilsenveille",
-    "icon": "",
+    "icon": "SleepModeBoldIcon",
+    "boldIcon": "SleepModeBoldIcon",
     "name": "Appareils en veille",
     "power": 45,
     "defaultOccurrence": {
@@ -335,7 +360,8 @@
   },
   {
     "slug": "voitureelectriquesurprise",
-    "icon": "",
+    "icon": "CarChargeBoldIcon",
+    "boldIcon": "CarChargeBoldIcon",
     "name": "Voiture électrique (sur prise)",
     "power": 2500,
     "defaultOccurrence": {
@@ -348,7 +374,8 @@
   },
   {
     "slug": "velolectrique",
-    "icon": "",
+    "icon": "BikeBoldIcon",
+    "boldIcon": "BikeBoldIcon",
     "name": "Vélo électrique",
     "power": 100,
     "defaultOccurrence": {
@@ -361,7 +388,8 @@
   },
   {
     "slug": "voitureelectriquesurborne",
-    "icon": "",
+    "icon": "CarChargeBoldIcon",
+    "boldIcon": "CarChargeBoldIcon",
     "name": "Voiture électrique (sur borne)",
     "power": 7000,
     "defaultOccurrence": {
@@ -374,7 +402,8 @@
   },
   {
     "slug": "trottinetteelectrique",
-    "icon": "",
+    "icon": "BikeBoldIcon",
+    "boldIcon": "BikeBoldIcon",
     "name": "Trottinette électrique",
     "power": 100,
     "defaultOccurrence": {
@@ -388,6 +417,8 @@
   {
     "slug": "pompeachaleurairair",
     "name": "Pompe à chaleur (air/air)",
+    "icon": "AirHotBoldIcon",
+    "boldIcon": "AirHotBoldIcon",
     "initialPower": 1500,
     "initialPowerLength": 30,
     "power": 400,
@@ -405,6 +436,8 @@
   {
     "slug": "pompeachaleuraireau",
     "name": "Pompe à chaleur (air/eau)",
+    "icon": "AirHotBoldIcon",
+    "boldIcon": "AirHotBoldIcon",
     "initialPower": 1500,
     "initialPowerLength": 30,
     "power": 400,
@@ -417,11 +450,13 @@
     "allDayPowerPeak": 1000,
     "allDayPeakStart": 6.5,
     "allDayPeakLength": 30,
-    "description": "On considère une pompe à chaleur de technologie air/eau, placée dans une pièce d'environ 40m², pour un logement bien isolé. Nous considérons une pompe à chaleur dédiée uniquement au chauffage de la pièce et ne permettant pas de produire de l’eau chaude sanitaire. Les pompes à chaleur air/eau sont généralement utilisées en continu. En fonction de la température extérieure, de l'isolation du bâtiment et de la taille de la pièce, les appels de puissance permettant de maintenir la température de consigne peuvent être plus ou moins nombreux. <br/><br/>En particulier, si le logement est mal isolé, ces appels sont très nombreux ce qui implique une puissance appelée importante sur l'ensemble de l’utilisation de la pompe à chaleur. Ce phénomène est renforcé les jours de grand froid. Ainsi, la consommation de la pompe à chaleur est d’autant plus importante que la température demandée est différente de la température extérieure. <br/><br/>Nous avons choisi de simplifier sa représentation en modélisant un appel de puissance constant à 400W, avec un pic de 1000W à 6h30 du matin. Si l’utilisation de la pompe à chaleur est discontinue, ce pic de puissance est plus important (1500W) car la température de la pièce n’est pas maintenue à un certain niveau tout au long de la journée." 
+    "description": "On considère une pompe à chaleur de technologie air/eau, placée dans une pièce d'environ 40m², pour un logement bien isolé. Nous considérons une pompe à chaleur dédiée uniquement au chauffage de la pièce et ne permettant pas de produire de l’eau chaude sanitaire. Les pompes à chaleur air/eau sont généralement utilisées en continu. En fonction de la température extérieure, de l'isolation du bâtiment et de la taille de la pièce, les appels de puissance permettant de maintenir la température de consigne peuvent être plus ou moins nombreux. <br/><br/>En particulier, si le logement est mal isolé, ces appels sont très nombreux ce qui implique une puissance appelée importante sur l'ensemble de l’utilisation de la pompe à chaleur. Ce phénomène est renforcé les jours de grand froid. Ainsi, la consommation de la pompe à chaleur est d’autant plus importante que la température demandée est différente de la température extérieure. <br/><br/>Nous avons choisi de simplifier sa représentation en modélisant un appel de puissance constant à 400W, avec un pic de 1000W à 6h30 du matin. Si l’utilisation de la pompe à chaleur est discontinue, ce pic de puissance est plus important (1500W) car la température de la pièce n’est pas maintenue à un certain niveau tout au long de la journée."
   },
   {
     "slug": "climatiseurmobile",
     "name": "Climatiseur mobile",
+    "icon": "AirFreshBoldIcon",
+    "boldIcon": "AirFreshBoldIcon",
     "power": 1500,
     "defaultOccurrence": {
       "start": 14,
