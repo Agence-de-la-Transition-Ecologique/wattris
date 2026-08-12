@@ -5,11 +5,11 @@ import DataContext from 'components/providers/DataProvider'
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import DescriptionButton from './appliance/DescriptionButton'
-import Occurence from './appliance/Occurence'
-import OccurenceButtons from './appliance/OccurenceButtons'
+import Occurrence from './appliance/Occurrence'
+import OccurrenceButtons from './appliance/OccurrenceButtons'
 import DeleteButton from 'components/misc/DeleteButton'
 
-const Occurences = styled.div`
+const Occurrences = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -69,14 +69,14 @@ export default function Appliance(props) {
       : props.appliance.description.slice(0, maxTextLength) + '...'
 
   const lastIndex =
-    props.occurencesOfAppliance[props.occurencesOfAppliance.length - 1].index
+    props.occurrencesOfAppliance[props.occurrencesOfAppliance.length - 1].index
   return (
     <>
       <DeleteButton
         onClick={() => {
           props.active.new &&
-            props.deleteOccurence({
-              occurenceIndex: lastIndex,
+            props.deleteOccurrence({
+              occurrenceIndex: lastIndex,
             })
           setActive(null)
           setAppliancesListOpen(true)
@@ -94,44 +94,38 @@ export default function Appliance(props) {
             fullDescription={fullDescription}
             onClick={() => {
               setFullDescription((prevDescription) => !prevDescription)
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Voir description',
-                props.appliance.slug,
-              ])
             }}
           />
         )}
       </DescriptionWrapper>
-      <Occurences>
-        {props.occurencesOfAppliance.map((occurence, index) => (
-          <Occurence
+      <Occurrences>
+        {props.occurrencesOfAppliance.map((occurrence, index) => (
+          <Occurrence
             key={props.appliance.slug + index}
             appliance={props.appliance}
-            occurence={occurence}
+            occurrence={occurrence}
             peak={props.peaks[index]}
             allPeaks={props.allPeaks}
-            multiple={props.occurencesOfAppliance.length > 1}
+            multiple={props.occurrencesOfAppliance.length > 1}
           />
         ))}
-      </Occurences>
-      <OccurenceButtons
+      </Occurrences>
+      <OccurrenceButtons
         appliance={props.appliance}
         lastIndex={lastIndex}
-        addOccurence={props.addOccurence}
-        deleteOccurence={props.deleteOccurence}
+        addOccurrence={props.addOccurrence}
+        deleteOccurrence={props.deleteOccurrence}
       />
       <Buttons>
         <StyledButtonLink
           onClick={() => {
-            props.deleteAllOccurencesOfAppliance({
+            props.deleteAllOccurrencesOfAppliance({
               appliance: props.appliance,
             })
             props.setActive(null)
           }}
         >
-          Supprimer{props.occurencesOfAppliance.length > 1 ? ' tous' : ''}
+          Supprimer{props.occurrencesOfAppliance.length > 1 ? ' tous' : ''}
         </StyledButtonLink>
         <StyledButton
           onClick={() => props.setActive(null)}

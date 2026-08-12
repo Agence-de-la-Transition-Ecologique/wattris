@@ -1,0 +1,54 @@
+{
+    "aspirateur": {
+        "start": 18,
+        "duration": 0.25
+    },
+    "radiateur": {
+        "start": 8,
+        "duration": 14
+    },
+    "congelateur": {
+        "start": 0,
+        "duration": 24
+    },
+    "lavevaisselle": {
+        "start": 10,
+        "duration": 1.5
+    },
+    "microonde": {
+        "start": 18,
+        "duration": 0.0833333333333339
+    },
+    "refrigerateur": {
+        "start": 0,
+        "duration": 24
+    },
+    "ballondeauchaude": {
+        "start": 23.5,
+        "duration": 2
+    },
+    "lavelinge": {
+        "start": 15,
+        "duration": 1.5
+    },
+    "ampouleled": {
+        "start": 19,
+        "duration": 4
+    },
+    "voitureelectriquesurprise": {
+        "start": 18,
+        "duration": 5
+    },
+    "boxinternet": {
+        "start": 0,
+        "duration": 24
+    },
+    "chargeurordinateur": {
+        "start": 9,
+        "duration": 7
+    },
+    "appareilsenveille": {
+        "start": 0,
+        "duration": 24
+    }
+}

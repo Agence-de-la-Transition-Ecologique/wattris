@@ -5,7 +5,7 @@ import DataContext from 'components/providers/DataProvider'
 import StartSelector from 'components/misc/StartSelector'
 import DeleteButton from 'components/misc/DeleteButton'
 import StartAndEndSelector from 'components/misc/StartAndEndSelector'
-import DurationSelector from './occurence/DurationSelector'
+import DurationSelector from './occurrence/DurationSelector'
 
 const Wrapper = styled.div`
   position: relative;
@@ -43,8 +43,8 @@ const Text = styled.p`
   margin: 0;
   font-size: 0.75rem;
 `
-export default function Occurence(props) {
-  const { editOccurence, deleteOccurence } = useContext(DataContext)
+export default function Occurrence(props) {
+  const { editOccurrence, deleteOccurrence } = useContext(DataContext)
 
   return (
     <Wrapper
@@ -56,12 +56,12 @@ export default function Occurence(props) {
           <span>
             <Text>Je le lance</Text>
             <StartSelector
-              start={props.occurence.start}
+              start={props.occurrence.start}
               peak={props.peak}
               onChange={([start]) => {
-                editOccurence({
-                  occurenceIndex: props.occurence.index,
-                  newOccurence: { ...props.occurence, start },
+                editOccurrence({
+                  occurrenceIndex: props.occurrence.index,
+                  newOccurrence: { ...props.occurrence, start },
                 })
               }}
               large
@@ -70,13 +70,13 @@ export default function Occurence(props) {
           <span>
             <Text>pendant</Text>
             <DurationSelector
-              slug={props.occurence.slug}
+              slug={props.occurrence.slug}
               peak={props.peak}
-              value={props.occurence.duration}
+              value={props.occurrence.duration}
               onChange={(duration) => {
-                editOccurence({
-                  occurenceIndex: props.occurence.index,
-                  newOccurence: { ...props.occurence, duration },
+                editOccurrence({
+                  occurrenceIndex: props.occurrence.index,
+                  newOccurrence: { ...props.occurrence, duration },
                 })
               }}
             />
@@ -88,16 +88,16 @@ export default function Occurence(props) {
             Je {props.appliance.slug === 'radiateur' ? 'chauffe' : 'le lance'}
           </Text>
           <StartAndEndSelector
-            start={props.occurence.start}
-            duration={props.occurence.duration}
-            smallDuration={Math.abs(props.occurence.duration) <= 4}
+            start={props.occurrence.start}
+            duration={props.occurrence.duration}
+            smallDuration={Math.abs(props.occurrence.duration) <= 4}
             peak={props.peak}
             onChange={([start, end]) => {
               let duration = end - start
-              editOccurence({
-                occurenceIndex: props.occurence.index,
-                newOccurence: {
-                  ...props.occurence,
+              editOccurrence({
+                occurrenceIndex: props.occurrence.index,
+                newOccurrence: {
+                  ...props.occurrence,
                   start,
                   duration,
                 },
@@ -111,8 +111,8 @@ export default function Occurence(props) {
         <DeleteButton
           small
           onClick={() =>
-            deleteOccurence({
-              occurenceIndex: props.occurence.index,
+            deleteOccurrence({
+              occurrenceIndex: props.occurrence.index,
             })
           }
         />

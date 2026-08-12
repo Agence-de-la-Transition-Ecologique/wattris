@@ -49,37 +49,31 @@ const Title = styled.p`
     }
   }
 `
-export default function Occurence(props) {
-  const { appliances, hover, setHover, active, setActive, editOccurence } =
+export default function Occurrence(props) {
+  const { appliances, hover, setHover, active, setActive, editOccurrence } =
     useContext(DataContext)
 
   const appliance = useMemo(
     () =>
-      appliances.find((appliance) => appliance.slug === props.occurence.slug),
-    [props.occurence, appliances]
+      appliances.find((appliance) => appliance.slug === props.occurrence.slug),
+    [props.occurrence, appliances]
   )
 
-  const peak = usePeak(props.occurence)
+  const peak = usePeak(props.occurrence)
 
   return (
     <Wrapper
       href='#home'
       $discret={
         active
-          ? active?.occurence !== props.index
-          : hover && hover.occurence !== props.index
+          ? active?.occurrence !== props.index
+          : hover && hover.occurrence !== props.index
       }
       $peak={peak}
       onClick={() => {
         setActive({ appliance: appliance.slug })
-        window?._paq?.push([
-          'trackEvent',
-          'Interaction',
-          'Click tuile',
-          `${appliance.slug} (${props.index})`,
-        ])
       }}
-      onMouseEnter={() => setHover({ occurence: props.index })}
+      onMouseEnter={() => setHover({ occurrence: props.index })}
       onMouseLeave={() => setHover(null)}
     >
       <Title>
@@ -103,14 +97,13 @@ export default function Occurence(props) {
         </svg>
       </Title>
       <StartSelector
-        start={props.occurence.start}
+        start={props.occurrence.start}
         peak={peak}
         onChange={([start]) => {
-          editOccurence({
-            occurenceIndex: props.index,
-            newOccurence: { ...props.occurence, start },
+          editOccurrence({
+            occurrenceIndex: props.index,
+            newOccurrence: { ...props.occurrence, start },
           })
-          window?._paq?.push(['trackEvent', 'Interaction', 'Slider tuile'])
         }}
       />
     </Wrapper>

@@ -1,17 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useAxisAndPowerInfos } from 'hooks/useAppliances'
 
 const Wrapper = styled.div`
   position: absolute;
   z-index: 10;
-  bottom: ${(props) => (props.position / 2500) * 100}%;
+  bottom: ${(props) => (props.$position / props.$axisYMaxPower) * 100}%;
   left: 0;
   width: 100%;
   height: 0.0625rem;
   transform: translateY(50%);
   background-color: ${(props) => props.theme.colors.textLighter};
   cursor: pointer;
-  opacity: ${(props) => (props.hover ? 1 : 0.5)};
+  opacity: ${(props) => (props.$hover ? 1 : 0.5)};
   transition: opacity 300ms ease-out;
 
   span {
@@ -34,41 +35,31 @@ const Wrapper = styled.div`
   }
 `
 export default function Ticks(props) {
+  const { axisYIntervals, axisYMaxPower } = useAxisAndPowerInfos();
+
   return (
     <>
-      <Wrapper
-        hover={props.hover}
-        position={0}
-        onMouseEnter={() => props.setHover(true)}
-        onMouseLeave={() => props.setHover(false)}
-      >
-        <span>0</span>
-        <svg
-          width='8'
-          height='14'
-          viewBox='0 0 8 14'
-          xmlns='http://www.w3.org/2000/svg'
+      {axisYIntervals.map((position) => (
+        <Wrapper
+          key={position}
+          $hover={props.hover}
+          $position={position}
+          $axisYMaxPower={axisYMaxPower}
+          onMouseEnter={() => props.setHover(true)}
+          onMouseLeave={() => props.setHover(false)}
         >
-          <path d='M5.16973 7L0.219727 2.05L1.63973 0.639999L7.99973 7L1.63973 13.36L0.219727 11.95L5.16973 7Z' />
-        </svg>
-      </Wrapper>
-      <Wrapper
-        hover={props.hover}
-        position={1000}
-        onMouseEnter={() => props.setHover(true)}
-        onMouseLeave={() => props.setHover(false)}
-      >
-        <span>1000&nbsp;W</span>
-      </Wrapper>
-
-      <Wrapper
-        hover={props.hover}
-        position={2000}
-        onMouseEnter={() => props.setHover(true)}
-        onMouseLeave={() => props.setHover(false)}
-      >
-        <span>2000&nbsp;W</span>
-      </Wrapper>
+          <span>{position === 0 ? '0' : `${position}\u00A0W`}</span>
+          {position === 0 && (
+            <svg
+              width='8'
+              height='14'
+              viewBox='0 0 8 14'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M5.16973 7L0.219727 2.05L1.63973 0.639999L7.99973 7L1.63973 13.36L0.219727 11.95L5.16973 7Z' />
+            </svg>)}
+        </Wrapper>
+      ))}
     </>
   )
 }

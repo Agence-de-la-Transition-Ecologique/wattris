@@ -128,8 +128,8 @@ const StyledMagicLink = styled(MagicLink)`
   }
 `
 export default function Score() {
-  const { occurences } = useContext(DataContext)
-  const { introduction, profils } = useContext(ModalContext)
+  const { occurrences } = useContext(DataContext)
+  const { introductionOpen } = useContext(ModalContext)
 
   const power = useAllPowerOfPeaks()
 
@@ -138,7 +138,7 @@ export default function Score() {
   return (
     <Wrapper
       visible={
-        (!introduction && !profils) || (profils && occurences.length > 0)
+        !introductionOpen || occurrences.length > 0
       }
     >
       <Gauge
@@ -180,7 +180,7 @@ export default function Score() {
           />
         </g>
       </Gauge>
-      {occurences.length === 0 ? (
+      {occurrences.length === 0 ? (
         <Content>
           <Label>
             Votre foyer ne comporte encore
@@ -210,13 +210,6 @@ export default function Score() {
               : 'Utilisez le moins possible vos appareils entre 7h et 11h puis 18h et 20h pour éviter les coupures les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'}
           </Description>
           <StyledMagicLink
-            onClick={() =>
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Lien ecogestes',
-              ])
-            }
             to='https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie'
             percent={percent}
           >

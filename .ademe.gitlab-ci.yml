@@ -1,0 +1,4 @@
+include:
+  - project: ademe-group/wattris/ademe_ci
+    ref: main
+    file: wattris/.ademe.gitlab-ci.yml

@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-
 import Bloc from './step/Bloc'
 
 const Wrapper = styled.div`
@@ -33,7 +32,7 @@ export default function Step(props) {
   return (
     <Wrapper width={props.width} peak={peak}>
       {props.step.map((bloc, index) => {
-        return <Bloc key={index} bloc={bloc} peak={peak} />
+        return <Bloc key={index} bloc={bloc} peak={peak} axisYMaxPower={props.axisYMaxPower} />
       })}
       {totalPower > 2500 ? <Indicator>More</Indicator> : null}
     </Wrapper>

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import { useAllBlocsByStep } from 'hooks/useAppliances'
+import { useAllBlocsByStep, useAxisAndPowerInfos } from 'hooks/useAppliances'
 import Axis from './timeline/Axis'
 import Step from './timeline/Step'
 
@@ -21,7 +20,8 @@ const Steps = styled.div`
   );
 `
 export default function Timeline() {
-  const { steps, stepDurationInMinute, powerByBlocInKW } = useAllBlocsByStep()
+  const { steps, stepDurationInMinute } = useAllBlocsByStep()
+  const { axisYMaxPower } = useAxisAndPowerInfos()
 
   return (
     <Wrapper>
@@ -33,7 +33,7 @@ export default function Timeline() {
             step={step}
             hour={(index / 60) * stepDurationInMinute}
             width={(100 / 24) * (60 / stepDurationInMinute)}
-            powerByBlocInKW={powerByBlocInKW}
+            axisYMaxPower={axisYMaxPower}
           />
         ))}
       </Steps>

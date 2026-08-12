@@ -24,22 +24,16 @@ const Button = styled.button`
     fill: ${(props) => props.theme.colors.background};
   }
 `
-export default function OccurenceButtons(props) {
+export default function OccurrenceButtons(props) {
   return (
     <Wrapper>
       <Button
         onClick={() => {
-          props.addOccurence({
+          props.addOccurrence({
             slug: props.appliance.slug,
-            start: props.appliance.defaultOccurence.start,
-            duration: props.appliance.defaultOccurence.duration,
+            start: props.appliance.defaultOccurrence.start,
+            duration: props.appliance.defaultOccurrence.duration,
           })
-          window?._paq?.push([
-            'trackEvent',
-            'Interaction',
-            'Ajouter occurence',
-            props.appliance.slug,
-          ])
         }}
       >
         <svg
