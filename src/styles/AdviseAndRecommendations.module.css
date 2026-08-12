@@ -106,3 +106,30 @@
     margin-bottom: 1.5rem;
     line-height: 1rem;
 }
+
+
+/* Css for mobile view */
+@media (max-width: 768px) {
+
+  .contentWrapper {
+    flex-direction: column;
+  }
+
+  .blocWrapper, .noteInfo, .blocWrapperScore {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .blocWrapperScore {
+    max-width: 260px;
+    min-height: auto;
+  }
+
+  .blocWrapperScore > div {
+    margin-bottom: 0;
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+}
