@@ -41,6 +41,7 @@ export function DataProvider(props) {
           slug,
           name: appliance.name,
           icon: appliance.icon,
+          boldIcon: appliance.boldIcon,
           start: appliance.defaultOccurrence.start,
           duration: appliance.defaultOccurrence.duration,
         }
