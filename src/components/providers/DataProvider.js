@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import appliances from 'data/appliances.json'
 import initDefaultAppliances from 'data/initDefaultAppliances.json'
 import dataCategoryAppliances from 'data/categoryAppliances.json'
+import watchedApplianceSlugs from 'data/adviseWatchedAppliances.json'
 
 const DataContext = React.createContext({})
 
@@ -96,7 +97,8 @@ export function DataProvider(props) {
         setSortAppliancesByPower,
         sortedAppliances,
         defaultOccurrences,
-        mapOccurrencesListWithNames
+        mapOccurrencesListWithNames,
+        watchedApplianceSlugs
       }}
     >
       {props.children}

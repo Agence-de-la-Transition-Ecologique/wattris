@@ -16,6 +16,7 @@ import KettleBoldIcon from 'components/icons/KettleBoldIcon'
 import SleepModeBoldIcon from 'components/icons/SleepModeBoldIcon'
 import TvBoldIcon from 'components/icons/TvBoldIcon'
 import WasherDryerBoldIcon from 'components/icons/WasherDryerBoldIcon'
+import CheckMarkIcon from 'components/icons/CheckMarkIcon'
 
 const iconMap = {
   AirFreshBoldIcon,
@@ -34,7 +35,8 @@ const iconMap = {
   KettleBoldIcon,
   SleepModeBoldIcon,
   TvBoldIcon,
-  WasherDryerBoldIcon
+  WasherDryerBoldIcon,
+  CheckMarkIcon
 }
 
 export default function DynamicIcon({ name, ...props }) {

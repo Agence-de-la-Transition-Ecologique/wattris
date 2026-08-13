@@ -1,0 +1,108 @@
+.contentWrapper {
+  padding: 1rem 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.blocWrapper {
+  width: 100%;
+  padding: 0;
+}
+
+.blocWrapperScore {
+  max-width: 320px;
+  margin-top: 2.75rem;
+  align-self: center;
+}
+
+.title {
+  margin-bottom: 0.2rem;
+  color: var(--color-main);
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.listAppliances {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.applianceItemIconLabel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.applianceItem, .applianceItemOK, .applianceItemKO {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    color: var(--color-black, #000000);
+    border-radius: 8px;
+    padding: 0.5rem 1.3rem;
+    margin: 0.25rem auto;
+    width: 100%;
+}
+
+.applianceItemOK {
+    background-color: rgba(var(--color-main-rgb), 0.1);
+    border: 1px solid var(--color-main);
+}
+
+.applianceItemKO {
+    background-color: rgba(var(--color-error-rgb), 0.1);
+    border: 1px solid var(--color-error);
+}
+
+.applianceItemLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    line-height: 1rem;
+}
+
+.applianceItemLabel span {
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+
+.applianceItemLabel small {
+    font-size: 0.75rem;
+}
+
+.applianceItem svg, .applianceItemOK svg, .applianceItemKO svg {
+    height: 2rem;
+}
+
+.applianceItemStatus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+.applianceItemStatus svg {
+    height: 1.2rem;
+}
+
+.applianceItemOK .applianceItemStatus {
+    color: var(--color-main);
+}
+
+.applianceItemKO .applianceItemStatus {
+    color: var(--color-error);
+}
+
+.noteInfo {
+    font-size: 0.85rem;
+    background-color: var(--color-text-light);
+    border: 1px solid var(--color-text-lighter);
+    padding: 0.3rem 0.9rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1rem;
+}

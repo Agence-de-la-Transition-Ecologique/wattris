@@ -6,6 +6,7 @@ export const themes = {
     name: 'Clair',
     colors: {
       main: '#476C9B',
+      mainRgb: '71, 108, 155',
       mainLight: '#DFECEB',
       mainDark: '#1D625E',
       second: '#EFF4F9',
@@ -15,8 +16,10 @@ export const themes = {
       textLight: '#f6f6f6',
       textLighter: '#C4C4C4',
       error: '#FA1E43',
+      errorRgb: '250, 30, 67',
       errorLight: '#FEEBEF',
       warning: '#FC5D00',
+      black: '#000000',
     },
     fonts: {
       body: '"Marianne", Arial, sans-serif',
@@ -34,11 +37,15 @@ export const GlobalStyle = createGlobalStyle`
   
   :root {
     --color-main: ${(props) => props.theme.colors.main};
+    --color-main-rgb: ${(props) => props.theme.colors.mainRgb};
+    --color-error: ${(props) => props.theme.colors.error};
+    --color-error-rgb: ${(props) => props.theme.colors.errorRgb};
     --color-main-dark: ${(props) => props.theme.colors.mainDark};
     --color-text: ${(props) => props.theme.colors.text};
     --color-text-light: ${(props) => props.theme.colors.textLight};
     --color-text-lighter: ${(props) => props.theme.colors.textLighter};
     --color-background: ${(props) => props.theme.colors.background};
+    --color-black: ${(props) => props.theme.colors.black};
   }
 
   html {
