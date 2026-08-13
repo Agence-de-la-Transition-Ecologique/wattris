@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DynamicIcon from 'components/icons/DynamicIcon'
 import styles from 'styles/AdviseAndRecommendations.module.css'
+import DataContext from 'components/providers/DataProvider'
+import Link from 'next/link'
 
 export default function ApplianceItem({ appliance }) {
+    const { setActive } = useContext(DataContext)
+    
+    const handleClick = () => {
+        setActive({ appliance: appliance.slug })
+    }
     return (
-        <div className={appliance.peak ? styles.applianceItemKO : styles.applianceItemOK}>
+        <Link
+            href='#home'
+            onClick={handleClick}
+            className={appliance.peak ? styles.applianceItemKO : styles.applianceItemOK}
+        >
             <div className={styles.applianceItemIconLabel}>
                 <DynamicIcon name={appliance.boldIcon} />
                 <span className={styles.applianceItemLabel}>
@@ -15,6 +26,6 @@ export default function ApplianceItem({ appliance }) {
             <span className={styles.applianceItemStatus}>
                 {appliance.peak ? 'En période de pointe' : <><DynamicIcon name="CheckMarkIcon" /> Hors pointe</>}
             </span>
-        </div>
+        </Link>
     )
 }

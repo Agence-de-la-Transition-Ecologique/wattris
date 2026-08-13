@@ -7,7 +7,7 @@ export default function ApplianceList({ watchedAppliances, hasWatchedAppliances 
         <div className={styles.blocWrapper}>
             {hasWatchedAppliances && (
                 <h4 className={styles.title}>
-                    Les appareils suivant peuvent être décalés en dehors des heures de pointe :
+                    Les appareils suivants peuvent être décalés en dehors des heures de pointe :
                 </h4>
             )}
             <div className={styles.listAppliances}>
