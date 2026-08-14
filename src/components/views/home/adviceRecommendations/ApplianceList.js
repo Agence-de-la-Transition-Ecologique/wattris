@@ -11,8 +11,8 @@ export default function ApplianceList({ watchedAppliances, hasWatchedAppliances 
                 </h4>
             )}
             <div className={styles.listAppliances}>
-                {watchedAppliances.map((appliance) => (
-                    <ApplianceItem key={appliance.slug} appliance={appliance} />
+                {watchedAppliances.map((appliance, index) => (
+                    <ApplianceItem key={appliance.slug + index} appliance={appliance} />
                 ))}
             </div>
         </div>
