@@ -4,7 +4,7 @@ import styles from 'styles/AdviseAndRecommendations.module.css'
 import DataContext from 'components/providers/DataProvider'
 import Link from 'next/link'
 
-export default function ApplianceItem({ appliance }) {
+export default function ApplianceItem({ appliance, indexInAppliance }) {
     const { setActive } = useContext(DataContext)
     
     const handleClick = () => {
@@ -19,7 +19,7 @@ export default function ApplianceItem({ appliance }) {
             <div className={styles.applianceItemIconLabel}>
                 <DynamicIcon name={appliance.boldIcon} />
                 <span className={styles.applianceItemLabel}>
-                    <span>{appliance.name}</span>
+                    <span>{appliance.name}{indexInAppliance !== undefined ? ` ${indexInAppliance}` : ''}</span>
                     <small className='hours'>{appliance.start} - {appliance.end}</small>
                 </span>
             </div>
