@@ -1,8 +1,8 @@
 [
   {
     "slug": "lavelinge",
-    "icon": "WasherDryerBoldIcon",
-    "boldIcon": "WasherDryerBoldIcon",
+    "icon": "WasherDryerIcon",
+    "boldIcon": "WasherDryerIcon",
     "name": "Lave-linge",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -32,8 +32,8 @@
   },
   {
     "slug": "four",
-    "icon": "CulteryBoldIcon",
-    "boldIcon": "CulteryBoldIcon",
+    "icon": "CulteryIcon",
+    "boldIcon": "CulteryIcon",
     "name": "Four électrique",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -62,8 +62,8 @@
   },
   {
     "slug": "lavevaisselle",
-    "icon": "WasherDryerBoldIcon",
-    "boldIcon": "WasherDryerBoldIcon",
+    "icon": "WasherDryerIcon",
+    "boldIcon": "WasherDryerIcon",
     "name": "Lave-vaisselle",
     "initialPower": 2000,
     "initialPowerLength": 15,
@@ -80,8 +80,8 @@
   },
   {
     "slug": "sechelinge",
-    "icon": "WasherDryerBoldIcon",
-    "boldIcon": "WasherDryerBoldIcon",
+    "icon": "WasherDryerIcon",
+    "boldIcon": "WasherDryerIcon",
     "name": "Sèche-linge",
     "power": 1800,
     "defaultOccurrence": {
@@ -94,8 +94,8 @@
   },
   {
     "slug": "microonde",
-    "icon": "CulteryBoldIcon",
-    "boldIcon": "CulteryBoldIcon",
+    "icon": "CulteryIcon",
+    "boldIcon": "CulteryIcon",
     "name": "Micro-onde",
     "power": 1000,
     "defaultOccurrence": {
@@ -108,8 +108,8 @@
   },
   {
     "slug": "plaque",
-    "icon": "CulteryBoldIcon",
-    "boldIcon": "CulteryBoldIcon",
+    "icon": "CulteryIcon",
+    "boldIcon": "CulteryIcon",
     "name": "Plaque électrique",
     "power": 750,
     "defaultOccurrence": {
@@ -122,8 +122,8 @@
   },
   {
     "slug": "bouilloire",
-    "icon": "KettleBoldIcon",
-    "boldIcon": "KettleBoldIcon",
+    "icon": "KettleIcon",
+    "boldIcon": "KettleIcon",
     "name": "Bouilloire",
     "power": 1300,
     "defaultOccurrence": {
@@ -136,8 +136,8 @@
   },
   {
     "slug": "cafetiere",
-    "icon": "KettleBoldIcon",
-    "boldIcon": "KettleBoldIcon",
+    "icon": "KettleIcon",
+    "boldIcon": "KettleIcon",
     "name": "Cafetière",
     "power": 800,
     "defaultOccurrence": {
@@ -150,8 +150,8 @@
   },
   {
     "slug": "sechecheveux",
-    "icon": "HairDryerBoldIcon",
-    "boldIcon": "HairDryerBoldIcon",
+    "icon": "HairDryerIcon",
+    "boldIcon": "HairDryerIcon",
     "name": "Sèche-cheveux",
     "power": 2000,
     "defaultOccurrence": {
@@ -164,8 +164,8 @@
   },
   {
     "slug": "television",
-    "icon": "TvBoldIcon",
-    "boldIcon": "TvBoldIcon",
+    "icon": "TvIcon",
+    "boldIcon": "TvIcon",
     "name": "Télévision",
     "power": 80,
     "defaultOccurrence": {
@@ -178,8 +178,8 @@
   },
   {
     "slug": "ferarepasser",
-    "icon": "IronBoldIcon",
-    "boldIcon": "IronBoldIcon",
+    "icon": "IronIcon",
+    "boldIcon": "IronIcon",
     "name": "Fer à repasser",
     "power": 1000,
     "defaultOccurrence": {
@@ -206,8 +206,8 @@
   },
   {
     "slug": "ampouleled",
-    "icon": "BulbBoldIcon",
-    "boldIcon": "BulbBoldIcon",
+    "icon": "BulbIcon",
+    "boldIcon": "BulbIcon",
     "name": "Ampoule LED",
     "power": 7,
     "defaultOccurrence": {
@@ -220,8 +220,8 @@
   },
   {
     "slug": "ampoulehalogene",
-    "icon": "BulbBoldIcon",
-    "boldIcon": "BulbBoldIcon",
+    "icon": "BulbIcon",
+    "boldIcon": "BulbIcon",
     "name": "Ampoule halogène",
     "power": 45,
     "defaultOccurrence": {
@@ -234,8 +234,8 @@
   },
   {
     "slug": "refrigerateur",
-    "icon": "FreezerBoldIcon",
-    "boldIcon": "FreezerBoldIcon",
+    "icon": "FreezerIcon",
+    "boldIcon": "FreezerIcon",
     "name": "Réfrigérateur",
     "power": 19,
     "defaultOccurrence": {
@@ -248,8 +248,8 @@
   },
   {
     "slug": "refrigerateurcombine",
-    "icon": "FreezerBoldIcon",
-    "boldIcon": "FreezerBoldIcon",
+    "icon": "FreezerIcon",
+    "boldIcon": "FreezerIcon",
     "name": "Réfrigérateur combiné",
     "power": 39,
     "defaultOccurrence": {
@@ -262,8 +262,8 @@
   },
   {
     "slug": "congelateur",
-    "icon": "FreezerBoldIcon",
-    "boldIcon": "FreezerBoldIcon",
+    "icon": "FreezerIcon",
+    "boldIcon": "FreezerIcon",
     "name": "Congélateur",
     "power": 33,
     "defaultOccurrence": {
@@ -276,8 +276,8 @@
   },
   {
     "slug": "boxinternet",
-    "icon": "TvBoldIcon",
-    "boldIcon": "TvBoldIcon",
+    "icon": "TvIcon",
+    "boldIcon": "TvIcon",
     "name": "Box internet",
     "power": 12,
     "defaultOccurrence": {
@@ -290,8 +290,8 @@
   },
   {
     "slug": "boxtv",
-    "icon": "TvBoldIcon",
-    "boldIcon": "TvBoldIcon",
+    "icon": "TvIcon",
+    "boldIcon": "TvIcon",
     "name": "Box TV",
     "power": 13,
     "defaultOccurrence": {
@@ -304,8 +304,8 @@
   },
   {
     "slug": "chargeurtelephoneportable",
-    "icon": "ChargeBoldIcon",
-    "boldIcon": "ChargeBoldIcon",
+    "icon": "ChargeIcon",
+    "boldIcon": "ChargeIcon",
     "name": "Chargeur téléphone portable",
     "power": 5,
     "defaultOccurrence": {
@@ -318,8 +318,8 @@
   },
   {
     "slug": "chargeurordinateur",
-    "icon": "ChargeBoldIcon",
-    "boldIcon": "ChargeBoldIcon",
+    "icon": "ChargeIcon",
+    "boldIcon": "ChargeIcon",
     "name": "Chargeur ordinateur portable",
     "power": 19,
     "defaultOccurrence": {
@@ -332,8 +332,8 @@
   },
   {
     "slug": "ordinateurfixe",
-    "icon": "TvBoldIcon",
-    "boldIcon": "TvBoldIcon",
+    "icon": "TvIcon",
+    "boldIcon": "TvIcon",
     "name": "Ordinateur fixe",
     "power": 76,
     "defaultOccurrence": {
