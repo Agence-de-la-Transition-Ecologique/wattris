@@ -3,19 +3,19 @@ import AirFreshBoldIcon from 'components/icons/AirFreshBoldIcon'
 import AirHotBoldIcon from 'components/icons/AirHotBoldIcon'
 import ArrowRightIcon from 'components/icons/ArrowRightIcon'
 import BikeBoldIcon from 'components/icons/BikeBoldIcon'
-import BulbBoldIcon from 'components/icons/BulbBoldIcon'
+import BulbIcon from 'components/icons/BulbIcon'
 import CarChargeBoldIcon from 'components/icons/CarChargeBoldIcon'
-import ChargeBoldIcon from 'components/icons/ChargeBoldIcon'
-import CulteryBoldIcon from 'components/icons/CulteryBoldIcon'
+import ChargeIcon from 'components/icons/ChargeIcon'
+import CulteryIcon from 'components/icons/CulteryIcon'
 import FlushBoldIcon from 'components/icons/FlushBoldIcon'
-import FreezerBoldIcon from 'components/icons/FreezerBoldIcon'
-import HairDryerBoldIcon from 'components/icons/HairDryerBoldIcon'
+import FreezerIcon from 'components/icons/FreezerIcon'
+import HairDryerIcon from 'components/icons/HairDryerIcon'
 import HomeCleaningBoldIcon from 'components/icons/HomeCleaningBoldIcon'
-import IronBoldIcon from 'components/icons/IronBoldIcon'
-import KettleBoldIcon from 'components/icons/KettleBoldIcon'
+import IronIcon from 'components/icons/IronIcon'
+import KettleIcon from 'components/icons/KettleIcon'
 import SleepModeBoldIcon from 'components/icons/SleepModeBoldIcon'
-import TvBoldIcon from 'components/icons/TvBoldIcon'
-import WasherDryerBoldIcon from 'components/icons/WasherDryerBoldIcon'
+import TvIcon from 'components/icons/TvIcon'
+import WasherDryerIcon from 'components/icons/WasherDryerIcon'
 import CheckMarkIcon from 'components/icons/CheckMarkIcon'
 
 const iconMap = {
@@ -23,19 +23,19 @@ const iconMap = {
   AirHotBoldIcon,
   ArrowRightIcon,
   BikeBoldIcon,
-  BulbBoldIcon,
+  BulbIcon,
   CarChargeBoldIcon,
-  ChargeBoldIcon,
-  CulteryBoldIcon,
+  ChargeIcon,
+  CulteryIcon,
   FlushBoldIcon,
-  FreezerBoldIcon,
-  HairDryerBoldIcon,
+  FreezerIcon,
+  HairDryerIcon,
   HomeCleaningBoldIcon,
-  IronBoldIcon,
-  KettleBoldIcon,
+  IronIcon,
+  KettleIcon,
   SleepModeBoldIcon,
-  TvBoldIcon,
-  WasherDryerBoldIcon,
+  TvIcon,
+  WasherDryerIcon,
   CheckMarkIcon
 }
 
