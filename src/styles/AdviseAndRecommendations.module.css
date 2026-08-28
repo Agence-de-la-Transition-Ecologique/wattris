@@ -39,7 +39,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    align-items: center;
     color: var(--color-black, #000000);
     border-radius: 8px;
     padding: 0.5rem 1.3rem;

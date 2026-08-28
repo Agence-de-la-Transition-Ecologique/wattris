@@ -294,12 +294,12 @@ export default function PolitiqueCookies() {
                     </Paragraph>
 
                     <Paragraph>
-                        Vous pouvez par exemple vous rendre sur le site <a href='http://www.youronlinechoices.com' target='_blank'>www.youronlinechoices.com</a> afin d’interdire l’installation de ces cookies sur votre terminal. Ce site est proposé par les professionnels de la publicité digitale regroupés au sein de l’association européenne EDAA (European Digital Advertising Alliance) et géré en France par l’Interactive Advertising Bureau France.
+                        Vous pouvez par exemple vous rendre sur le site <a href='https://www.youronlinechoices.com' target='_blank'>www.youronlinechoices.com</a> afin d’interdire l’installation de ces cookies sur votre terminal. Ce site est proposé par les professionnels de la publicité digitale regroupés au sein de l’association européenne EDAA (European Digital Advertising Alliance) et géré en France par l’Interactive Advertising Bureau France.
                     </Paragraph>
 
                     <Paragraph>
                         Vous pourrez ainsi connaître les entreprises inscrites à cette plate-forme et qui vous offrent la possibilité de refuser ou d'accepter les cookies utilisés par ces entreprises pour adapter à vos informations de navigation les publicités susceptibles d'être affichées sur votre terminal : <br />
-                    <a href='http://www.youronlinechoices.com/fr/controler-ses-cookies/' target='_blank'>http://www.youronlinechoices.com/fr/controler-ses-cookies/</a>.
+                    <a href='https://www.youronlinechoices.com/fr/controler-ses-cookies/' target='_blank'>http://www.youronlinechoices.com/fr/controler-ses-cookies/</a>.
                     </Paragraph>
 
                     <Paragraph>

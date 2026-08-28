@@ -140,7 +140,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    align-items: center;
     color: var(--color-text, #383838);
     border: 1px solid var(--color-text-lighter, #C4C4C4);
     background-color: #fafafa;
