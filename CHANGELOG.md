@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to Semantic Versioning.
 
+## [1.3.0] TMA Socle - 126K - 2026-08-28
+
+### Added
+- [WAT-122](https://ademe.atlassian.net/browse/WAT-122) - Ouverture du bloc d'usage lors du clic sur un usage depuis la section Conseils
+- [WAT-124](https://ademe.atlassian.net/browse/WAT-124) - Design de la section conseil et recommandations
+- [WAT-125](https://ademe.atlassian.net/browse/WAT-125) - Dynamique de la liste des appareils à décaler dans la zone de conseils
+- [WAT-129](https://ademe.atlassian.net/browse/WAT-129) - Liens icônes - usages électriques
+- [WAT-133](https://ademe.atlassian.net/browse/WAT-133) - Version mobile des conseils et recommandations
+
 ## [1.2.0] TMA Socle - I26K - 2026-08-11
 
 ### Added
