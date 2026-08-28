@@ -17,7 +17,7 @@ Une fois CI/CD terminé pour que les changements sont visibles sur https://devel
 
 ## Production
 
-1. Vérifier que le numéro de version dans le fichier `package.json` est à jour et respecte la convention [semver](https://semver.org/) (ex: `1.12.3`)
+1. Vérifier que le numéro de version dans le fichier `package.json` et `sonar-project.properties` est à jour et respecte la convention [semver](https://semver.org/) (ex: `1.12.3`)
 2. Mettre à jour le fichier `CHANGELOG.md`
 3. Créer une merge request de la branche `develop` vers la `main` en pensant à décocher l'option "Squash commits" pour que les commits soient bien visibles dans la branche `main`
 4. Merger la merge request une fois que les tests sont passés.

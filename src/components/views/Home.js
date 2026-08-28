@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import Section from 'components/base/Section'
 import Appliances from './home/Appliances'
 import Timeline from './home/Timeline'
-import Score from './home/Score'
 import ApplianceModal from './home/ApplianceModal'
 import OpenSetupProfileButton from './home/OpenSetupProfileButton'
+import AdviseAndRecommendations from './home/AdviseAndRecommendations'
 
 const StyledSectionContent = styled(Section.Content)`
   padding-top: 2rem;
@@ -18,23 +18,19 @@ const StyledSectionContent = styled(Section.Content)`
 const Wrapper = styled.div`
   position: relative;
   margin-bottom: 2.5rem;
-  padding-top: 6.5rem;
-
-  ${(props) => props.theme.mq.medium} {
-    padding-top: 0;
-  }
+  padding-top: 2rem;
 `
 export default function Home(props) {
   return (
     <Section id='home'>
       <StyledSectionContent hoverIframe={props.hoverIframe}>
         <Wrapper>
-          <Score />
           <ApplianceModal />
           <Timeline />
         </Wrapper>
         <Appliances />
         <OpenSetupProfileButton />
+        <AdviseAndRecommendations />
         {/* <ExportSimulation /> */}
       </StyledSectionContent>
     </Section>

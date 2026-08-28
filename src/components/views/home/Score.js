@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
@@ -24,6 +24,25 @@ const Wrapper = styled.div`
   top: -1.5rem;
   left: 0.5rem;
   display: flex;
+  ${({ adviseSection, percent, theme }) =>
+    adviseSection &&
+    css`
+      position: static;
+      justify-content: center;
+      flex-direction: column;
+      border: 2px solid
+        ${theme.colors[
+          percent
+            ? percent < 0.4
+              ? 'main'
+              : percent < 0.8
+                ? 'warning'
+                : 'error'
+            : 'main'
+        ]};
+      padding: 1.5rem 1rem 1rem;
+      border-radius: 1.5rem;
+    `}
   align-items: center;
   gap: 0.75rem;
   opacity: ${(props) => (props.visible ? 1 : 0)};
@@ -37,7 +56,7 @@ const Wrapper = styled.div`
 `
 const Gauge = styled.svg`
   width: auto;
-  height: 5.5rem;
+  height: ${(props) => (props.adviseSection ? '6.5rem' : '5.5rem')};
   animation: ${(props) => (props.percent >= 1 ? warning : '')} 800ms infinite;
 
   path,
@@ -127,7 +146,7 @@ const StyledMagicLink = styled(MagicLink)`
       ]};
   }
 `
-export default function Score() {
+export default function Score({ adviseSection }) {
   const { occurrences } = useContext(DataContext)
   const { introductionOpen } = useContext(ModalContext)
 
@@ -137,11 +156,14 @@ export default function Score() {
 
   return (
     <Wrapper
+      adviseSection={adviseSection}
+      percent={percent}
       visible={
-        !introductionOpen || occurrences.length > 0
+        (!introductionOpen || occurrences.length > 0) || adviseSection
       }
     >
       <Gauge
+        adviseSection={adviseSection}
         width='80'
         height='120'
         viewBox='0 0 80 120'
@@ -202,19 +224,23 @@ export default function Score() {
               : 'très importante'}
             <span> pendant les heures de pointe de consommation</span>
           </Label>
-          <Description percent={percent}>
-            {percent < 0.4
-              ? 'Vous aidez à écarter le risque de coupure d’électricité les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
-              : percent < 0.8
-              ? 'Chauffez moins et décalez l’utilisation de certains appareils pour réduire le risque de coupure les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
-              : 'Utilisez le moins possible vos appareils entre 7h et 11h puis 18h et 20h pour éviter les coupures les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'}
-          </Description>
-          <StyledMagicLink
-            to='https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie'
-            percent={percent}
-          >
-            Découvrez comment faire des économies d'énergie
-          </StyledMagicLink>
+          {!adviseSection && (
+          <>
+            <Description percent={percent}>
+              {percent < 0.4
+                ? 'Vous aidez à écarter le risque de coupure d’électricité les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
+                : percent < 0.8
+                ? 'Chauffez moins et décalez l’utilisation de certains appareils pour réduire le risque de coupure les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
+                : 'Utilisez le moins possible vos appareils entre 7h et 11h puis 18h et 20h pour éviter les coupures les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'}
+            </Description>
+            <StyledMagicLink
+              to='https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie'
+              percent={percent}
+            >
+              Découvrez comment faire des économies d'énergie
+            </StyledMagicLink>
+          </>
+          )}
         </Content>
       )}
     </Wrapper>
