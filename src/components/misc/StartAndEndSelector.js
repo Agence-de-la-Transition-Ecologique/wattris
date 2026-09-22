@@ -7,11 +7,15 @@ import useMounted from 'hooks/useMounted'
 import useDeviceDetect from 'hooks/useMobileDetect'
 
 const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 1.25rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 1.25rem;
+    
+    ${(props) => props.theme.mq.small} {
+        width: 100%;
+    }
 `
 
 const Track = styled.div`
@@ -52,9 +56,9 @@ const SmallThumb = styled.div`
   width: 0.5rem;
   height: 1rem;
   border-radius: 0.25rem;
-  display: 'flex';
-  justify-content: 'center';
-  align-items: 'center';
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.theme.colors.background};
   pointer-events: auto;
 `
@@ -86,6 +90,7 @@ const ThumbLabel = (props) => {
     ' - ',
     (value) => `${getRealHoursFromDecimalHours(value)}`
   )
+
   const formatedLabelValue = labelValue.includes(' - ')
     ? `${getRealHoursFromDecimalHours(
         props.values[0]
@@ -112,7 +117,7 @@ const ThumbLabel = (props) => {
   )
 }
 
-export default function Slider(props) {
+export default function StartAndEndSelector(props) {
   const isMobile = useDeviceDetect()
   const mounted = useMounted()
 
