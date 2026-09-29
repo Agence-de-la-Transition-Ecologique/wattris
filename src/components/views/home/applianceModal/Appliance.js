@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, {useContext, useState} from 'react'
 import styled from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
@@ -57,7 +57,7 @@ const StyledButtonLink = styled(ButtonLink)`
 `
 
 export default function Appliance(props) {
-  const { setActive, setAppliancesListOpen } = useContext(DataContext)
+  const { setActive } = useContext(DataContext)
 
   const [fullDescription, setFullDescription] = useState(false)
 
@@ -77,9 +77,8 @@ export default function Appliance(props) {
           props.active.new &&
             props.deleteOccurrence({
               occurrenceIndex: lastIndex,
-            })
-          setActive(null)
-          setAppliancesListOpen(true)
+            });
+          setActive(null);
         }}
       />
       <Title>{props.appliance.name}</Title>
