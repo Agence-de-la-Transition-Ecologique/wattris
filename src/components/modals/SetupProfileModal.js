@@ -41,7 +41,6 @@ export default function SetupProfileModal() {
       <div className={styles.setupProfileModalContainer}>
         <div className={styles.setupProfileModalHeader}>
           <h3 className={styles.setupProfileModalTitle}>Configurez votre profil</h3>
-          <small className={styles.setupProfileModalSubtitle}>Cliquez sur le + pour ajouter un appareil à votre sélection</small>
         </div>
 
         <div className={styles.setupProfileModalBody}>

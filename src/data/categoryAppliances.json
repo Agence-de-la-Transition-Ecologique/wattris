@@ -10,7 +10,7 @@
         ]
     },
     {
-        "category": "Mobilité électrique",
+        "category": "Véhicules électrique",
         "items": [
             "trottinetteelectrique",
             "velolectrique",
@@ -33,7 +33,7 @@
         ]
     },
     {
-        "category": "Appareils électroniques",
+        "category": "Multimédia",
         "items": [
             "chargeurordinateur",
             "chargeurtelephoneportable",
