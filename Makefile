@@ -19,6 +19,12 @@ yarn.build-static:
 lint:
 	docker compose run --rm app yarn lint
 
+test:
+	docker compose run --rm app yarn test
+
+test.coverage:
+	docker compose run --rm app yarn test:coverage
+
 build:
 	docker compose build --no-cache
 
