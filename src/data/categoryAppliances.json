@@ -40,7 +40,8 @@
             "boxtv",
             "boxinternet",
             "ordinateurfixe",
-            "television"
+            "television",
+            "appareilsenveille"
         ]
     },
     {
@@ -58,12 +59,6 @@
         "items": [
             "ampouleled",
             "ampoulehalogene"
-        ]
-    },
-    {
-        "category": "Autres consommations d'électricité",
-        "items": [
-            "appareilsenveille"
         ]
     }
 ]
