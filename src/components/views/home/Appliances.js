@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   }
 `
 const AddOccurrenceWrapper = styled.div`
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
   display: flex;
   flex-direction: column;
 `
@@ -45,23 +45,22 @@ const AddOccurrenceButton = styled(Button)`
   height: 100%;
   padding: 0.75rem 0.75rem;
   text-align: left;
-  color: ${(props) => props.theme.colors[props.blink ? 'background' : 'main']};
+  color: ${(props) => props.theme.colors[props.$blink ? 'background' : 'main']};
   background-color: ${(props) =>
-    props.theme.colors[props.blink ? 'main' : 'background']};
+    props.theme.colors[props.$blink ? 'main' : 'background']};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.75rem;
   box-shadow: none;
-  transition: all 300ms ease-out;
   cursor: pointer;
   transition: opacity 500ms 300ms;
-  animation: ${(props) => (props.blink ? blink : '')} 2000ms infinite 3000ms;
+  animation: ${(props) => (props.$blink ? blink : '')} 2000ms infinite 3000ms;
 
   svg {
     width: 1.5rem;
     height: auto;
     path {
       fill: ${(props) =>
-        props.theme.colors[props.blink ? 'background' : 'main']};
+        props.theme.colors[props.$blink ? 'background' : 'main']};
     }
   }
 
@@ -108,14 +107,14 @@ export default function Appliances() {
         ))
       )}
       <AddOccurrenceWrapper
-        visible={
+        $visible={
           !introductionOpen || occurrences.length > 0
         }
       >
         <AddOccurrenceButton
           to='#home'
           onClick={() => setAppliancesListOpen(true)}
-          blink={!occurrences.length && !appliancesListOpen}
+          $blink={!occurrences.length && !appliancesListOpen}
         >
           <svg width='14' height='15' viewBox='0 0 14 15'>
             <path d='M14 6.16472V8.83528C14 9.03631 13.8371 9.19945 13.6358 9.19945H8.69947V14.1358C8.69947 14.3371 8.53634 14.5 8.3353 14.5H5.66474C5.46382 14.5 5.30057 14.3371 5.30057 14.1358V9.19945H0.364169C0.162972 9.19945 0 9.03631 0 8.83528V6.16472C0 5.96364 0.162972 5.80055 0.364169 5.80055H5.30057V0.864146C5.30057 0.662869 5.46378 0.499977 5.66474 0.499977H8.3353C8.53634 0.499977 8.69947 0.662869 8.69947 0.864146V5.80055H13.6358C13.8371 5.80055 14 5.96364 14 6.16472Z' />

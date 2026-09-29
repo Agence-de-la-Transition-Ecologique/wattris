@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import styles from 'styles/Modal.module.css'
 
 const Wrapper = styled.div`
   position: fixed;
@@ -24,7 +25,7 @@ const Background = styled.div`
   transition: background-color ${(props) => (props.open ? '300ms' : '1ms')}
     ease-in-out;
 `
-const Content = styled.div`
+const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -33,7 +34,7 @@ const Content = styled.div`
   max-width: 90vw;
   max-height: 90vh;
   margin: 1rem;
-  background-color: ${(props) => props.backgroundColor || props.theme.colors.background};
+  background-color: ${(props) => props.$backgroundColor || props.theme.colors.background};
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
   visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
@@ -44,36 +45,21 @@ const Content = styled.div`
     ${(props) => (props.open && !props.noAnimation ? '300ms' : '1ms')}
     ease-in-out;
 `
-const ButtonClose = styled.div`
-  position: absolute;
-  z-index: 12;
-  top: 0.5em;
-  right: 0.5em;
-  font-size: 2rem;
-  font-weight: bold;
-  transform: rotate(45deg);
-  cursor: pointer;
-  line-height: 0.5;
-`
-const Scroll = styled.div`
-  overflow-y: auto;
-  padding: 2rem 1.5rem;
-`
 export default function Modal(props) {
   return (
     <Wrapper open={props.open}>
       <Background open={props.open} onClick={() => props.setOpen(false)} />
-      <Content
+      <Container
         open={props.open}
         width={props.width}
         height={props.height}
         textColor={props.textColor}
-        backgroundColor={props.backgroundColor}
+        $backgroundColor={props.backgroundColor}
         noAnimation={props.noAnimation}
       >
-        <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
-        <Scroll className={props.className}>{props.children}</Scroll>
-      </Content>
+        <button className={styles.modalButtonClose} onClick={() => props.setOpen(false)}>+</button>
+        <div className={styles.modalContent}>{props.children}</div>
+      </Container>
     </Wrapper>
   )
 }

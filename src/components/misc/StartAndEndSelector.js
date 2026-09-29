@@ -167,7 +167,7 @@ export default function Slider(props) {
                 index={index}
                 color={props.color}
                 aria-label={props.ariaLabel}
-                peak={props.peak}
+                $peak={props.peak}
                 isMobile
               />
             </SmallThumb>
@@ -198,7 +198,7 @@ export default function Slider(props) {
                 color={props.color}
                 large={props.large}
                 aria-label={props.ariaLabel}
-                peak={props.peak}
+                $peak={props.peak}
                 smallDuration={props.smallDuration}
               />
             </SmallThumb>

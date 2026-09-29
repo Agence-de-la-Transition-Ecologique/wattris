@@ -21,7 +21,7 @@ const Xlegend = styled.div`
   font-weight: 300;
   text-align: center;
   transform-origin: left;
-  opacity: ${(props) => (props.hover ? 1 : 0)};
+  opacity: ${(props) => (props.$hover ? 1 : 0)};
   transition: opacity 300ms ease-out;
 `
 const Ylegend = styled.div`
@@ -32,7 +32,7 @@ const Ylegend = styled.div`
   font-size: 0.75rem;
   font-weight: 300;
   transform-origin: left;
-  opacity: ${(props) => (props.hover ? 1 : 0)};
+  opacity: ${(props) => (props.$hover ? 1 : 0)};
   transition: opacity 300ms ease-out;
 `
 const Yaxis = styled.div`
@@ -42,7 +42,7 @@ const Yaxis = styled.div`
   right: 100%;
   width: 0.0625rem;
   background-color: ${(props) => props.theme.colors.textLighter};
-  opacity: ${(props) => (props.hover ? 1 : 0)};
+  opacity: ${(props) => (props.$hover ? 1 : 0)};
   transition: opacity 300ms ease-out;
 `
 export default function Axis() {
@@ -50,9 +50,9 @@ export default function Axis() {
   return (
     <Wrapper>
       <Ticks hover={hover} setHover={setHover} />
-      <Yaxis hover={hover} />
-      <Ylegend hover={hover}>Puissance appelée</Ylegend>
-      <Xlegend hover={hover}>Heure de la journée</Xlegend>
+      <Yaxis $hover={hover} />
+      <Ylegend $hover={hover}>Puissance appelée</Ylegend>
+      <Xlegend $hover={hover}>Heure de la journée</Xlegend>
       <Hours hover={hover} setHover={setHover} />
       <Peaks hover={hover} setHover={setHover} />
     </Wrapper>

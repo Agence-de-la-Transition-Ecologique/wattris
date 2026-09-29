@@ -19,7 +19,7 @@ export default function SetupProfileModal() {
   const { categoryAppliances, setOccurrences } = useContext(DataContext)
 
   const { width } = useWindowSize()
-  const modalHeight = width < 768 ? '95vh' : '85vh'
+  const modalHeight = width < 768 ? '90vh' : '85vh'
 
   const addOccurrence = (item) => {
     setSetupProfileOccurrences([...setupProfileOccurrences, item])

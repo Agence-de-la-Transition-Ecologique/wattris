@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.label`
   position: relative;
   display: flex;
-  font-size: ${(props) => (props.small ? '1em' : '1.2em')};
+  font-size: ${(props) => (props.$small ? '1em' : '1.2em')};
   cursor: pointer;
 
   &:before {
@@ -14,7 +14,7 @@ const Wrapper = styled.label`
     left: 0;
     height: 1.1em;
     width: 1.1em;
-    border: 2px solid ${(props) => props.color || props.theme.colors.main};
+    border: 2px solid ${(props) => props.$color || props.theme.colors.main};
     border-radius: 0.25rem;
     pointer-events: none;
   }
@@ -27,10 +27,10 @@ const Wrapper = styled.label`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${(props) => props.color || props.theme.colors.main};
+    color: ${(props) => props.$color || props.theme.colors.main};
     font-size: 1.75em;
     line-height: 0.7;
-    opacity: ${(props) => (props.checked ? 1 : 0)};
+    opacity: ${(props) => (props.$checked ? 1 : 0)};
     pointer-events: none;
   }
 `
@@ -51,9 +51,9 @@ const Label = styled.span`
 export default function Checkbox(props) {
   return (
     <Wrapper
-      checked={props.checked}
-      small={props.small}
-      color={props.color}
+      $checked={props.checked}
+      $small={props.small}
+      $color={props.color}
       className={props.className}
       htmlFor={props.name}
     >
