@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column-reverse;
-  width: calc(${(props) => props.width}%);
+  width: calc(${(props) => props.$width}%);
   height: 26.25rem;
   margin-top: -1.25rem;
 `
@@ -30,7 +30,7 @@ export default function Step(props) {
   )
 
   return (
-    <Wrapper width={props.width} peak={peak}>
+    <Wrapper $width={props.width}>
       {props.step.map((bloc, index) => {
         return <Bloc key={index} bloc={bloc} peak={peak} axisYMaxPower={props.axisYMaxPower} />
       })}

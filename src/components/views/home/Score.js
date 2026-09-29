@@ -24,18 +24,18 @@ const Wrapper = styled.div`
   top: -1.5rem;
   left: 0.5rem;
   display: flex;
-  ${({ adviseSection, percent, theme }) =>
-    adviseSection &&
+  ${({ $adviseSection, $percent, theme }) =>
+    $adviseSection &&
     css`
       position: static;
       justify-content: center;
       flex-direction: column;
       border: 2px solid
         ${theme.colors[
-          percent
-            ? percent < 0.4
+                $percent
+            ? $percent < 0.4
               ? 'main'
-              : percent < 0.8
+              : $percent < 0.8
                 ? 'warning'
                 : 'error'
             : 'main'
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
     `}
   align-items: center;
   gap: 0.75rem;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
   transition: opacity 500ms 150ms;
 
   ${(props) => props.theme.mq.medium} {
@@ -56,14 +56,14 @@ const Wrapper = styled.div`
 `
 const Gauge = styled.svg`
   width: auto;
-  height: ${(props) => (props.adviseSection ? '6.5rem' : '5.5rem')};
-  animation: ${(props) => (props.percent >= 1 ? warning : '')} 800ms infinite;
+  height: ${(props) => (props.$adviseSection ? '6.5rem' : '5.5rem')};
+  animation: ${(props) => (props.$percent >= 1 ? warning : '')} 800ms infinite;
 
   path,
   rect {
     fill: ${(props) =>
       props.theme.colors[
-        props.percent < 0.4 ? 'main' : props.percent < 0.8 ? 'warning' : 'error'
+        props.$percent < 0.4 ? 'main' : props.$percent < 0.8 ? 'warning' : 'error'
       ]};
     ${(props) => props.theme.mq.medium} {
       max-width: none;
@@ -74,7 +74,7 @@ const Gauge = styled.svg`
   }
 `
 const Filling = styled.rect`
-  transform: scaleY(${(props) => props.percent});
+  transform: scaleY(${(props) => props.$percent});
   transform-origin: bottom;
   fill: ${(props) => props.theme.colors.main};
   transition: transform 300ms ease-out;
@@ -83,10 +83,10 @@ const Content = styled.div`
   flex: 1;
   color: ${(props) =>
     props.theme.colors[
-      props.percent
-        ? props.percent < 0.4
+      props.$percent
+        ? props.$percent < 0.4
           ? 'main'
-          : props.percent < 0.8
+          : props.$percent < 0.8
           ? 'warning'
           : 'error'
         : 'main'
@@ -117,12 +117,12 @@ const Label = styled.p`
   }
 `
 const Description = styled.p`
-  max-width: ${(props) => (props.percent < 0.4 ? 20 : 24)}rem;
+  max-width: ${(props) => (props.$percent < 0.4 ? 20 : 24)}rem;
   margin-bottom: 0;
   font-size: 0.7rem;
 
   ${(props) => props.theme.mq.medium} {
-    max-width: ${(props) => (props.percent < 0.4 ? 14 : 23)}rem;
+    max-width: ${(props) => (props.$percent < 0.4 ? 14 : 23)}rem;
   }
 
   ${(props) => props.theme.mq.small} {
@@ -136,10 +136,10 @@ const StyledMagicLink = styled(MagicLink)`
   path {
     fill: ${(props) =>
       props.theme.colors[
-        props.percent
-          ? props.percent < 0.4
+        props.$percent
+          ? props.$percent < 0.4
             ? 'main'
-            : props.percent < 0.8
+            : props.$percent < 0.8
             ? 'warning'
             : 'error'
           : 'main'
@@ -156,20 +156,20 @@ export default function Score({ adviseSection }) {
 
   return (
     <Wrapper
-      adviseSection={adviseSection}
-      percent={percent}
-      visible={
+      $adviseSection={adviseSection}
+      $percent={percent}
+      $visible={
         (!introductionOpen || occurrences.length > 0) || adviseSection
       }
     >
       <Gauge
-        adviseSection={adviseSection}
+        $adviseSection={adviseSection}
         width='80'
         height='120'
         viewBox='0 0 80 120'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        percent={percent}
+        $percent={percent}
       >
         <path
           fillRule='evenodd'
@@ -193,7 +193,7 @@ export default function Score({ adviseSection }) {
         </mask>
         <g mask='url(#mask0_914_135)'>
           <Filling
-            percent={percent}
+            $percent={percent}
             x='-30.8232'
             y='0'
             width='144.706'
@@ -214,7 +214,7 @@ export default function Score({ adviseSection }) {
           </Description>
         </Content>
       ) : (
-        <Content percent={percent}>
+        <Content $percent={percent}>
           <Label>
             Consommation{' '}
             {percent < 0.4
@@ -226,7 +226,7 @@ export default function Score({ adviseSection }) {
           </Label>
           {!adviseSection && (
           <>
-            <Description percent={percent}>
+            <Description $percent={percent}>
               {percent < 0.4
                 ? 'Vous aidez à écarter le risque de coupure d’électricité les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
                 : percent < 0.8
@@ -235,7 +235,7 @@ export default function Score({ adviseSection }) {
             </Description>
             <StyledMagicLink
               to='https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie'
-              percent={percent}
+              $percent={percent}
             >
               Découvrez comment faire des économies d'énergie
             </StyledMagicLink>

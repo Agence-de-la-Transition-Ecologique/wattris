@@ -11,7 +11,7 @@ import AdviseAndRecommendations from './home/AdviseAndRecommendations'
 const StyledSectionContent = styled(Section.Content)`
   padding-top: 2rem;
   border: 0.125rem solid
-    ${(props) => props.theme.colors[props.hoverIframe ? 'main' : 'background']};
+    ${(props) => props.theme.colors[props.$hoverIframe ? 'main' : 'background']};
   border-radius: 1rem;
   transition: border 300ms ease-out;
 `
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 export default function Home(props) {
   return (
     <Section id='home'>
-      <StyledSectionContent hoverIframe={props.hoverIframe}>
+      <StyledSectionContent $hoverIframe={props.hoverIframe}>
         <Wrapper>
           <ApplianceModal />
           <Timeline />

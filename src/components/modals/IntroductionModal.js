@@ -55,7 +55,7 @@ export default function IntroductionModal() {
         chez vous et ceux dont vous pouvez décaler l'utilisation pour participer
         à limiter le changement climatique.
       </Text>
-      <Button.Wrapper vertical>
+      <Button.Wrapper $vertical>
         <Button
           hollow
           onClick={() => {

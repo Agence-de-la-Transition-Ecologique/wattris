@@ -2,8 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function LegalLinks(props) {
-    const LegalItem = styled.div`
+const LegalItem = styled.div`
     padding-bottom: 1rem;
     font-size: 0.75rem;
     font-weight: 300;
@@ -20,14 +19,14 @@ export default function LegalLinks(props) {
         }
     }
 `
-    const LegalWrapper = styled.div`
+const LegalWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
 
 `
-
+export default function LegalLinks() {
     return (
         <>
             <LegalWrapper>
@@ -41,7 +40,8 @@ export default function LegalLinks(props) {
                     <Link key={'PolitiqueCookies'} href={'/politique-cookies'}>Politique des cookies</Link>
                 </LegalItem>
                 <LegalItem>
-                    <Link key={'PolitiqueDonnees'} href={'/politique-protection-donnees'}>Politique de protection des données personnelles</Link>
+                    <Link key={'PolitiqueDonnees'} href={'/politique-protection-donnees'}>Politique de protection des
+                        données personnelles</Link>
                 </LegalItem>
                 <LegalItem>
                     <Link key={'PlanDuSite'} href={'/plan-du-site'}>Plan du site</Link>

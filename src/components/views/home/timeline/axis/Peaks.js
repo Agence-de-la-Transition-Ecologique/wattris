@@ -5,8 +5,8 @@ const Peak = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => (props.position / 24) * 100}%;
-  width: ${(props) => (props.duration / 24) * 100}%;
+  left: ${(props) => (props.$position / 24) * 100}%;
+  width: ${(props) => (props.$duration / 24) * 100}%;
   background: ${(props) => props.theme.colors.error};
   background: linear-gradient(
     0deg,
@@ -14,7 +14,7 @@ const Peak = styled.div`
     rgba(250, 30, 67, 0.7) 80%,
     rgba(250, 30, 67, 0) 100%
   );
-  opacity: ${(props) => (props.hover ? 0.4 : 0.2)};
+  opacity: ${(props) => (props.$hover ? 0.4 : 0.2)};
   transition: opacity 300ms ease-out;
 `
 const PeakIndicator = styled.div`
@@ -27,7 +27,7 @@ const PeakIndicator = styled.div`
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
-  opacity: ${(props) => (props.hover ? 1 : 0.5)};
+  opacity: ${(props) => (props.$hover ? 1 : 0.5)};
   transition: opacity 300ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
@@ -41,19 +41,19 @@ const PeakIndicator = styled.div`
 const Arrow = styled.div`
   position: absolute;
   bottom: calc(100% + 1.5rem);
-  left: ${(props) => ((props.right ? 16.5 : 11) / 24) * 100}%;
-  right: ${(props) => ((props.right ? 6 : 11.5) / 24) * 100}%;
+  left: ${(props) => ((props.$right ? 16.5 : 11) / 24) * 100}%;
+  right: ${(props) => ((props.$right ? 6 : 11.5) / 24) * 100}%;
   height: 0.05rem;
-  transform: rotate(${(props) => (props.right ? 32.5 : -30)}deg);
-  transform-origin: ${(props) => (props.right ? 'left' : 'right')};
+  transform: rotate(${(props) => (props.$right ? 32.5 : -30)}deg);
+  transform-origin: ${(props) => (props.$right ? 'left' : 'right')};
   background: ${(props) => props.theme.colors.textLighter};
 
   svg {
     position: absolute;
-    left: ${(props) => (props.right ? 'auto' : 0)};
-    right: ${(props) => (props.right ? 0 : 'auto')};
+    left: ${(props) => (props.$right ? 'auto' : 0)};
+    right: ${(props) => (props.$right ? 0 : 'auto')};
     transform: translateY(-50%)
-      ${(props) => (!props.right ? 'rotate(180deg)' : '')};
+      ${(props) => (!props.$right ? 'rotate(180deg)' : '')};
 
     path {
       fill: ${(props) => props.theme.colors.textLighter};
@@ -67,10 +67,10 @@ const Arrow = styled.div`
 export default function Peaks(props) {
   return (
     <>
-      <Peak position={7} duration={4} hover={props.hover} />
-      <Peak position={18} duration={2} hover={props.hover} />
+      <Peak $position={7} $duration={4} $hover={props.hover} />
+      <Peak $position={18} $duration={2} $hover={props.hover} />
       <PeakIndicator
-        hover={props.hover}
+        $hover={props.hover}
         onMouseEnter={() => props.setHover(true)}
         onMouseLeave={() => props.setHover(false)}
       >
@@ -78,7 +78,7 @@ export default function Peaks(props) {
         de consommation
       </PeakIndicator>
       <Arrow
-        hover={props.hover}
+        $hover={props.hover}
         onMouseEnter={() => props.setHover(true)}
         onMouseLeave={() => props.setHover(false)}
       >
@@ -92,10 +92,10 @@ export default function Peaks(props) {
         </svg>
       </Arrow>
       <Arrow
-        hover={props.hover}
+        $hover={props.hover}
         onMouseEnter={() => props.setHover(true)}
         onMouseLeave={() => props.setHover(false)}
-        right
+        $right
       >
         <svg
           width='8'

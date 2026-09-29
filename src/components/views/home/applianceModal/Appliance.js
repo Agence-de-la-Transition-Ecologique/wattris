@@ -38,7 +38,7 @@ const Buttons = styled.div`
 const StyledButton = styled(Button)`
   padding: 0.25rem 0.875rem;
   font-size: 0.875rem;
-  color: ${(props) => props.theme.colors[props.peak ? 'error' : 'main']};
+  color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
   background-color: ${(props) => props.theme.colors.background};
   border-color: ${(props) => props.theme.colors.background};
 
@@ -128,7 +128,7 @@ export default function Appliance(props) {
         </StyledButtonLink>
         <StyledButton
           onClick={() => props.setActive(null)}
-          peak={props.allPeaks}
+          $peak={props.allPeaks}
           small
         >
           {props.active.new ? 'Ajouter' : 'Valider'}

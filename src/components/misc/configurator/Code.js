@@ -29,7 +29,7 @@ const Text = styled.code`
   word-break: break-word;
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 0.5rem;
-  animation: ${(props) => (props.copied ? flash : 'none')} 400ms 1;
+  animation: ${(props) => (props.$copied ? flash : 'none')} 400ms 1;
 `
 
 const Copy = styled.button`
@@ -80,7 +80,7 @@ export default function Code() {
         Copiez le code ci-dessous où vous souhaitez afficher l&apos;iframe sur
         votre site.
       </Label>
-      <Text name='code' copied={copied}>
+      <Text name='code' $copied={copied}>
         {script}
       </Text>
       {!copied ? (
