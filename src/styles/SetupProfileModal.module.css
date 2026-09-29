@@ -1,6 +1,6 @@
 .setupProfileModalContainer {
     max-height: 100%;
-    background-color: var(--color-text-light, #C4C4C4);
+    background-color: var(--color-text-light);
     border-radius: 8px;
     display: grid;
     grid-template-columns: 1fr;
@@ -21,12 +21,7 @@
     font-size: 1.7rem;
     margin-bottom: 0;
     font-weight: bold;
-    color: var(--color-main, #476C9B);
-}
-
-.setupProfileModalSubtitle {
-    font-size: 0.9rem;
-    color: var(--color-text-lighter, #C4C4C4);
+    color: var(--color-main);
 }
 
 .setupProfileModalBody {
@@ -38,11 +33,11 @@
 
 .setupProfileModalBloc {
     width: calc(50% - 0.5rem);
-    border: 1px solid var(--color-text-lighter, #C4C4C4);
+    border: 1px solid var(--color-text-lighter);
     border-radius: 25px;
     overflow-y: hidden;
-    color: var(--color-text-lighter, #C4C4C4);
-    background-color: var(--color-background, #FFFFFF);
+    color: var(--color-text-lighter);
+    background-color: var(--color-background);
     padding: 0.5rem;
 }
 
@@ -50,8 +45,15 @@
     font-size: 1.2rem;
     margin-bottom: 0;
     font-weight: bold;
-    color: var(--color-main, #476C9B);
+    color: var(--color-main);
     padding: 0.8rem;
+}
+
+.setupProfileModalBlocSubtitle {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--color-text-lighter);
+    padding: 0 0.8rem 0.8rem;
 }
 
 .setupProfileModalBlocContent {
@@ -59,10 +61,10 @@
     max-height: calc(100% - 70px);
     overflow-y: auto;
     font-size: 0.9rem;
-    color: var(--color-text, #383838);
+    color: var(--color-text);
     /* Firefox */
     scrollbar-width: thin;
-    scrollbar-color: var(--color-main, #476C9B) var(--color-text-light, #C4C4C4);
+    scrollbar-color: var(--color-main) var(--color-text-light);
 }
 
 .setupProfileModalFooter {
@@ -74,8 +76,8 @@
 }
 
 .setupProfileModalButton {
-    background-color: var(--color-main, #476C9B);
-    color: var(--color-background, #FFFFFF);
+    background-color: var(--color-main);
+    color: var(--color-background);
     border: none;
     border-radius: 25px;
     padding: 0.5rem 1.5rem;
@@ -98,25 +100,25 @@
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-track {
-    background: var(--color-text-light, #C4C4C4);
+    background: var(--color-text-light);
     border-radius: 999px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-thumb {
-    background: var(--color-main, #476C9B);
+    background: var(--color-main);
     border-radius: 999px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-thumb:hover {
-    background: var(--color-main-dark, #1D625E);
+    background: var(--color-main-dark);
 }
 
 .setupProfileModalSelectedItem {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--color-text, #FFFFFF);
-    border: 1px solid var(--color-text-lighter, #C4C4C4);
+    color: var(--color-text);
+    border: 1px solid var(--color-text-lighter);
     border-radius: 8px;
     padding: 0.5rem 0.5rem;
     margin-right: 0.5rem;
@@ -143,8 +145,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--color-text, #383838);
-    border: 1px solid var(--color-text-lighter, #C4C4C4);
+    color: var(--color-text);
+    border: 1px solid var(--color-text-lighter);
     background-color: #fafafa;
     border-radius: 8px;
     padding: 0.5rem 0.8rem;
@@ -160,18 +162,18 @@
 }
 
 .setupProfileModalAvailableItemLabelIcon span {
-    color: var(--color-main, #476C9B);
+    color: var(--color-main);
 }
 
 .setupProfileModalAvailableItemLabelIcon svg {
-    border: 1px solid var(--color-text-lighter, #C4C4C4);
+    border: 1px solid var(--color-text-lighter);
     height: 2.2rem;
     border-radius: 50%;
     padding: 0.3rem;
 }
 
 .setupProfileModalAvailableItem svg {
-    color: var(--color-text, #383838);
+    color: var(--color-text);
 }
 
 .setupProfileModalAvailableItemAddIcon {
