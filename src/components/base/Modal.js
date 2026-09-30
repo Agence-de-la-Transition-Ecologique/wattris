@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import styles from 'styles/Modal.module.css'
 
@@ -42,11 +42,14 @@ const Container = styled.div`
     transition: all 300ms ease-in-out;
 `
 export default function Modal(props) {
-    const [contentLoaded, setContentLoaded] = useState(false)
+    const [contentLoaded, setContentLoaded] = useState(props.open);
 
-    useEffect(() => {
-        setContentLoaded(props.open)
-    }, [props.open]);
+    // Delay unmount on close so the CSS disappear animation can finish playing.
+    if (props.open && !contentLoaded) {
+        setContentLoaded(true);
+    } else {
+        setTimeout(() => setContentLoaded(false), 300);
+    }
 
     return (
         <Wrapper $open={props.open}>

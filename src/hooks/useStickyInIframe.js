@@ -48,7 +48,7 @@ export default function useStickyInIframe({enabled, stickyTop = 0}) {
             height: rect.height,
             flowHeight: rect.height + marginTop + marginBottom,
         }
-    }, [applyUnstuck])
+    }, [])
 
     useEffect(() => {
         if (!enabled || typeof window === 'undefined') {
