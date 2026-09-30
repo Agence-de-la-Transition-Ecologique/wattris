@@ -11,7 +11,7 @@ export default function AvailableAppliances({categoryAppliances, onAdd}) {
                 sur +</small>
             <div className={styles.setupProfileModalBlocContent}>
                 {categoryAppliances && categoryAppliances.map((category, index) => (
-                    <AvailableCategory key={index} category={category} onAdd={onAdd}/>
+                    <AvailableCategory key={index} categoryIndex={index} category={category} onAdd={onAdd}/>
                 ))}
             </div>
         </section>
