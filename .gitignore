@@ -36,3 +36,5 @@ yarn-error.log*
 /public/sitemap*
 .yarn
 .idea
+
+/ademe_ci
