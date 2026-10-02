@@ -7,7 +7,7 @@ const StyledButtonLink = styled(ButtonLink)`
   bottom: 0.5rem;
   right: 0.5rem;
   font-size: 0.875rem;
-  color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.white};
 `
 export default function DisplayDescription(props) {
   return (

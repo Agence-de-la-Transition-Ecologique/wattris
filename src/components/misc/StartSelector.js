@@ -27,7 +27,7 @@ const Track = styled.div`
     bottom: 0;
     left: ${(props) => (props.$large ? -1.75 : -1.5)}rem;
     right: ${(props) => (props.$large ? -1.75 : -1.5)}rem;
-    background-color: ${(props) => props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.white};
   }
 `
 const Thumb = styled.div`
@@ -41,7 +41,7 @@ const Thumb = styled.div`
   white-space: nowrap;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
   background-color: ${(props) =>
-    props.$color || props.theme.colors.background};
+    props.$color || props.theme.colors.white};
   border-radius: 0.5rem;
   pointer-events: auto;
 `

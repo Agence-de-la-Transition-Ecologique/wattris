@@ -10,7 +10,7 @@ import AdviseAndRecommendations from './home/AdviseAndRecommendations'
 
 const StyledSectionContent = styled(Section.Content)`
     padding-top: 2rem;
-    border: 0.125rem solid ${(props) => props.theme.colors[props.$hoverIframe ? 'main' : 'background']};
+    border: 0.125rem solid ${(props) => props.theme.colors[props.$hoverIframe ? 'main' : 'white']};
     border-radius: 1rem;
     transition: border 300ms ease-out;
 `

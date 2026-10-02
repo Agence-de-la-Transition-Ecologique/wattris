@@ -48,7 +48,7 @@ const Thumb = styled.div`
   white-space: nowrap;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
   background-color: ${(props) =>
-    props.$color || props.theme.colors.background};
+    props.$color || props.theme.colors.white};
   border-radius: 0.5rem;
   pointer-events: auto;
 `
@@ -59,7 +59,7 @@ const SmallThumb = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.white};
   pointer-events: auto;
 `
 const NumberLabel = styled.div`
@@ -76,7 +76,7 @@ const NumberLabel = styled.div`
   font-size: 0.75rem;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
   background-color: ${(props) =>
-    props.$color || props.theme.colors.background};
+    props.$color || props.theme.colors.white};
   border-radius: 0.5rem;
   white-space: nowrap;
 `

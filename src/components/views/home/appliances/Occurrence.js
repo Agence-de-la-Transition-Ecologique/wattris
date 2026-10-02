@@ -13,7 +13,7 @@ const Wrapper = styled(Link)`
   height: 100%;
   padding: 0.75rem;
   padding-bottom: 1.5rem;
-  color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.white};
   background-color: ${(props) =>
     props.theme.colors[props.$peak ? 'error' : 'main']};
   border-radius: 0.75rem;
@@ -45,7 +45,7 @@ const Title = styled.p`
     height: auto;
 
     path {
-      fill: ${(props) => props.theme.colors.background};
+      fill: ${(props) => props.theme.colors.white};
     }
   }
 `

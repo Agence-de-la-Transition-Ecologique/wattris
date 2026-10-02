@@ -37,7 +37,7 @@
     border-radius: 25px;
     overflow-y: hidden;
     color: var(--color-text-lighter);
-    background-color: var(--color-background);
+    background-color: var(--color-white);
     padding: 0.5rem 0.5rem 1.5rem;
 }
 
@@ -49,7 +49,7 @@
     left: 0;
     right: 0;
     height: 1.5rem;
-    background-color: var(--color-background);
+    background-color: var(--color-white);
 }
 
 .setupProfileModalBlocTitle {
@@ -68,8 +68,8 @@
 }
 
 .setupProfileModalBlocContent {
-    padding: 0.2rem 0.8rem 0.8rem;
-    max-height: calc(100% - 70px);
+    padding: 0.2rem 0.8rem;
+    max-height: calc(100% - 105px);
     overflow-y: auto;
     font-size: 0.9rem;
     color: var(--color-text);
@@ -84,19 +84,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.setupProfileModalButton {
-    background-color: var(--color-main);
-    color: var(--color-background);
-    border: none;
-    border-radius: 25px;
-    padding: 0.5rem 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
 }
 
 .setupProfileModalButtonIcon {
@@ -219,17 +206,26 @@
     margin-top: 0.5rem;
 }
 
+
 .setupProfileModalAvailableItem {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--color-text);
-    border: 1px solid var(--color-text-lighter);
-    background-color: #fafafa;
-    border-radius: 8px;
+    color: var(--color-main);
     padding: 0.5rem 0.8rem;
     margin-bottom: 0.5rem;
+    border-radius: 8px;
     width: 100%;
+    border: 1px solid var(--color-text-lighter);
+    background-color: var(--color-text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+.setupProfileModalAvailableItem:hover {
+    background-color: var(--color-main);
+    color: var(--color-white);
 }
 
 .setupProfileModalAvailableItemLabelIcon {
@@ -239,24 +235,22 @@
     gap: 1rem;
 }
 
-.setupProfileModalAvailableItemLabelIcon span {
-    color: var(--color-main);
-}
 
 .setupProfileModalAvailableItemLabelIcon svg {
     border: 1px solid var(--color-text-lighter);
     height: 2.2rem;
     border-radius: 50%;
     padding: 0.3rem;
-}
-
-.setupProfileModalAvailableItemAddButton {
-    background-color: transparent;
-    border: none;
+    border-color: var(--color-text-white);
 }
 
 .setupProfileModalAvailableItem svg {
     color: var(--color-text);
+    transition: color 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableItem:hover svg {
+    color: var(--color-white);
 }
 
 .setupProfileModalAvailableItemAddIcon {

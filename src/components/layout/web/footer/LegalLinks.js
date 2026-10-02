@@ -7,7 +7,7 @@ const LegalItem = styled.div`
     font-size: 0.75rem;
     font-weight: 300;
     text-align: center;
-    background-color: ${(props) => props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.white};
     margin: 0 8px;
 
     a {
