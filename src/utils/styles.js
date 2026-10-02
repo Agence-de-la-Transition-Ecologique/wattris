@@ -7,12 +7,10 @@ export const themes = {
     colors: {
       main: '#476C9B',
       main20: '#476C9B33',
-
       mainLight: '#DFECEB',
       mainDark: '#1D625E',
       second: '#EFF4F9',
       secondDark: '#B1D4F6',
-
       text: '#383838',
       textGray: '#6A6A6A',
       textLight: '#f6f6f6',
