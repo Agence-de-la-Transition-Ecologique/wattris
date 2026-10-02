@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Ticks from './axis/Ticks';
 import Hours from './axis/Hours';
 import Peaks from './axis/Peaks';
+import ChevronRightIcon from '../../../icons/ChevronRightIcon';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -12,6 +13,14 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   overflow-y: visible;
+
+  .y-axis-arrow {
+    position: absolute;
+    left: -4px;
+    top: -7px;
+    transform: rotate(-90deg);
+    color: ${(props) => props.theme.colors.textLighter};
+  }
 `;
 const Ylegend = styled.div`
   position: absolute;
@@ -37,6 +46,8 @@ export default function Axis() {
       <Yaxis />
       <Hours />
       <Peaks />
+
+      <ChevronRightIcon className={'y-axis-arrow'} />
       <Ylegend>Puissance appelée</Ylegend>
     </Wrapper>
   );
