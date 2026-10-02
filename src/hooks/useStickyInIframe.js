@@ -56,7 +56,7 @@ export default function useStickyInIframe({enabled, stickyTop = 0}) {
             return undefined
         }
 
-        const mediaQuery = window.matchMedia('(max-width: 768px)')
+        const mediaQuery = window.matchMedia('screen and (max-width: 768px)')
         let stopped = false
         let pollTimeout = null
 

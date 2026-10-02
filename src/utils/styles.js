@@ -28,8 +28,8 @@ export const themes = {
             title: '"Marianne", Arial, sans-serif',
         },
         mq: {
-            small: `@media screen and (max-width: ${36}em)`,
-            medium: `@media screen and (max-width: ${57}em)`,
+            small: `@media screen and (max-width: 576px)`,
+            medium: `@media screen and (max-width: 768px)`,
         },
     },
 }
