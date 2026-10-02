@@ -12,8 +12,6 @@ const Wrapper = styled.div`
   transform: translateY(50%);
   background-color: ${(props) => props.theme.colors.textLighter};
   cursor: pointer;
-  opacity: ${(props) => (props.$hover ? 1 : 0.5)};
-  transition: opacity 300ms ease-out;
 
   span {
     position: absolute;
@@ -42,11 +40,8 @@ export default function Ticks(props) {
       {axisYIntervals.map((position) => (
         <Wrapper
           key={position}
-          $hover={props.hover}
           $position={position}
           $axisYMaxPower={axisYMaxPower}
-          onMouseEnter={() => props.setHover(true)}
-          onMouseLeave={() => props.setHover(false)}
         >
           <span>{position === 0 ? '0' : `${position}\u00A0W`}</span>
           {position === 0 && (
