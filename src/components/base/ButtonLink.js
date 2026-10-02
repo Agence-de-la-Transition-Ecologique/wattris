@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import MagicLink from 'components/base/MagicLink'
+import MagicLink from 'components/base/MagicLink';
 
 const Wrapper = styled(MagicLink)`
   display: inline;
@@ -20,7 +20,7 @@ const Wrapper = styled(MagicLink)`
     display: inline-block;
     text-decoration: none;
   }
-`
+`;
 export default function ButtonLink(props) {
   return (
     <Wrapper
@@ -33,5 +33,5 @@ export default function ButtonLink(props) {
     >
       {props.children}
     </Wrapper>
-  )
+  );
 }

@@ -1,9 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Section = styled.div`
-  background-color: ${(props) =>
-    props.theme.colors[props.background ? 'second' : 'white']};
-`
+  background-color: ${(props) => props.theme.colors[props.background ? 'second' : 'white']};
+`;
 
 Section.Content = styled.div`
   display: ${(props) => (props.flex ? 'flex' : 'block')};
@@ -18,6 +17,6 @@ Section.Content = styled.div`
     width: 100vw;
     padding: 0 0.25rem;
   }
-`
+`;
 
-export default Section
+export default Section;

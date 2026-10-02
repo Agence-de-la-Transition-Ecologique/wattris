@@ -19,6 +19,12 @@ yarn.build-static:
 lint:
 	docker compose run --rm app yarn lint
 
+format:
+	docker compose run --rm app yarn format
+
+format.check:
+	docker compose run --rm app yarn format:check
+
 test:
 	docker compose run --rm app yarn test
 

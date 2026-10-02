@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext } from 'react';
+import styled from 'styled-components';
 
-import DataContext from 'components/providers/DataProvider'
-import StartSelector from 'components/misc/StartSelector'
-import DeleteButton from 'components/misc/DeleteButton'
-import StartAndEndSelector from 'components/misc/StartAndEndSelector'
-import DurationSelector from './occurrence/DurationSelector'
+import DataContext from 'components/providers/DataProvider';
+import StartSelector from 'components/misc/StartSelector';
+import DeleteButton from 'components/misc/DeleteButton';
+import StartAndEndSelector from 'components/misc/StartAndEndSelector';
+import DurationSelector from './occurrence/DurationSelector';
 
 const Wrapper = styled.div`
   position: relative;
@@ -38,19 +38,16 @@ const Wrapper = styled.div`
       flex-direction: column;
     }
   }
-`
+`;
 const Text = styled.p`
   margin: 0;
   font-size: 0.75rem;
-`
+`;
 export default function Occurrence(props) {
-  const { editOccurrence, deleteOccurrence } = useContext(DataContext)
+  const { editOccurrence, deleteOccurrence } = useContext(DataContext);
 
   return (
-    <Wrapper
-      $peak={props.peak}
-      $peakIsSameAsAppliance={props.allPeaks === props.peak}
-    >
+    <Wrapper $peak={props.peak} $peakIsSameAsAppliance={props.allPeaks === props.peak}>
       {props.appliance.durationSelector ? (
         <>
           <span>
@@ -62,7 +59,7 @@ export default function Occurrence(props) {
                 editOccurrence({
                   occurrenceIndex: props.occurrence.index,
                   newOccurrence: { ...props.occurrence, start },
-                })
+                });
               }}
               large
             />
@@ -77,23 +74,21 @@ export default function Occurrence(props) {
                 editOccurrence({
                   occurrenceIndex: props.occurrence.index,
                   newOccurrence: { ...props.occurrence, duration },
-                })
+                });
               }}
             />
           </span>
         </>
       ) : (
         <>
-          <Text>
-            Je {props.appliance.slug === 'radiateur' ? 'chauffe' : 'le lance'}
-          </Text>
+          <Text>Je {props.appliance.slug === 'radiateur' ? 'chauffe' : 'le lance'}</Text>
           <StartAndEndSelector
             start={props.occurrence.start}
             duration={props.occurrence.duration}
             smallDuration={Math.abs(props.occurrence.duration) <= 4}
             peak={props.peak}
             onChange={([start, end]) => {
-              let duration = end - start
+              let duration = end - start;
               editOccurrence({
                 occurrenceIndex: props.occurrence.index,
                 newOccurrence: {
@@ -101,7 +96,7 @@ export default function Occurrence(props) {
                   start,
                   duration,
                 },
-              })
+              });
             }}
             large
           />
@@ -118,5 +113,5 @@ export default function Occurrence(props) {
         />
       )}
     </Wrapper>
-  )
+  );
 }

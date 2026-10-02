@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
-import ModalContext from 'components/providers/ModalProvider'
-import DataContext from 'components/providers/DataProvider'
-import Modal from 'components/base/Modal'
-import ArrowRightIcon from 'components/icons/ArrowRightIcon'
-import styles from 'styles/SetupProfileModal.module.css'
-import useWindowSize from 'hooks/useWindowSize'
-import SelectedAppliances from './setupProfileModal/SelectedAppliances'
-import AvailableAppliances from './setupProfileModal/AvailableAppliances'
-import Button from "../base/Button";
+import React, { useContext } from 'react';
+import ModalContext from 'components/providers/ModalProvider';
+import DataContext from 'components/providers/DataProvider';
+import Modal from 'components/base/Modal';
+import ArrowRightIcon from 'components/icons/ArrowRightIcon';
+import styles from 'styles/SetupProfileModal.module.css';
+import useWindowSize from 'hooks/useWindowSize';
+import SelectedAppliances from './setupProfileModal/SelectedAppliances';
+import AvailableAppliances from './setupProfileModal/AvailableAppliances';
+import Button from '../base/Button';
 
 export default function SetupProfileModal() {
   const {
@@ -15,30 +15,37 @@ export default function SetupProfileModal() {
     setSetupProfileOpen,
     setupProfileOccurrences,
     setSetupProfileOccurrences,
-  } = useContext(ModalContext)
+  } = useContext(ModalContext);
 
-  const { categoryAppliances, setOccurrences } = useContext(DataContext)
+  const { categoryAppliances, setOccurrences } = useContext(DataContext);
 
-  const { width } = useWindowSize()
-  const modalHeight = width < 768 ? '90vh' : '85vh'
+  const { width } = useWindowSize();
+  const modalHeight = width < 768 ? '90vh' : '85vh';
 
   const addOccurrence = (item) => {
-    setSetupProfileOccurrences([...setupProfileOccurrences, item])
-  }
+    setSetupProfileOccurrences([...setupProfileOccurrences, item]);
+  };
 
   const deleteOccurrence = ({ occurrenceIndex }) => {
     setSetupProfileOccurrences((prevOccurrences) =>
       prevOccurrences.filter((_, index) => index !== occurrenceIndex)
-    )
-  }
+    );
+  };
 
   const start = () => {
-    setOccurrences(setupProfileOccurrences)
-    setSetupProfileOpen(false)
-  }
+    setOccurrences(setupProfileOccurrences);
+    setSetupProfileOpen(false);
+  };
 
   return (
-    <Modal className={styles.setupProfileModal} open={setupProfileOpen} setOpen={setSetupProfileOpen} width="95vw" height={modalHeight} backgroundColor={(props) => props.theme.colors.textLight}>
+    <Modal
+      className={styles.setupProfileModal}
+      open={setupProfileOpen}
+      setOpen={setSetupProfileOpen}
+      width="95vw"
+      height={modalHeight}
+      backgroundColor={(props) => props.theme.colors.textLight}
+    >
       <div className={styles.setupProfileModalContainer}>
         <div className={styles.setupProfileModalHeader}>
           <h3 className={styles.setupProfileModalTitle}>Configurez votre profil</h3>
@@ -51,11 +58,11 @@ export default function SetupProfileModal() {
 
         <footer className={styles.setupProfileModalFooter}>
           <Button onClick={start}>
-              Commencer
-              <ArrowRightIcon strokeWidth={10} className={styles.setupProfileModalButtonIcon} />
+            Commencer
+            <ArrowRightIcon strokeWidth={10} className={styles.setupProfileModalButtonIcon} />
           </Button>
         </footer>
       </div>
     </Modal>
-  )
+  );
 }

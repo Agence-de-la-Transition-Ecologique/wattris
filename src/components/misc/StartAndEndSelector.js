@@ -1,22 +1,22 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components'
-import { Range, getTrackBackground, useThumbOverlap } from 'react-range'
+import React, { useRef } from 'react';
+import styled from 'styled-components';
+import { Range, getTrackBackground, useThumbOverlap } from 'react-range';
 
-import { getRealHoursFromDecimalHours } from 'utils/formatters'
-import useMounted from 'hooks/useMounted'
-import useDeviceDetect from 'hooks/useMobileDetect'
+import { getRealHoursFromDecimalHours } from 'utils/formatters';
+import useMounted from 'hooks/useMounted';
+import useDeviceDetect from 'hooks/useMobileDetect';
 
 const Wrapper = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 1.25rem;
-    
-    ${(props) => props.theme.mq.small} {
-        width: 100%;
-    }
-`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 1.25rem;
+
+  ${(props) => props.theme.mq.small} {
+    width: 100%;
+  }
+`;
 
 const Track = styled.div`
   position: relative;
@@ -35,7 +35,7 @@ const Track = styled.div`
     right: 0;
     background: ${(props) => props.$background};
   }
-`
+`;
 const Thumb = styled.div`
   display: flex;
   justify-content: center;
@@ -47,11 +47,10 @@ const Thumb = styled.div`
   font-weight: 300;
   white-space: nowrap;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
-  background-color: ${(props) =>
-    props.$color || props.theme.colors.white};
+  background-color: ${(props) => props.$color || props.theme.colors.white};
   border-radius: 0.5rem;
   pointer-events: auto;
-`
+`;
 const SmallThumb = styled.div`
   width: 0.5rem;
   height: 1rem;
@@ -61,7 +60,7 @@ const SmallThumb = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.white};
   pointer-events: auto;
-`
+`;
 const NumberLabel = styled.div`
   position: absolute;
   top: ${(props) => (props.$isMobile ? -1.75 : -1.5)}em;
@@ -75,11 +74,10 @@ const NumberLabel = styled.div`
   padding: 0.5rem;
   font-size: 0.75rem;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
-  background-color: ${(props) =>
-    props.$color || props.theme.colors.white};
+  background-color: ${(props) => props.$color || props.theme.colors.white};
   border-radius: 0.5rem;
   white-space: nowrap;
-`
+`;
 
 const ThumbLabel = (props) => {
   const [labelValue, labelStyle] = useThumbOverlap(
@@ -89,13 +87,13 @@ const ThumbLabel = (props) => {
     0.5,
     ' - ',
     (value) => `${getRealHoursFromDecimalHours(value)}`
-  )
+  );
 
   const formatedLabelValue = labelValue.includes(' - ')
     ? `${getRealHoursFromDecimalHours(
         props.values[0]
       )} - ${getRealHoursFromDecimalHours(props.values[1])}`
-    : labelValue
+    : labelValue;
   return (
     (props.smallDuration || props.isMobile) && (
       <NumberLabel
@@ -114,19 +112,16 @@ const ThumbLabel = (props) => {
         {formatedLabelValue}
       </NumberLabel>
     )
-  )
-}
+  );
+};
 
 export default function StartAndEndSelector(props) {
-  const isMobile = useDeviceDetect()
-  const mounted = useMounted()
+  const isMobile = useDeviceDetect();
+  const mounted = useMounted();
 
-  const endThumb =
-    props.start + props.duration === 24
-      ? 24
-      : (props.start + props.duration) % 24
-  const thumbs = [props.start, endThumb]
-  const rangeRef = useRef()
+  const endThumb = props.start + props.duration === 24 ? 24 : (props.start + props.duration) % 24;
+  const thumbs = [props.start, endThumb];
+  const rangeRef = useRef();
 
   return (
     <Wrapper className={props.className} onClick={(e) => e.stopPropagation()}>
@@ -146,11 +141,7 @@ export default function StartAndEndSelector(props) {
               colors:
                 thumbs[0] > thumbs[1]
                   ? ['#fff', 'rgba(255, 255, 255, 0.3)', '#fff']
-                  : [
-                      'rgba(255, 255, 255, 0.3)',
-                      '#fff',
-                      'rgba(255, 255, 255, 0.3)',
-                    ],
+                  : ['rgba(255, 255, 255, 0.3)', '#fff', 'rgba(255, 255, 255, 0.3)'],
               min: 0,
               max: 24,
             })}
@@ -159,13 +150,9 @@ export default function StartAndEndSelector(props) {
           </Track>
         )}
         renderThumb={({ index, props: anotherProps }) => {
-          const { key, ...rest } = anotherProps
+          const { key, ...rest } = anotherProps;
           return isMobile ? (
-            <SmallThumb
-              key={key}
-              {...rest}
-              aria-label={props.ariaLabel}
-            >
+            <SmallThumb key={key} {...rest} aria-label={props.ariaLabel}>
               <ThumbLabel
                 rangeRef={rangeRef.current}
                 values={thumbs}
@@ -191,11 +178,7 @@ export default function StartAndEndSelector(props) {
               </span>
             </Thumb>
           ) : (
-            <SmallThumb
-              key={key}
-              {...rest}
-              aria-label={props.ariaLabel}
-            >
+            <SmallThumb key={key} {...rest} aria-label={props.ariaLabel}>
               <ThumbLabel
                 rangeRef={rangeRef.current}
                 values={thumbs}
@@ -207,9 +190,9 @@ export default function StartAndEndSelector(props) {
                 smallDuration={props.smallDuration}
               />
             </SmallThumb>
-          )
+          );
         }}
       />
     </Wrapper>
-  )
+  );
 }

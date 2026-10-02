@@ -1,64 +1,55 @@
 [
-    {
-        "category": "Chauffage / Climatisation",
-        "items": [
-            "ballondeauchaude",
-            "climatiseurmobile",
-            "pompeachaleurairair",
-            "pompeachaleuraireau",
-            "radiateur"
-        ]
-    },
-    {
-        "category": "Véhicules électrique",
-        "items": [
-            "trottinetteelectrique",
-            "velolectrique",
-            "voitureelectriquesurprise",
-            "voitureelectriquesurborne"
-        ]
-    },
-    {
-        "category": "Cuisine",
-        "items": [
-            "four",
-            "microonde",
-            "bouilloire",
-            "cafetiere",
-            "plaque",
-            "congelateur",
-            "refrigerateur",
-            "refrigerateurcombine",
-            "lavevaisselle"
-        ]
-    },
-    {
-        "category": "Multimédia",
-        "items": [
-            "chargeurordinateur",
-            "chargeurtelephoneportable",
-            "boxtv",
-            "boxinternet",
-            "ordinateurfixe",
-            "television",
-            "appareilsenveille"
-        ]
-    },
-    {
-        "category": "Entretien et autre électroménager",
-        "items": [
-            "aspirateur",
-            "lavelinge",
-            "sechelinge",
-            "ferarepasser",
-            "sechecheveux"
-        ]
-    },
-    {
-        "category": "Eclairage",
-        "items": [
-            "ampouleled",
-            "ampoulehalogene"
-        ]
-    }
+  {
+    "category": "Chauffage / Climatisation",
+    "items": [
+      "ballondeauchaude",
+      "climatiseurmobile",
+      "pompeachaleurairair",
+      "pompeachaleuraireau",
+      "radiateur"
+    ]
+  },
+  {
+    "category": "Véhicules électrique",
+    "items": [
+      "trottinetteelectrique",
+      "velolectrique",
+      "voitureelectriquesurprise",
+      "voitureelectriquesurborne"
+    ]
+  },
+  {
+    "category": "Cuisine",
+    "items": [
+      "four",
+      "microonde",
+      "bouilloire",
+      "cafetiere",
+      "plaque",
+      "congelateur",
+      "refrigerateur",
+      "refrigerateurcombine",
+      "lavevaisselle"
+    ]
+  },
+  {
+    "category": "Multimédia",
+    "items": [
+      "chargeurordinateur",
+      "chargeurtelephoneportable",
+      "boxtv",
+      "boxinternet",
+      "ordinateurfixe",
+      "television",
+      "appareilsenveille"
+    ]
+  },
+  {
+    "category": "Entretien et autre électroménager",
+    "items": ["aspirateur", "lavelinge", "sechelinge", "ferarepasser", "sechecheveux"]
+  },
+  {
+    "category": "Eclairage",
+    "items": ["ampouleled", "ampoulehalogene"]
+  }
 ]

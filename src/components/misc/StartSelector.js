@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Range } from 'react-range'
+import React from 'react';
+import styled from 'styled-components';
+import { Range } from 'react-range';
 
-import { getRealHoursFromDecimalHours } from 'utils/formatters'
+import { getRealHoursFromDecimalHours } from 'utils/formatters';
 
 const Wrapper = styled.div`
   flex: 1;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   gap: 0.5rem;
   height: 1.25rem;
   margin-top: ${(props) => (props.$large ? 0 : 0.5)}rem;
-`
+`;
 
 const Track = styled.div`
   position: relative;
@@ -29,7 +29,7 @@ const Track = styled.div`
     right: ${(props) => (props.$large ? -1.75 : -1.5)}rem;
     background-color: ${(props) => props.theme.colors.white};
   }
-`
+`;
 const Thumb = styled.div`
   display: flex;
   justify-content: center;
@@ -40,29 +40,22 @@ const Thumb = styled.div`
   font-weight: 300;
   white-space: nowrap;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
-  background-color: ${(props) =>
-    props.$color || props.theme.colors.white};
+  background-color: ${(props) => props.$color || props.theme.colors.white};
   border-radius: 0.5rem;
   pointer-events: auto;
-`
+`;
 export default function Slider(props) {
   return (
-    <Wrapper
-      className={props.className}
-      onClick={(e) => e.stopPropagation()}
-      $large={props.large}
-    >
+    <Wrapper className={props.className} onClick={(e) => e.stopPropagation()} $large={props.large}>
       <Range
         step={0.5}
         min={0}
         max={24}
         values={[props.start]}
         onChange={props.onChange}
-        renderTrack={({ props, children }) => (
-          <Track {...props}>{children}</Track>
-        )}
+        renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
         renderThumb={({ props: anotherProps }) => {
-          const { key, ...rest } = anotherProps
+          const { key, ...rest } = anotherProps;
           return (
             <Thumb
               key={key}
@@ -77,9 +70,9 @@ export default function Slider(props) {
                 <strong>{getRealHoursFromDecimalHours(props.start)}</strong>
               </span>
             </Thumb>
-          )
+          );
         }}
       />
     </Wrapper>
-  )
+  );
 }
