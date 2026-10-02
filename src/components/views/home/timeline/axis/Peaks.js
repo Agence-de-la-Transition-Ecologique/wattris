@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const Peak = styled.div`
@@ -20,8 +20,8 @@ const Peak = styled.div`
 const PeakIndicator = styled.div`
     position: absolute;
     bottom: calc(100% + 1rem);
-    left: ${(props) => (10.75 / 24) * 100}%;
-    right: ${(props) => (5.75 / 24) * 100}%;
+    left: ${() => (10.75 / 24) * 100}%;
+    right: ${() => (5.75 / 24) * 100}%;
     font-size: 0.75rem;
     font-weight: 300;
     text-align: center;
@@ -74,24 +74,26 @@ const Backdrop = styled.div`
     height: 35px;
 `
 
-export default function Peaks(props) {
+export default function Peaks() {
+    const [hover, setHover] = useState(false)
+
     return (
         <>
             <Backdrop />
-            <Peak $position={7} $duration={4} $hover={props.hover}/>
-            <Peak $position={18} $duration={2} $hover={props.hover}/>
+            <Peak $position={7} $duration={4} $hover={hover}/>
+            <Peak $position={18} $duration={2} $hover={hover}/>
             <PeakIndicator
-                $hover={props.hover}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
+                $hover={hover}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
             >
                 Heures de pointe <br/>
                 de consommation
             </PeakIndicator>
             <Arrow
-                $hover={props.hover}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
+                $hover={hover}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
             >
                 <svg
                     width='8'
@@ -104,9 +106,9 @@ export default function Peaks(props) {
                 </svg>
             </Arrow>
             <Arrow
-                $hover={props.hover}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
+                $hover={hover}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
                 $right
             >
                 <svg

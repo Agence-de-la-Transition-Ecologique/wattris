@@ -13,77 +13,40 @@ const Wrapper = styled.div`
 const Hour = styled.div`
     position: absolute;
     top: 0;
-    left: ${(props) => (props.$position / 24) * 100}%;
-    right: ${(props) => (props.$last ? '0.75rem' : 'auto')};
+    left: ${(props) => (props.$position ? ((props.$position / 24) * 100) : 'unset')}%;
+    right: ${(props) => (props.$last ? 0 : 'auto')};
     font-size: 0.75rem;
     font-weight: 300;
-    cursor: pointer;
-    opacity: ${(props) => (props.$hover ? 1 : 0.5)};
-    transition: opacity 300ms ease-out;
 
     ${(props) => props.theme.mq.small} {
-        transform: translateX(${(props) => (props.$last ? '0' : '-50%')});
+        transform: translateX(${(props) => (props.$last ? 0 : '-50%')});
         right: ${(props) => (props.$last ? '-0.25rem' : 'auto')};
     }
 `
-export default function Hours(props) {
+export default function Hours() {
     return (
         <Wrapper>
-            <Hour
-                $hover={props.hover}
-                $position={1}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
+            <Hour $position={1}>
                 1h
             </Hour>
-            <Hour
-                $hover={props.hover}
-                $position={4}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
+            <Hour $position={4}>
                 4h
             </Hour>
-            <Hour
-                $hover={props.hover}
-                $position={7}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
+            <Hour $position={7}>
                 7h
             </Hour>
-            <Hour
-                $hover={props.hover}
-                $position={11}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
+            <Hour $position={11}>
                 11h
             </Hour>
-            <Hour
-                $hover={props.hover}
-                $position={18}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
+            <Hour $position={18}>
                 18h
             </Hour>
-            <Hour
-                $hover={props.hover}
-                $position={20}
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
+            <Hour $position={20}>
                 20h
             </Hour>
-            <Hour
-                $hover={props.hover}
-                $last
-                onMouseEnter={() => props.setHover(true)}
-                onMouseLeave={() => props.setHover(false)}
-            >
-                Minuit
+            <Hour $last>
+                Heure de<br/>
+                la journée
             </Hour>
         </Wrapper>
     )
