@@ -16,7 +16,7 @@ const Wrapper = styled.button`
     height: auto;
   }
   path {
-    fill: ${(props) => props.theme.colors.background};
+    fill: ${(props) => props.theme.colors.white};
   }
 
   ${(props) => props.theme.mq.small} {

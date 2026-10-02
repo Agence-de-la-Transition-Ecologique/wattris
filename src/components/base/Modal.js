@@ -33,7 +33,7 @@ const Container = styled.div`
     max-width: 90vw;
     max-height: 90vh;
     margin: 1rem;
-    background-color: ${(props) => props.$backgroundColor || props.theme.colors.background};
+    background-color: ${(props) => props.$backgroundColor || props.theme.colors.white};
     border-radius: 1em;
     box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
     visibility: ${(props) => (props.$open ? 'visible' : 'hidden')};

@@ -7,20 +7,19 @@ export const themes = {
         colors: {
             main: '#476C9B',
             main20: '#476C9B33',
-            mainRgb: '71, 108, 155',
             mainLight: '#DFECEB',
             mainDark: '#1D625E',
             second: '#EFF4F9',
             secondDark: '#B1D4F6',
-            background: '#ffffff',
             text: '#383838',
             textGray: '#6A6A6A',
             textLight: '#f6f6f6',
             textLighter: '#C4C4C4',
             error: '#FA1E43',
-            errorRgb: '250, 30, 67',
+            error20: '#FA1E4333',
             errorLight: '#FEEBEF',
             warning: '#FC5D00',
+            white: '#ffffff',
             black: '#000000',
         },
         fonts: {
@@ -39,15 +38,14 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --color-main: ${(props) => props.theme.colors.main};
         --color-main-20: ${(props) => props.theme.colors.main20};
-        --color-main-rgb: ${(props) => props.theme.colors.mainRgb};
         --color-error: ${(props) => props.theme.colors.error};
-        --color-error-rgb: ${(props) => props.theme.colors.errorRgb};
+        --color-error-20: ${(props) => props.theme.colors.error20};
         --color-main-dark: ${(props) => props.theme.colors.mainDark};
         --color-text: ${(props) => props.theme.colors.text};
         --color-text-gray: ${(props) => props.theme.colors.textGray};
         --color-text-light: ${(props) => props.theme.colors.textLight};
         --color-text-lighter: ${(props) => props.theme.colors.textLighter};
-        --color-background: ${(props) => props.theme.colors.background};
+        --color-white: ${(props) => props.theme.colors.white};
         --color-black: ${(props) => props.theme.colors.black};
     }
 
@@ -59,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${(props) => props.theme.colors.background};
+        background-color: ${(props) => props.theme.colors.white};
         color: ${(props) => props.theme.colors.text};
     }
 

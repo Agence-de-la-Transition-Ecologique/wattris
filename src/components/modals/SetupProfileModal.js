@@ -7,6 +7,7 @@ import styles from 'styles/SetupProfileModal.module.css'
 import useWindowSize from 'hooks/useWindowSize'
 import SelectedAppliances from './setupProfileModal/SelectedAppliances'
 import AvailableAppliances from './setupProfileModal/AvailableAppliances'
+import Button from "../base/Button";
 
 export default function SetupProfileModal() {
   const {
@@ -49,10 +50,10 @@ export default function SetupProfileModal() {
         </div>
 
         <footer className={styles.setupProfileModalFooter}>
-          <button type="button" className={styles.setupProfileModalButton} onClick={start}>
-            Commencer
-            <ArrowRightIcon strokeWidth={10} className={styles.setupProfileModalButtonIcon} />
-          </button>
+          <Button onClick={start}>
+              Commencer
+              <ArrowRightIcon strokeWidth={10} className={styles.setupProfileModalButtonIcon} />
+          </Button>
         </footer>
       </div>
     </Modal>

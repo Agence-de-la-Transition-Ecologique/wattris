@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   font-size: 0.875rem;
   white-space: nowrap;
   color: ${(props) => props.theme.colors[props.peak ? 'error' : 'main']};
-  background-color: ${(props) => props.color || props.theme.colors.background};
+  background-color: ${(props) => props.color || props.theme.colors.white};
   border-radius: 0.5rem;
 
   path {

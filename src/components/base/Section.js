@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Section = styled.div`
   background-color: ${(props) =>
-    props.theme.colors[props.background ? 'second' : 'background']};
+    props.theme.colors[props.background ? 'second' : 'white']};
 `
 
 Section.Content = styled.div`

@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 36rem;
     padding: 1rem 1.25rem;
-    color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.white};
     background-color: ${(props) =>
             props.theme.colors[props.$peak ? 'error' : 'main']};
     border-radius: 0.75rem;

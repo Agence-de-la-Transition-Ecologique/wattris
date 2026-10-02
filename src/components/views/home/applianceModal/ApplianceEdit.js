@@ -39,11 +39,11 @@ const StyledButton = styled(Button)`
   padding: 0.25rem 0.875rem;
   font-size: 0.875rem;
   color: ${(props) => props.theme.colors[props.$peak ? 'error' : 'main']};
-  background-color: ${(props) => props.theme.colors.background};
-  border-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.white};
+  border-color: ${(props) => props.theme.colors.white};
 
   &:hover {
-    color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.white};
   }
 
   ${(props) => props.theme.mq.small} {
@@ -53,7 +53,7 @@ const StyledButton = styled(Button)`
 
 const StyledButtonLink = styled(ButtonLink)`
   font-size: 0.875rem;
-  color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.white};
 `
 
 export default function ApplianceEdit(props) {

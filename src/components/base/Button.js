@@ -13,7 +13,7 @@ const Wrapper = styled(MagicLink)`
   text-align: center;
   line-height: 1.2;
   text-decoration: none;
-  color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
+  color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'white']};
   background-color: ${(props) =>
     props.hollow ? 'transparent' : props.theme.colors.main};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
@@ -25,8 +25,7 @@ const Wrapper = styled(MagicLink)`
 
   path {
     transition: all 300ms ease-out;
-    fill: ${(props) =>
-      props.theme.colors[props.hollow ? 'main' : 'background']};
+    fill: currentColor;
   }
 
   &:hover,
@@ -35,12 +34,7 @@ const Wrapper = styled(MagicLink)`
     background-color: ${(props) =>
       props.hollow ? props.theme.colors.main : 'transparent'};
     color: ${(props) =>
-      props.theme.colors[props.hollow ? 'background' : 'main']};
-
-    path {
-      fill: ${(props) =>
-        props.theme.colors[props.hollow ? 'background' : 'main']};
-    }
+      props.theme.colors[props.hollow ? 'white' : 'main']};
   }
 `
 export default function Button(props) {

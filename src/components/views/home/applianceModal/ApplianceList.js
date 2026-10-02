@@ -19,10 +19,10 @@ const Appliance = styled.button`
     align-items: center;
     min-height: 4.5rem;
     padding: 0.5rem;
-    color: ${(props) => props.theme.colors[props.hollow ? 'background' : 'main']};
+    color: ${(props) => props.theme.colors[props.hollow ? 'white' : 'main']};
     background-color: ${(props) =>
-            props.theme.colors[props.hollow ? 'main' : 'background']};
-    border: 0.125rem solid ${(props) => props.theme.colors.background};
+            props.theme.colors[props.hollow ? 'main' : 'white']};
+    border: 0.125rem solid ${(props) => props.theme.colors.white};
     border-radius: 0.5rem;
     cursor: pointer;
     pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
@@ -34,9 +34,9 @@ const Appliance = styled.button`
     }
 
     &:hover {
-        color: ${(props) => props.theme.colors.background};
+        color: ${(props) => props.theme.colors.white};
         background-color: ${(props) => props.theme.colors.main};
-        border: 0.125rem solid ${(props) => props.theme.colors.background};
+        border: 0.125rem solid ${(props) => props.theme.colors.white};
     }
 `
 const SortWrapper = styled.div`
@@ -48,7 +48,7 @@ const SortWrapper = styled.div`
 
 const SortButton = styled(ButtonLink)`
   font-size: 0.875rem;
-  color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.white};
 `
 export default function ApplianceList() {
   const {
