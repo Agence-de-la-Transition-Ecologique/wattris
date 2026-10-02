@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import MagicLink from 'components/base/MagicLink'
+import MagicLink from 'components/base/MagicLink';
 
 const Wrapper = styled(MagicLink)`
   display: flex;
@@ -14,8 +14,7 @@ const Wrapper = styled(MagicLink)`
   line-height: 1.2;
   text-decoration: none;
   color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'white']};
-  background-color: ${(props) =>
-    props.hollow ? 'transparent' : props.theme.colors.main};
+  background-color: ${(props) => (props.hollow ? 'transparent' : props.theme.colors.main)};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
@@ -31,12 +30,10 @@ const Wrapper = styled(MagicLink)`
   &:hover,
   &:focus {
     outline: none;
-    background-color: ${(props) =>
-      props.hollow ? props.theme.colors.main : 'transparent'};
-    color: ${(props) =>
-      props.theme.colors[props.hollow ? 'white' : 'main']};
+    background-color: ${(props) => (props.hollow ? props.theme.colors.main : 'transparent')};
+    color: ${(props) => props.theme.colors[props.hollow ? 'white' : 'main']};
   }
-`
+`;
 export default function Button(props) {
   return (
     <Wrapper
@@ -52,7 +49,7 @@ export default function Button(props) {
     >
       {props.children}
     </Wrapper>
-  )
+  );
 }
 
 Button.Wrapper = styled.div`
@@ -63,10 +60,10 @@ Button.Wrapper = styled.div`
     props.left
       ? 'flex-start'
       : props.right
-      ? 'flex-end'
-      : props.spacebetween
-      ? 'space-between'
-      : 'center'};
+        ? 'flex-end'
+        : props.spacebetween
+          ? 'space-between'
+          : 'center'};
   align-items: center;
   gap: 1rem;
-`
+`;

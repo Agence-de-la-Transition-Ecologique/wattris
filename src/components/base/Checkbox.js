@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.label`
   position: relative;
@@ -33,7 +33,7 @@ const Wrapper = styled.label`
     opacity: ${(props) => (props.$checked ? 1 : 0)};
     pointer-events: none;
   }
-`
+`;
 const Input = styled.input`
   margin-right: ${(props) => (props.label ? '0.625em' : 0)};
   opacity: 0;
@@ -43,11 +43,11 @@ const Input = styled.input`
   &:focus {
     opacity: 0.5;
   }
-`
+`;
 const Label = styled.span`
   font-size: 0.833333333em;
   white-space: nowrap;
-`
+`;
 export default function Checkbox(props) {
   return (
     <Wrapper
@@ -59,14 +59,12 @@ export default function Checkbox(props) {
     >
       <Input
         id={props.name}
-        type='checkbox'
+        type="checkbox"
         checked={props.checked}
         label={props.children || props.label}
         onChange={(e) => props.onChange(e.target.checked)}
       />
-      {(props.children || props.label) && (
-        <Label>{props.children || props.label}</Label>
-      )}
+      {(props.children || props.label) && <Label>{props.children || props.label}</Label>}
     </Wrapper>
-  )
+  );
 }

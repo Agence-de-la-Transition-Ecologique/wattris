@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import React, { useContext } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
-import { useAllPowerOfPeaks } from 'hooks/useAppliances'
-import MagicLink from 'components/base/MagicLink'
+import DataContext from 'components/providers/DataProvider';
+import ModalContext from 'components/providers/ModalProvider';
+import { useAllPowerOfPeaks } from 'hooks/useAppliances';
+import MagicLink from 'components/base/MagicLink';
 
-const maxPower = 5500
+const maxPower = 5500;
 
 const warning = keyframes`
   from {
@@ -18,7 +18,7 @@ const warning = keyframes`
   to {
     opacity: 1;
   }
-`
+`;
 const Wrapper = styled.div`
   position: absolute;
   top: -1.5rem;
@@ -31,15 +31,11 @@ const Wrapper = styled.div`
       justify-content: center;
       flex-direction: column;
       border: 2px solid
-        ${theme.colors[
-                $percent
-            ? $percent < 0.4
-              ? 'main'
-              : $percent < 0.8
-                ? 'warning'
-                : 'error'
-            : 'main'
-        ]};
+        ${
+          theme.colors[
+            $percent ? ($percent < 0.4 ? 'main' : $percent < 0.8 ? 'warning' : 'error') : 'main'
+          ]
+        };
       padding: 1.5rem 1rem 1rem;
       border-radius: 1.5rem;
     `}
@@ -53,7 +49,7 @@ const Wrapper = styled.div`
     top: -0.5rem;
     margin-bottom: 2rem;
   }
-`
+`;
 const Gauge = styled.svg`
   width: auto;
   height: ${(props) => (props.$adviseSection ? '6.5rem' : '5.5rem')};
@@ -72,13 +68,13 @@ const Gauge = styled.svg`
   ${(props) => props.theme.mq.medium} {
     height: 4.5rem;
   }
-`
+`;
 const Filling = styled.rect`
   transform: scaleY(${(props) => props.$percent});
   transform-origin: bottom;
   fill: ${(props) => props.theme.colors.main};
   transition: transform 300ms ease-out;
-`
+`;
 const Content = styled.div`
   flex: 1;
   color: ${(props) =>
@@ -87,11 +83,11 @@ const Content = styled.div`
         ? props.$percent < 0.4
           ? 'main'
           : props.$percent < 0.8
-          ? 'warning'
-          : 'error'
+            ? 'warning'
+            : 'error'
         : 'main'
     ]};
-`
+`;
 const Label = styled.p`
   margin: -0.25rem 0 0.25rem;
   font-size: 1.125rem;
@@ -115,7 +111,7 @@ const Label = styled.p`
       display: block;
     }
   }
-`
+`;
 const Description = styled.p`
   max-width: ${(props) => (props.$percent < 0.4 ? 20 : 24)}rem;
   margin-bottom: 0;
@@ -128,7 +124,7 @@ const Description = styled.p`
   ${(props) => props.theme.mq.small} {
     min-height: 3.1875rem;
   }
-`
+`;
 const StyledMagicLink = styled(MagicLink)`
   font-size: 0.75rem;
   color: inherit;
@@ -140,65 +136,63 @@ const StyledMagicLink = styled(MagicLink)`
           ? props.$percent < 0.4
             ? 'main'
             : props.$percent < 0.8
-            ? 'warning'
-            : 'error'
+              ? 'warning'
+              : 'error'
           : 'main'
       ]};
   }
-`
+`;
 export default function Score({ adviseSection }) {
-  const { occurrences } = useContext(DataContext)
-  const { introductionOpen } = useContext(ModalContext)
+  const { occurrences } = useContext(DataContext);
+  const { introductionOpen } = useContext(ModalContext);
 
-  const power = useAllPowerOfPeaks()
+  const power = useAllPowerOfPeaks();
 
-  const percent = power / maxPower
+  const percent = power / maxPower;
 
   return (
     <Wrapper
       $adviseSection={adviseSection}
       $percent={percent}
-      $visible={
-        (!introductionOpen || occurrences.length > 0) || adviseSection
-      }
+      $visible={!introductionOpen || occurrences.length > 0 || adviseSection}
     >
       <Gauge
         $adviseSection={adviseSection}
-        width='80'
-        height='120'
-        viewBox='0 0 80 120'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
+        width="80"
+        height="120"
+        viewBox="0 0 80 120"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         $percent={percent}
       >
         <path
-          fillRule='evenodd'
-          clipRule='evenodd'
-          d='M40.8071 63.7822L28.3257 113.827L75.5933 40.5174H42.6998L58.8507 4H27.4391L4.22419 63.7822H40.8071ZM62.5384 1.59515C63.1897 2.5903 63.2927 3.84584 62.8118 4.93311L48.8427 36.5174H76.4706C77.7614 36.5174 78.9492 37.2193 79.568 38.3476C80.1868 39.4759 80.1379 40.8507 79.4402 41.9326L30.147 118.384C29.4804 119.418 28.347 120 27.1757 120C26.7072 120 26.2326 119.907 25.7794 119.712C24.1933 119.031 23.3355 117.306 23.7519 115.636L35.6869 67.7822H3.5294C2.3654 67.7822 1.27623 67.2105 0.618111 66.254C-0.0400049 65.2976 -0.182121 64.0795 0.237642 62.9981L23.8286 2.24741C24.3545 0.892965 25.6623 0 27.1204 0H59.5819C60.7746 0 61.8866 0.599998 62.5384 1.59515Z'
-          fill='#476C9B'
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M40.8071 63.7822L28.3257 113.827L75.5933 40.5174H42.6998L58.8507 4H27.4391L4.22419 63.7822H40.8071ZM62.5384 1.59515C63.1897 2.5903 63.2927 3.84584 62.8118 4.93311L48.8427 36.5174H76.4706C77.7614 36.5174 78.9492 37.2193 79.568 38.3476C80.1868 39.4759 80.1379 40.8507 79.4402 41.9326L30.147 118.384C29.4804 119.418 28.347 120 27.1757 120C26.7072 120 26.2326 119.907 25.7794 119.712C24.1933 119.031 23.3355 117.306 23.7519 115.636L35.6869 67.7822H3.5294C2.3654 67.7822 1.27623 67.2105 0.618111 66.254C-0.0400049 65.2976 -0.182121 64.0795 0.237642 62.9981L23.8286 2.24741C24.3545 0.892965 25.6623 0 27.1204 0H59.5819C60.7746 0 61.8866 0.599998 62.5384 1.59515Z"
+          fill="#476C9B"
         />
         <mask
-          id='mask0_914_135'
+          id="mask0_914_135"
           style={{ maskType: 'alpha' }}
-          maskUnits='userSpaceOnUse'
-          x='0'
-          y='0'
-          width='80'
-          height='120'
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="80"
+          height="120"
         >
           <path
-            d='M27.1757 120C26.7072 120 26.2326 119.907 25.7794 119.712C24.1933 119.031 23.3355 117.306 23.7519 115.636L35.6869 67.7822H3.5294C2.3654 67.7822 1.27623 67.2105 0.618111 66.254C-0.0400048 65.2976 -0.182121 64.0795 0.237642 62.9981L23.8286 2.24741C24.3545 0.892965 25.6623 0 27.1204 0H59.5819C60.7746 0 61.8866 0.599998 62.5384 1.59515C63.1897 2.5903 63.2927 3.84584 62.8118 4.93311L48.8427 36.5174H76.4706C77.7614 36.5174 78.9492 37.2193 79.568 38.3476C80.1868 39.4759 80.1379 40.8507 79.4402 41.9326L30.147 118.384C29.4804 119.418 28.347 120 27.1757 120V120Z'
-            fill='white'
+            d="M27.1757 120C26.7072 120 26.2326 119.907 25.7794 119.712C24.1933 119.031 23.3355 117.306 23.7519 115.636L35.6869 67.7822H3.5294C2.3654 67.7822 1.27623 67.2105 0.618111 66.254C-0.0400048 65.2976 -0.182121 64.0795 0.237642 62.9981L23.8286 2.24741C24.3545 0.892965 25.6623 0 27.1204 0H59.5819C60.7746 0 61.8866 0.599998 62.5384 1.59515C63.1897 2.5903 63.2927 3.84584 62.8118 4.93311L48.8427 36.5174H76.4706C77.7614 36.5174 78.9492 37.2193 79.568 38.3476C80.1868 39.4759 80.1379 40.8507 79.4402 41.9326L30.147 118.384C29.4804 119.418 28.347 120 27.1757 120V120Z"
+            fill="white"
           />
         </mask>
-        <g mask='url(#mask0_914_135)'>
+        <g mask="url(#mask0_914_135)">
           <Filling
             $percent={percent}
-            x='-30.8232'
-            y='0'
-            width='144.706'
-            height='120'
-            fill='#476C9B'
+            x="-30.8232"
+            y="0"
+            width="144.706"
+            height="120"
+            fill="#476C9B"
           />
         </g>
       </Gauge>
@@ -209,40 +203,34 @@ export default function Score({ adviseSection }) {
             <br />
             aucun appareil
           </Label>
-          <Description>
-            Ajoutez en un pour commencer la simulation !
-          </Description>
+          <Description>Ajoutez en un pour commencer la simulation !</Description>
         </Content>
       ) : (
         <Content $percent={percent}>
           <Label>
             Consommation{' '}
-            {percent < 0.4
-              ? 'faible'
-              : percent < 0.8
-              ? 'importante'
-              : 'très importante'}
+            {percent < 0.4 ? 'faible' : percent < 0.8 ? 'importante' : 'très importante'}
             <span> pendant les heures de pointe de consommation</span>
           </Label>
           {!adviseSection && (
-          <>
-            <Description $percent={percent}>
-              {percent < 0.4
-                ? 'Vous aidez à écarter le risque de coupure d’électricité les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
-                : percent < 0.8
-                ? 'Chauffez moins et décalez l’utilisation de certains appareils pour réduire le risque de coupure les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
-                : 'Utilisez le moins possible vos appareils entre 7h et 11h puis 18h et 20h pour éviter les coupures les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'}
-            </Description>
-            <StyledMagicLink
-              to='https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie'
-              $percent={percent}
-            >
-              Découvrez comment faire des économies d'énergie
-            </StyledMagicLink>
-          </>
+            <>
+              <Description $percent={percent}>
+                {percent < 0.4
+                  ? 'Vous aidez à écarter le risque de coupure d’électricité les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
+                  : percent < 0.8
+                    ? 'Chauffez moins et décalez l’utilisation de certains appareils pour réduire le risque de coupure les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'
+                    : 'Utilisez le moins possible vos appareils entre 7h et 11h puis 18h et 20h pour éviter les coupures les jours de tension. Gardez ce réflexe toute l’année pour produire de l’électricité sans recourir aux énergies fossiles et sans émettre de CO₂.'}
+              </Description>
+              <StyledMagicLink
+                to="https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie"
+                $percent={percent}
+              >
+                Découvrez comment faire des économies d'énergie
+              </StyledMagicLink>
+            </>
           )}
         </Content>
       )}
     </Wrapper>
-  )
+  );
 }

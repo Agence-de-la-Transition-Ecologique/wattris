@@ -1,289 +1,287 @@
 .setupProfileModalContainer {
-    height: 100%;
-    background-color: var(--color-text-light);
-    border-radius: 8px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 0 1rem;
-    grid-template-areas:
-    "Header"
-    "Appliances"
-    "Footer";
+  height: 100%;
+  background-color: var(--color-text-light);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0 1rem;
+  grid-template-areas:
+    'Header'
+    'Appliances'
+    'Footer';
 }
 
 .setupProfileModalHeader {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .setupProfileModalTitle {
-    font-size: 1.7rem;
-    margin-bottom: 0;
-    font-weight: bold;
-    color: var(--color-main);
+  font-size: 1.7rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: var(--color-main);
 }
 
 .setupProfileModalBody {
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .setupProfileModalBloc {
-    position: relative;
-    width: calc(50% - 0.5rem);
-    border: 1px solid var(--color-text-lighter);
-    border-radius: 25px;
-    overflow-y: hidden;
-    color: var(--color-text-lighter);
-    background-color: var(--color-white);
-    padding: 0.5rem 0.5rem 1.5rem;
+  position: relative;
+  width: calc(50% - 0.5rem);
+  border: 1px solid var(--color-text-lighter);
+  border-radius: 25px;
+  overflow-y: hidden;
+  color: var(--color-text-lighter);
+  background-color: var(--color-white);
+  padding: 0.5rem 0.5rem 1.5rem;
 }
 
 .setupProfileModalBloc::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1.5rem;
-    background-color: var(--color-white);
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5rem;
+  background-color: var(--color-white);
 }
 
 .setupProfileModalBlocTitle {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-    font-weight: bold;
-    color: var(--color-main);
-    padding: 0.8rem;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: var(--color-main);
+  padding: 0.8rem;
 }
 
 .setupProfileModalBlocSubtitle {
-    display: inline-block;
-    font-size: 0.9rem;
-    color: var(--color-text-lighter);
-    padding: 0 0.8rem 0.8rem;
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--color-text-lighter);
+  padding: 0 0.8rem 0.8rem;
 }
 
 .setupProfileModalBlocContent {
-    padding: 0.2rem 0.8rem;
-    max-height: calc(100% - 105px);
-    overflow-y: auto;
-    font-size: 0.9rem;
-    color: var(--color-text);
-    /* Firefox */
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-main) var(--color-text-light);
+  padding: 0.2rem 0.8rem;
+  max-height: calc(100% - 105px);
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-main) var(--color-text-light);
 }
 
 .setupProfileModalFooter {
-    margin-top: 1.2rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 1.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .setupProfileModalButtonIcon {
-    margin-left: 0.5rem;
-    height: 1.3rem;
-    width: auto;
+  margin-left: 0.5rem;
+  height: 1.3rem;
+  width: auto;
 }
 
 /* Chrome, Edge, Safari */
 .setupProfileModalBlocContent::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-track {
-    background: var(--color-text-light);
-    border-radius: 999px;
+  background: var(--color-text-light);
+  border-radius: 999px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-thumb {
-    background: var(--color-main);
-    border-radius: 999px;
+  background: var(--color-main);
+  border-radius: 999px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-thumb:hover {
-    background: var(--color-main-dark);
+  background: var(--color-main-dark);
 }
 
 .setupProfileModalSelectedItem {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-text);
-    border: 1px solid var(--color-text-lighter);
-    border-radius: 8px;
-    padding: 0.5rem 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text);
+  border: 1px solid var(--color-text-lighter);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .setupProfileModalSelectedItem > button {
-    margin-left: 1.2rem;
-    cursor: pointer;
+  margin-left: 1.2rem;
+  cursor: pointer;
 }
 
 .setupProfileModalSelectedItem svg {
-    height: 1.2rem;
-    vertical-align: middle;
+  height: 1.2rem;
+  vertical-align: middle;
 }
 
 .setupProfileModalSelectedItemDeleteButton {
-    background-color: transparent;
-    border: none;
-    display: inline;
+  background-color: transparent;
+  border: none;
+  display: inline;
 }
 
 .setupProfileModalAvailableCategory {
-    margin: 0 0 .5rem;
-    border-bottom: 1px solid var(--color-text-gray);
+  margin: 0 0 0.5rem;
+  border-bottom: 1px solid var(--color-text-gray);
 }
 
 .setupProfileModalAvailableCategoryTitle {
-    position: relative;
-    margin-bottom: 0;
-    color: var(--color-text-gray);
-    transition: background-color 0.3s ease-in-out;
+  position: relative;
+  margin-bottom: 0;
+  color: var(--color-text-gray);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .setupProfileModalAvailableCategoryTitle > button {
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.2rem;
-    width: 100%;
-    color: var(--color-text-gray);
-    background-color: transparent;
-    border: none;
-    transition: background-color 0.3s ease-in-out;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.2rem;
+  width: 100%;
+  color: var(--color-text-gray);
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .setupProfileModalAvailableCategoryTitle > button:hover {
-    cursor: pointer;
-    background-color: var(--color-main-20);
+  cursor: pointer;
+  background-color: var(--color-main-20);
 }
 
-.setupProfileModalAvailableCategoryTitle > button[aria-expanded="true"] {
-    background-color: var(--color-main-20);
+.setupProfileModalAvailableCategoryTitle > button[aria-expanded='true'] {
+  background-color: var(--color-main-20);
 }
 
 .setupProfileModalAvailableCategoryTitle > button::after {
-    content: '';
-    display: block;
-    height: 0.5rem;
-    width: 0.5rem;
-    position: absolute;
-    bottom: 0;
-    right: 0.5rem;
-    border-right: 1px solid var(--color-text-gray);
-    border-bottom: 1px solid var(--color-text-gray);
-    transform: rotate(45deg);
-    margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease-in-out;
+  content: '';
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0.5rem;
+  border-right: 1px solid var(--color-text-gray);
+  border-bottom: 1px solid var(--color-text-gray);
+  transform: rotate(45deg);
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease-in-out;
 }
 
-
-.setupProfileModalAvailableCategoryTitle > button[aria-expanded="true"]::after {
-    transform: rotate(-135deg) translateY(-50%);
+.setupProfileModalAvailableCategoryTitle > button[aria-expanded='true']::after {
+  transform: rotate(-135deg) translateY(-50%);
 }
 
 .setupProfileModalAvailableCategoryContent {
-    padding-left: 0.5rem;
-    overflow-y: hidden;
-    height: 0;
-    transition: height 0.3s ease-in-out;
+  padding-left: 0.5rem;
+  overflow-y: hidden;
+  height: 0;
+  transition: height 0.3s ease-in-out;
 }
 
-.setupProfileModalAvailableCategoryContent[aria-hidden="false"] {
-    overflow-y: visible;
-    height: auto;
-    margin-top: 0.5rem;
+.setupProfileModalAvailableCategoryContent[aria-hidden='false'] {
+  overflow-y: visible;
+  height: auto;
+  margin-top: 0.5rem;
 }
-
 
 .setupProfileModalAvailableItem {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-main);
-    padding: 0.5rem 0.8rem;
-    margin-bottom: 0.5rem;
-    border-radius: 8px;
-    width: 100%;
-    border: 1px solid var(--color-text-lighter);
-    background-color: var(--color-text-light);
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-main);
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid var(--color-text-lighter);
+  background-color: var(--color-text-light);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 }
 
-
 .setupProfileModalAvailableItem:hover {
-    background-color: var(--color-main);
-    color: var(--color-white);
+  background-color: var(--color-main);
+  color: var(--color-white);
 }
 
 .setupProfileModalAvailableItemLabelIcon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 
-
 .setupProfileModalAvailableItemLabelIcon svg {
-    border: 1px solid var(--color-text-lighter);
-    height: 2.2rem;
-    border-radius: 50%;
-    padding: 0.3rem;
-    border-color: var(--color-text-white);
+  border: 1px solid var(--color-text-lighter);
+  height: 2.2rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  border-color: var(--color-text-white);
 }
 
 .setupProfileModalAvailableItem svg {
-    color: var(--color-text);
-    transition: color 0.3s ease-in-out;
+  color: var(--color-text);
+  transition: color 0.3s ease-in-out;
 }
 
 .setupProfileModalAvailableItem:hover svg {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .setupProfileModalAvailableItemAddIcon {
-    height: 1.5rem;
-    cursor: pointer;
+  height: 1.5rem;
+  cursor: pointer;
 }
 
 /* Css for mobile view */
 @media (max-width: 768px) {
-    html {
-        font-size: 13px;
-    }
+  html {
+    font-size: 13px;
+  }
 
-    .setupProfileModalContainer {
-        height: 100%;
-    }
+  .setupProfileModalContainer {
+    height: 100%;
+  }
 
-    .setupProfileModalBody {
-        flex-direction: column-reverse;
-        gap: 1rem;
-        height: auto;
-    }
+  .setupProfileModalBody {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    height: auto;
+  }
 
-    .setupProfileModalBloc {
-        width: 100%;
-        height: 100%;
-    }
+  .setupProfileModalBloc {
+    width: 100%;
+    height: 100%;
+  }
 
-    .setupProfileModalBlocContent {
-        max-height: calc(100% - 45px);
-    }
+  .setupProfileModalBlocContent {
+    max-height: calc(100% - 45px);
+  }
 
-    .setupProfileModalFooter {
-        margin-top: 0.5rem;
-    }
+  .setupProfileModalFooter {
+    margin-top: 0.5rem;
+  }
 }

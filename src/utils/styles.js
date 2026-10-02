@@ -1,37 +1,39 @@
-import {createGlobalStyle} from 'styled-components'
-import styledNormalize from 'styled-normalize'
+import { createGlobalStyle } from 'styled-components';
+import styledNormalize from 'styled-normalize';
 
 export const themes = {
-    default: {
-        name: 'Clair',
-        colors: {
-            main: '#476C9B',
-            main20: '#476C9B33',
-            mainLight: '#DFECEB',
-            mainDark: '#1D625E',
-            second: '#EFF4F9',
-            secondDark: '#B1D4F6',
-            text: '#383838',
-            textGray: '#6A6A6A',
-            textLight: '#f6f6f6',
-            textLighter: '#C4C4C4',
-            error: '#FA1E43',
-            error20: '#FA1E4333',
-            errorLight: '#FEEBEF',
-            warning: '#FC5D00',
-            white: '#ffffff',
-            black: '#000000',
-        },
-        fonts: {
-            body: '"Marianne", Arial, sans-serif',
-            title: '"Marianne", Arial, sans-serif',
-        },
-        mq: {
-            small: `@media screen and (max-width: 576px)`,
-            medium: `@media screen and (max-width: 768px)`,
-        },
+  default: {
+    name: 'Clair',
+    colors: {
+      main: '#476C9B',
+      main20: '#476C9B33',
+
+      mainLight: '#DFECEB',
+      mainDark: '#1D625E',
+      second: '#EFF4F9',
+      secondDark: '#B1D4F6',
+
+      text: '#383838',
+      textGray: '#6A6A6A',
+      textLight: '#f6f6f6',
+      textLighter: '#C4C4C4',
+      error: '#FA1E43',
+      error20: '#FA1E4333',
+      errorLight: '#FEEBEF',
+      warning: '#FC5D00',
+      white: '#ffffff',
+      black: '#000000',
     },
-}
+    fonts: {
+      body: '"Marianne", Arial, sans-serif',
+      title: '"Marianne", Arial, sans-serif',
+    },
+    mq: {
+      small: `@media screen and (max-width: 576px)`,
+      medium: `@media screen and (max-width: 768px)`,
+    },
+  },
+};
 
 export const GlobalStyle = createGlobalStyle`
     ${styledNormalize}
@@ -177,4 +179,4 @@ export const GlobalStyle = createGlobalStyle`
     .table-rgpd tr:nth-child(odd) {
         background-color: ${(props) => props.theme.colors.textLight};
     }
-`
+`;

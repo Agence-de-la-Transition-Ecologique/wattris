@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: relative;
@@ -22,11 +22,11 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     padding: 1rem 1rem 1rem calc(1rem + 0.3125rem);
   }
-`
+`;
 export default function Alert(props) {
   return (
     <Wrapper {...props} error={props.error}>
       {props.children}
     </Wrapper>
-  )
+  );
 }

@@ -1,137 +1,140 @@
 .contentWrapper {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem 0;
-    margin: 1rem 0 0;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 1rem 0 0;
 }
 
 .blocWrapper {
-    width: 100%;
-    padding: 0;
+  width: 100%;
+  padding: 0;
 }
 
 .blocWrapperScore {
-    max-width: 320px;
-    margin-top: 2.85rem;
+  max-width: 320px;
+  margin-top: 2.85rem;
 }
 
 .title {
-    margin-bottom: 0.2rem;
-    color: var(--color-main);
-    font-weight: normal;
-    font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: var(--color-main);
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 .listAppliances {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .applianceItemIconLabel {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.applianceItemOK, .applianceItemKO {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    color: var(--color-black);
-    border-radius: 8px;
-    padding: 0.5rem 1.3rem;
-    margin: 0.25rem auto;
-    width: 100%;
-    cursor: pointer;
-    text-decoration: none;
+.applianceItemOK,
+.applianceItemKO {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-black);
+  border-radius: 8px;
+  padding: 0.5rem 1.3rem;
+  margin: 0.25rem auto;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .applianceItemOK {
-    background-color: var(--color-main-20);
-    border: 1px solid var(--color-main);
+  background-color: var(--color-main-20);
+  border: 1px solid var(--color-main);
 }
 
 .applianceItemKO {
-    background-color: var(--color-error-20);
-    border: 1px solid var(--color-error);
+  background-color: var(--color-error-20);
+  border: 1px solid var(--color-error);
 }
 
 .applianceItemLabel {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    line-height: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  line-height: 1rem;
 }
 
 .applianceItemLabel span {
-    font-size: 0.9rem;
-    font-weight: bolder;
+  font-size: 0.9rem;
+  font-weight: bolder;
 }
 
 .applianceItemLabel small {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
-.applianceItem svg, .applianceItemOK svg, .applianceItemKO svg {
-    height: 2.2rem;
+.applianceItem svg,
+.applianceItemOK svg,
+.applianceItemKO svg {
+  height: 2.2rem;
 }
 
 .applianceItemStatus {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: bold;
-    font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 0.875rem;
 }
 
 .applianceItemStatus svg {
-    height: 1.2rem;
+  height: 1.2rem;
 }
 
 .applianceItemOK .applianceItemStatus {
-    color: var(--color-main);
+  color: var(--color-main);
 }
 
 .applianceItemKO .applianceItemStatus {
-    color: var(--color-error);
+  color: var(--color-error);
 }
 
 .noteInfo {
-    font-size: 0.90rem;
-    background-color: var(--color-text-light);
-    border: 1px solid var(--color-text-lighter);
-    color: var(--color-black);
-    padding: 0.3rem 0.9rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1rem;
+  font-size: 0.9rem;
+  background-color: var(--color-text-light);
+  border: 1px solid var(--color-text-lighter);
+  color: var(--color-black);
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1rem;
 }
-
 
 /* Css for mobile view */
 @media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+  }
 
-    .contentWrapper {
-        flex-direction: column;
-    }
+  .blocWrapper,
+  .noteInfo,
+  .blocWrapperScore {
+    width: 90%;
+    margin: 0 auto;
+  }
 
-    .blocWrapper, .noteInfo, .blocWrapperScore {
-        width: 90%;
-        margin: 0 auto;
-    }
+  .blocWrapperScore {
+    max-width: 260px;
+    min-height: auto;
+  }
 
-    .blocWrapperScore {
-        max-width: 260px;
-        min-height: auto;
-    }
+  .blocWrapperScore > div {
+    margin-bottom: 0;
+  }
 
-    .blocWrapperScore > div {
-        margin-bottom: 0;
-    }
-
-    .title {
-        font-weight: bold;
-    }
+  .title {
+    font-weight: bold;
+  }
 }

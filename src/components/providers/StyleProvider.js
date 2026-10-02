@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
-import { themes } from 'utils/styles'
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { themes } from 'utils/styles';
 
-const StyleContext = React.createContext({})
+const StyleContext = React.createContext({});
 
 export function StyleProvider(props) {
-  const [theme, setTheme] = useState('default')
+  const [theme, setTheme] = useState('default');
 
   return (
     <StyleContext.Provider
@@ -14,11 +14,9 @@ export function StyleProvider(props) {
         setTheme,
       }}
     >
-      <ThemeProvider theme={{ ...themes[theme] }}>
-        {props.children}
-      </ThemeProvider>
+      <ThemeProvider theme={{ ...themes[theme] }}>{props.children}</ThemeProvider>
     </StyleContext.Provider>
-  )
+  );
 }
 
-export default StyleContext
+export default StyleContext;
