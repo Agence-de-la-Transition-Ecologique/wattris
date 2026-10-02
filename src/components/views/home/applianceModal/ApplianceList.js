@@ -1,51 +1,43 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
+import styles from 'styles/ApplianceModal.module.css'
 
 import DataContext from 'components/providers/DataProvider'
 import DeleteButton from 'components/misc/DeleteButton'
 import ButtonLink from 'components/base/ButtonLink'
-import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
 const Title = styled.p`
   margin-bottom: 0.75rem;
   font-weight: bold;
   text-align: center;
 `
-const AppliancesList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
 
-  ${(props) => props.theme.mq.small} {
-    gap: 0.75rem;
-  }
-`
 const Appliance = styled.button`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 4.5rem;
-  padding: 0.5rem;
-  color: ${(props) => props.theme.colors[props.hollow ? 'background' : 'main']};
-  background-color: ${(props) =>
-    props.theme.colors[props.hollow ? 'main' : 'background']};
-  border: 0.125rem solid ${(props) => props.theme.colors.background};
-  border-radius: 0.5rem;
-  cursor: pointer;
-  pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
-  opacity: ${(props) => (props.disabled ? 0.3 : props.hollow ? 0.8 : 1)};
-  transition: all 200ms ease-out;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
-
-  &:hover {
-    color: ${(props) => props.theme.colors.background};
-    background-color: ${(props) => props.theme.colors.main};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 4.5rem;
+    padding: 0.5rem;
+    color: ${(props) => props.theme.colors[props.hollow ? 'background' : 'main']};
+    background-color: ${(props) =>
+            props.theme.colors[props.hollow ? 'main' : 'background']};
     border: 0.125rem solid ${(props) => props.theme.colors.background};
-  }
+    border-radius: 0.5rem;
+    cursor: pointer;
+    pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
+    opacity: ${(props) => (props.disabled ? 0.3 : props.hollow ? 0.8 : 1)};
+    transition: all 200ms ease-out;
+
+    ${(props) => props.theme.mq.small} {
+        font-size: 0.75rem;
+    }
+
+    &:hover {
+        color: ${(props) => props.theme.colors.background};
+        background-color: ${(props) => props.theme.colors.main};
+        border: 0.125rem solid ${(props) => props.theme.colors.background};
+    }
 `
 const SortWrapper = styled.div`
   display: flex;
@@ -58,7 +50,7 @@ const SortButton = styled(ButtonLink)`
   font-size: 0.875rem;
   color: ${(props) => props.theme.colors.background};
 `
-export default function List() {
+export default function ApplianceList() {
   const {
     setAppliancesListOpen,
     occurrences,
@@ -82,7 +74,7 @@ export default function List() {
           {sortAppliancesByPower ? 'ordre alphabétique' : 'puissance maximale'}
         </SortButton>
       </SortWrapper>
-      <AppliancesList>
+      <div className={styles.appliancesList}>
         {sortedAppliances.map((appliance) => (
           <Appliance
             key={appliance.slug}
@@ -101,7 +93,7 @@ export default function List() {
             {appliance.name}
           </Appliance>
         ))}
-      </AppliancesList>
+      </div>
     </>
   )
 }

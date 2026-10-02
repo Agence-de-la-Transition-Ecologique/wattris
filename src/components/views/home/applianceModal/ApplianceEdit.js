@@ -10,10 +10,10 @@ import OccurrenceButtons from './appliance/OccurrenceButtons'
 import DeleteButton from 'components/misc/DeleteButton'
 
 const Occurrences = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin: 0 -0.675rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0 -0.675rem;
 `
 const Title = styled.p`
   margin-bottom: 0.75rem;
@@ -56,7 +56,7 @@ const StyledButtonLink = styled(ButtonLink)`
   color: ${(props) => props.theme.colors.background};
 `
 
-export default function Appliance(props) {
+export default function ApplianceEdit(props) {
   const { setActive } = useContext(DataContext)
 
   const [fullDescription, setFullDescription] = useState(false)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 
 import Section from 'components/base/Section'
@@ -15,11 +15,13 @@ const StyledSectionContent = styled(Section.Content)`
     transition: border 300ms ease-out;
 `
 export default function Home(props) {
+    const timelineRef = useRef(null);
+
     return (
         <Section id='home'>
             <StyledSectionContent $hoverIframe={props.hoverIframe}>
-                <Timeline/>
-                <ApplianceModal/>
+                <Timeline timelineRef={timelineRef}/>
+                <ApplianceModal timelineRef={timelineRef}/>
                 <Appliances/>
                 <OpenSetupProfileButton/>
                 <AdviseAndRecommendations/>

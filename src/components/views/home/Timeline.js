@@ -18,7 +18,7 @@ const Steps = styled.div`
             to(rgba(0, 0, 0, 1))
     );
 `
-export default function Timeline() {
+export default function Timeline({timelineRef}) {
     const {steps, stepDurationInMinute} = useAllBlocsByStep()
     const {axisYMaxPower} = useAxisAndPowerInfos()
     const iframe = useIframe()
@@ -30,7 +30,13 @@ export default function Timeline() {
     return (
         <>
             <div ref={spacerRef} style={{height: 0}}/>
-            <div ref={containerRef} className={styles.timelineWrapper}>
+            <div
+                ref={(node) => {
+                    containerRef.current = node
+                    if (timelineRef) timelineRef.current = node
+                }}
+                className={styles.timelineWrapper}
+            >
                 <Axis/>
                 <Steps>
                     {steps.map((step, index) => (
