@@ -10,12 +10,6 @@ const Wrapper = styled.div`
   height: 26.25rem;
   margin-top: -1.25rem;
 `
-
-const Indicator = styled.div`
-  position: absolute;
-  bottom: calc(100% - 0.25rem);
-  font-size: 0.75rem;
-`
 export default function Step(props) {
   const peak = useMemo(
     () =>
@@ -24,17 +18,11 @@ export default function Step(props) {
     [props.hour]
   )
 
-  const totalPower = useMemo(
-    () => props.step.reduce((acc, cur) => acc + cur.power, 0),
-    [props.step]
-  )
-
   return (
     <Wrapper $width={props.width}>
       {props.step.map((bloc, index) => {
         return <Bloc key={index} bloc={bloc} peak={peak} axisYMaxPower={props.axisYMaxPower} />
       })}
-      {totalPower > 2500 ? <Indicator>More</Indicator> : null}
     </Wrapper>
   )
 }
