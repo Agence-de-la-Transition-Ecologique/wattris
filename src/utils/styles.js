@@ -15,9 +15,11 @@ export const themes = {
       textGray: '#6A6A6A',
       textLight: '#f6f6f6',
       textLighter: '#C4C4C4',
-      error: '#FA1E43',
-      error20: '#FA1E4333',
+
+      error: '#EE031D',
+      error20: '#EE031D33',
       errorLight: '#FEEBEF',
+
       warning: '#FC5D00',
       white: '#ffffff',
       black: '#000000',
