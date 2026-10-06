@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAxisAndPowerInfos } from 'hooks/useAppliances';
+import ChevronRightIcon from '../../../../icons/ChevronRightIcon';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -11,7 +12,6 @@ const Wrapper = styled.div`
   height: 0.0625rem;
   transform: translateY(50%);
   background-color: ${(props) => props.theme.colors.textLighter};
-  cursor: pointer;
 
   span {
     position: absolute;
@@ -26,10 +26,7 @@ const Wrapper = styled.div`
     position: absolute;
     right: 0;
     transform: translateY(-50%);
-
-    path {
-      fill: ${(props) => props.theme.colors.textLighter};
-    }
+    color: ${(props) => props.theme.colors.textLighter};
   }
 `;
 export default function Ticks(props) {
@@ -40,11 +37,7 @@ export default function Ticks(props) {
       {axisYIntervals.map((position) => (
         <Wrapper key={position} $position={position} $axisYMaxPower={axisYMaxPower}>
           <span>{position === 0 ? '0' : `${position}\u00A0W`}</span>
-          {position === 0 && (
-            <svg width="8" height="14" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.16973 7L0.219727 2.05L1.63973 0.639999L7.99973 7L1.63973 13.36L0.219727 11.95L5.16973 7Z" />
-            </svg>
-          )}
+          {position === 0 && <ChevronRightIcon />}
         </Wrapper>
       ))}
     </>
