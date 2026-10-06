@@ -25,7 +25,7 @@ const DescriptionWrapper = styled.div`
 `;
 
 const Description = styled.div`
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   font-size: 0.875rem;
   font-style: italic;
   text-align: left;

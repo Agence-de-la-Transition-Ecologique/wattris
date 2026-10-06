@@ -4,7 +4,7 @@ import ButtonLink from 'components/base/ButtonLink';
 
 const StyledButtonLink = styled(ButtonLink)`
   position: absolute;
-  bottom: 0.5rem;
+  bottom: 0.25rem;
   right: 0.5rem;
   font-size: 0.875rem;
   color: ${(props) => props.theme.colors.white};
