@@ -1,5 +1,6 @@
 .contentWrapper {
   display: flex;
+  flex-direction: row-reverse;
   gap: 1rem;
   padding: 1rem 0;
   margin: 1rem 0 0;
