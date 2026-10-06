@@ -123,20 +123,18 @@
   margin-bottom: 0.5rem;
 }
 
-.setupProfileModalSelectedItem > button {
-  margin-left: 1.2rem;
+.setupProfileModalSelectedItemDeleteButton {
+  display: inline;
+  margin-left: 0.5rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 
-.setupProfileModalSelectedItem svg {
+.setupProfileModalSelectedItemDeleteButton > svg {
   height: 1.2rem;
   vertical-align: middle;
-}
-
-.setupProfileModalSelectedItemDeleteButton {
-  background-color: transparent;
-  border: none;
-  display: inline;
 }
 
 .setupProfileModalAvailableCategory {
