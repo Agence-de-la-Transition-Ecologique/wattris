@@ -59,6 +59,8 @@ export default function Occurrence(props) {
 
   const peak = usePeak(props.occurrence);
 
+  const isFullTime = useMemo(() => props.occurrence.duration === 24, [props.occurrence.duration]);
+
   return (
     <Wrapper
       href="#home"
@@ -92,16 +94,19 @@ export default function Occurrence(props) {
           />
         </svg>
       </Title>
-      <StartSelector
-        start={props.occurrence.start}
-        peak={peak}
-        onChange={([start]) => {
-          editOccurrence({
-            occurrenceIndex: props.index,
-            newOccurrence: { ...props.occurrence, start },
-          });
-        }}
-      />
+
+      {!isFullTime && (
+        <StartSelector
+          start={props.occurrence.start}
+          peak={peak}
+          onChange={([start]) => {
+            editOccurrence({
+              occurrenceIndex: props.index,
+              newOccurrence: { ...props.occurrence, start },
+            });
+          }}
+        />
+      )}
     </Wrapper>
   );
 }
