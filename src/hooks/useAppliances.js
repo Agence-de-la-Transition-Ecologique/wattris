@@ -166,43 +166,56 @@ export function getPowerForStep({ step, appliance, start, duration }) {
     return appliance.power;
   }
 
-  let end = start + duration;
-  end = end > 24 ? end - (24 + stepDurationInMinute / 60) : end;
+  let stop = start + duration;
+  stop = stop > 24 ? stop - (24 + stepDurationInMinute / 60) : stop;
 
-  let initialPowerEnd = start + appliance.initialPowerLength / 60;
-  initialPowerEnd =
-    initialPowerEnd > 24 ? initialPowerEnd - (24 + stepDurationInMinute / 60) : initialPowerEnd;
+  let initialPowerStop,
+    initialPowerStopStep = NaN;
+  if (appliance.initialPowerLength) {
+    initialPowerStop = start + appliance.initialPowerLength / 60;
+    initialPowerStop =
+      initialPowerStop > 24
+        ? initialPowerStop - (24 + stepDurationInMinute / 60)
+        : initialPowerStop;
+    initialPowerStopStep = Math.trunc(initialPowerStop * (60 / stepDurationInMinute));
+  }
 
-  let endPowerEnd = end - appliance.endPowerLength / 60;
-  endPowerEnd = endPowerEnd < 0 ? endPowerEnd + (24 + stepDurationInMinute / 60) : endPowerEnd;
+  let endPowerStop,
+    endPowerStopStep = NaN;
+  if (appliance.endPowerLength) {
+    endPowerStop = stop - appliance.endPowerLength / 60;
+    endPowerStop =
+      endPowerStop < 0 ? endPowerStop + (24 + stepDurationInMinute / 60) : endPowerStop;
+    endPowerStopStep = Math.trunc(endPowerStop * (60 / stepDurationInMinute));
+  }
 
-  const startInStep = Math.floor(start * (60 / stepDurationInMinute));
-  const endInStep = Math.ceil(end * (60 / stepDurationInMinute));
-  const initialPowerEndInStep = Math.ceil(initialPowerEnd * (60 / stepDurationInMinute));
-  const endPowerEndInStep = Math.ceil(endPowerEnd * (60 / stepDurationInMinute));
-  const runAtNight = endInStep < startInStep;
-  const initialPowerAtNight = initialPowerEndInStep < startInStep;
+  const startStep = Math.trunc(start * (60 / stepDurationInMinute));
+  const stopStep = Math.trunc(stop * (60 / stepDurationInMinute));
+
+  const runAtNight = stopStep < startStep;
+  const initialPowerAtNight = initialPowerStopStep < startStep;
 
   if (
-    step >= startInStep &&
-    (step < initialPowerEndInStep || initialPowerAtNight) &&
-    (step < endInStep || runAtNight)
+    step >= startStep &&
+    (step < initialPowerStopStep || initialPowerAtNight) &&
+    (step < stopStep || runAtNight)
   ) {
     return appliance.initialPower || appliance.power;
   }
-  if (step > endPowerEndInStep && step <= endInStep) {
+
+  if (step > endPowerStopStep && step <= stopStep) {
     return appliance.endPower || appliance.power;
   }
 
-  if (initialPowerAtNight && step <= initialPowerEndInStep) {
+  if (initialPowerAtNight && step <= initialPowerStopStep) {
     return appliance.initialPower || appliance.power;
   }
 
-  if (step >= startInStep && step < endInStep) {
+  if (step >= startStep && step < stopStep) {
     return appliance.power;
   }
 
-  if (runAtNight && (step >= startInStep || step <= endInStep)) {
+  if (runAtNight && (step >= startStep || step <= stopStep)) {
     return appliance.power;
   }
   return 0;
