@@ -1,35 +1,40 @@
+DOCKER_APP_RUN_USER=@docker compose run --rm -it -u 1000 app
+
 yarn.install:
-	docker compose run --rm app yarn --frozen-lockfile
+	$(DOCKER_APP_RUN_USER) yarn --frozen-lockfile
 
 yarn.fresh-install:
-	docker compose run --rm app yarn install
+	$(DOCKER_APP_RUN_USER) yarn install
 
 yarn.dev:
-	docker compose run --rm app yarn dev
+	$(DOCKER_APP_RUN_USER) yarn dev
 
 yarn.build:
-	docker compose run --rm app yarn build
+	$(DOCKER_APP_RUN_USER) yarn build
 
 yarn.start:
-	docker compose run --rm app yarn start
+	$(DOCKER_APP_RUN_USER) yarn start
 
 yarn.build-static:
-	docker compose run --rm app yarn build:static
+	$(DOCKER_APP_RUN_USER) yarn build:static
+
+audit:
+	$(DOCKER_APP_RUN_USER) yarn audit
 
 lint:
-	docker compose run --rm app yarn lint
+	$(DOCKER_APP_RUN_USER) yarn lint
 
 format:
-	docker compose run --rm app yarn format
+	$(DOCKER_APP_RUN_USER) yarn format
 
 format.check:
-	docker compose run --rm app yarn format:check
+	$(DOCKER_APP_RUN_USER) yarn format:check
 
 test:
-	docker compose run --rm app yarn test
+	$(DOCKER_APP_RUN_USER) yarn test
 
 test.coverage:
-	docker compose run --rm app yarn test:coverage
+	$(DOCKER_APP_RUN_USER) yarn test:coverage
 
 build:
 	docker compose build --no-cache

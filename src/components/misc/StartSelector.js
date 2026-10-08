@@ -44,7 +44,7 @@ const Thumb = styled.div`
   border-radius: 0.5rem;
   pointer-events: auto;
 `;
-export default function Slider(props) {
+export default function StartSelector(props) {
   return (
     <Wrapper className={props.className} onClick={(e) => e.stopPropagation()} $large={props.large}>
       <Range

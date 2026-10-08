@@ -28,7 +28,12 @@ make yarn.dev            # Lance le serveur de développement
 make yarn.build          # Compile l'iframe et génère le build de production
 make yarn.start          # Démarre le serveur en mode production (après build)
 make yarn.build-static   # Génère le build statique
+make audit               # Analyse les dépendances avec `yarn audit`
 make lint                # Analyse le code avec ESLint
+make format              # Formate le code avec Prettier
+make format.check        # Vérifie le formatage du code avec Prettier
+make test                # Lance les tests unitaires avec Jest
+make test.coverage       # Lance les tests unitaires avec Jest et génère le rapport de couverture
 make build               # Build l'image Docker sans cache
 make start               # Démarre les conteneurs Docker en arrière-plan
 make stop                # Arrête les conteneurs Docker
