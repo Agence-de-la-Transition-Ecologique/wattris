@@ -7,9 +7,7 @@ export default function SelectedAppliances({ occurrences, onDelete }) {
     <section className={styles.setupProfileModalBloc}>
       <h4 className={styles.setupProfileModalBlocTitle}>Correspondez-vous à ce profil ?</h4>
       <small className={styles.setupProfileModalBlocSubtitle}>
-        Si certains appareils ne sont pas disponibles dans
-        <br />
-        votre foyer, cliquez sur X
+        Si certains appareils ne sont pas disponibles dans votre foyer, cliquez sur X
       </small>
       <div className={styles.setupProfileModalBlocContent}>
         {occurrences &&

@@ -6,8 +6,7 @@ export default function AvailableAppliances({ categoryAppliances, onAdd }) {
   return (
     <section className={styles.setupProfileModalBloc}>
       <h4 className={styles.setupProfileModalBlocTitle}>
-        Les appareils présents dans votre foyer à<br />
-        ajouter au profil
+        Les appareils présents dans votre foyer à ajouter au profil
       </h4>
       <small className={styles.setupProfileModalBlocSubtitle}>
         Pour ajouter des appareils à votre profil, cliquez sur +
