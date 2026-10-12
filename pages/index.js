@@ -31,7 +31,7 @@ export default function Index() {
           </Title>
           <Text>
             Simulez les besoins électriques de votre foyer. Découvrez quels appareils consomment le
-            pluset les périodes où vos besoins électriques sont les plus importants. Simulez le
+            plus et les périodes où vos besoins électriques sont les plus importants. Simulez le
             décalage de vos appareils pour réduire la demande en électricité lors des heures de
             pointes (de 7h à 11h et de 18h à 20h), ou pour consommer sur les heures qui vous coûtent
             le moins cher (dépendant de votre contrat) !
