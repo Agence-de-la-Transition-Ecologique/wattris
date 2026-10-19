@@ -4,7 +4,7 @@
   border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   gap: 0 1rem;
   grid-template-areas:
     'Header'
@@ -267,16 +267,22 @@
   .setupProfileModalBody {
     flex-direction: column-reverse;
     gap: 1rem;
-    height: auto;
+    min-height: 0;
   }
 
   .setupProfileModalBloc {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 0;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .setupProfileModalBlocContent {
-    max-height: calc(100% - 45px);
+    flex: 1 1 0;
+    min-height: 0;
+    max-height: none;
   }
 
   .setupProfileModalFooter {
