@@ -1,43 +1,43 @@
-import React, { useState } from 'react'
-import appliances from 'data/appliances.json'
-import initDefaultAppliances from 'data/initDefaultAppliances.json'
-import dataCategoryAppliances from 'data/categoryAppliances.json'
-import watchedApplianceSlugs from 'data/adviseWatchedAppliances.json'
+import React, { useState } from 'react';
+import appliances from 'data/appliances.json';
+import initDefaultAppliances from 'data/initDefaultAppliances.json';
+import dataCategoryAppliances from 'data/categoryAppliances.json';
+import watchedApplianceSlugs from 'data/adviseWatchedAppliances.json';
 
-const DataContext = React.createContext({})
+const DataContext = React.createContext({});
 
 export function DataProvider(props) {
-  const [occurrences, setOccurrences] = useState([])
+  const [occurrences, setOccurrences] = useState([]);
 
-  const [hover, setHover] = useState(null)
-  const [active, setActive] = useState(null)
+  const [hover, setHover] = useState(null);
+  const [active, setActive] = useState(null);
 
-  const [appliancesListOpen, setAppliancesListOpen] = useState(false)
-  const [sortAppliancesByPower, setSortAppliancesByPower] = useState(false)
+  const [appliancesListOpen, setAppliancesListOpen] = useState(false);
+  const [sortAppliancesByPower, setSortAppliancesByPower] = useState(false);
 
   const sortedAppliances = sortAppliancesByPower
     ? appliances.sort((a, b) => b.power - a.power)
-    : appliances.sort((a, b) => a.name.localeCompare(b.name))
+    : appliances.sort((a, b) => a.name.localeCompare(b.name));
 
   const defaultOccurrences = Object.entries(initDefaultAppliances).map(([slug, occurrence]) => ({
     slug,
     name: appliances.find((a) => a.slug === slug)?.name ?? slug,
     ...occurrence,
-  }))
+  }));
 
   const mapOccurrencesListWithNames = (occurrencesList) => {
     return occurrencesList.map((occurrence) => ({
       ...occurrence,
       name: appliances.find((a) => a.slug === occurrence.slug)?.name ?? occurrence.slug,
-    }))
-  }
+    }));
+  };
 
   const categoryAppliances = dataCategoryAppliances.map((category) => ({
     ...category,
     items: category.items
       .map((slug) => {
-        const appliance = appliances.find((a) => a.slug === slug)
-        if (!appliance) return null
+        const appliance = appliances.find((a) => a.slug === slug);
+        if (!appliance) return null;
         return {
           slug,
           name: appliance.name,
@@ -45,36 +45,36 @@ export function DataProvider(props) {
           boldIcon: appliance.boldIcon,
           start: appliance.defaultOccurrence.start,
           duration: appliance.defaultOccurrence.duration,
-        }
+        };
       })
       .filter(Boolean)
       .sort((a, b) => a.name.localeCompare(b.name)),
-  }))
+  }));
 
   const addOccurrence = (occurrence) => {
-    setOccurrences((prevOccurrences) => [...prevOccurrences, occurrence])
-    setActive({ appliance: occurrence.slug, new: true })
-  }
+    setOccurrences((prevOccurrences) => [...prevOccurrences, occurrence]);
+    setActive({ appliance: occurrence.slug, new: true });
+  };
 
   const editOccurrence = ({ occurrenceIndex, newOccurrence }) => {
     setOccurrences((prevOccurrences) =>
       prevOccurrences.map((occurrence, index) =>
         index === occurrenceIndex ? newOccurrence : occurrence
       )
-    )
-  }
+    );
+  };
 
   const deleteOccurrence = ({ occurrenceIndex }) => {
     setOccurrences((prevOccurrences) =>
       prevOccurrences.filter((occurrence, index) => index !== occurrenceIndex)
-    )
-  }
+    );
+  };
 
   const deleteAllOccurrencesOfAppliance = ({ appliance }) => {
     setOccurrences((prevOccurrences) =>
       prevOccurrences.filter((occurrence) => occurrence.slug !== appliance.slug)
-    )
-  }
+    );
+  };
 
   return (
     <DataContext.Provider
@@ -98,12 +98,12 @@ export function DataProvider(props) {
         sortedAppliances,
         defaultOccurrences,
         mapOccurrencesListWithNames,
-        watchedApplianceSlugs
+        watchedApplianceSlugs,
       }}
     >
       {props.children}
     </DataContext.Provider>
-  )
+  );
 }
 
-export default DataContext
+export default DataContext;

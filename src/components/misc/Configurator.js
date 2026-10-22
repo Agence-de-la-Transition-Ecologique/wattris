@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import useIframe from 'hooks/useIframe'
-import Section from 'components/base/Section'
-import Code from './configurator/Code'
+import useIframe from 'hooks/useIframe';
+import Section from 'components/base/Section';
+import Code from './configurator/Code';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -11,12 +11,12 @@ const Wrapper = styled.div`
   padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-`
+`;
 const Title = styled.h1`
   font-size: 2rem;
-`
+`;
 export default function Configurator(props) {
-  const iframe = useIframe()
+  const iframe = useIframe();
   return (
     !iframe && (
       <Section>
@@ -31,5 +31,5 @@ export default function Configurator(props) {
         </Section.Content>
       </Section>
     )
-  )
+  );
 }

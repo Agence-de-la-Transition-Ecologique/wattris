@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import Web from 'components/layout/Web'
-import Section from 'components/base/Section'
+import Web from 'components/layout/Web';
+import Section from 'components/base/Section';
 
 export default function notfound() {
   return (
@@ -12,5 +12,5 @@ export default function notfound() {
         </Section.Content>
       </Section>
     </Web>
-  )
+  );
 }

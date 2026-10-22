@@ -1,12 +1,15 @@
 .setupProfileModalContainer {
-  width: 100%;
-  height: calc(85vh - 70px);
-  background-color: var(--color-text-light, #C4C4C4);
+  height: 100%;
+  background-color: var(--color-text-light);
   border-radius: 8px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 0 1rem;
+  grid-template-areas:
+    'Header'
+    'Appliances'
+    'Footer';
 }
 
 .setupProfileModalHeader {
@@ -18,48 +21,61 @@
   font-size: 1.7rem;
   margin-bottom: 0;
   font-weight: bold;
-  color: var(--color-main, #476C9B);
-}
-
-.setupProfileModalSubtitle {
-  font-size: 0.9rem;
-  color: var(--color-text-lighter, #C4C4C4);
+  color: var(--color-main);
 }
 
 .setupProfileModalBody {
-  height: calc(100% - 115px);
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .setupProfileModalBloc {
-  width: 48%;
-  height: 100%;
-  border: 1px solid var(--color-text-lighter, #C4C4C4);
+  position: relative;
+  width: calc(50% - 0.5rem);
+  border: 1px solid var(--color-text-lighter);
   border-radius: 25px;
   overflow-y: hidden;
-  color: var(--color-text-lighter, #C4C4C4);
-  background-color: var(--color-background, #FFFFFF);
-  padding: 0.5rem;
+  color: var(--color-text-lighter);
+  background-color: var(--color-white);
+  padding: 0.5rem 0.5rem 1.5rem;
+}
+
+.setupProfileModalBloc::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5rem;
+  background-color: var(--color-white);
 }
 
 .setupProfileModalBlocTitle {
   font-size: 1.2rem;
   margin-bottom: 0;
   font-weight: bold;
-  color: var(--color-main, #476C9B);
+  color: var(--color-main);
   padding: 0.8rem;
 }
 
+.setupProfileModalBlocSubtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--color-text-lighter);
+  padding: 0 0.8rem 0.8rem;
+}
+
 .setupProfileModalBlocContent {
-  padding: 0.2rem 0.8rem 0.8rem;
-  max-height: calc(100% - 70px);
+  padding: 0.2rem 0.8rem;
+  max-height: calc(100% - 105px);
   overflow-y: auto;
   font-size: 0.9rem;
-  color: var(--color-text, #383838);
+  color: var(--color-text);
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: var(--color-main, #476C9B) var(--color-text-light, #C4C4C4);
+  scrollbar-color: var(--color-main) var(--color-text-light);
 }
 
 .setupProfileModalFooter {
@@ -70,22 +86,9 @@
   justify-content: center;
 }
 
-.setupProfileModalButton {
-  background-color: var(--color-main, #476C9B);
-  color: var(--color-background, #FFFFFF);
-  border: none;
-  border-radius: 25px;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-
 .setupProfileModalButtonIcon {
   margin-left: 0.5rem;
-  height: 1.3rem;  
+  height: 1.3rem;
   width: auto;
 }
 
@@ -95,58 +98,131 @@
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-track {
-  background: var(--color-text-light, #C4C4C4);
+  background: var(--color-text-light);
   border-radius: 999px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-thumb {
-  background: var(--color-main, #476C9B);
+  background: var(--color-main);
   border-radius: 999px;
 }
 
 .setupProfileModalBlocContent::-webkit-scrollbar-thumb:hover {
-  background: var(--color-main-dark, #1D625E);
+  background: var(--color-main-dark);
 }
 
 .setupProfileModalSelectedItem {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-text, #FFFFFF);
-    border: 1px solid var(--color-text-lighter, #C4C4C4);
-    border-radius: 8px;
-    padding: 0.5rem 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text);
+  border: 1px solid var(--color-text-lighter);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.setupProfileModalSelectedItem svg {
-    margin-left: 1.2rem;
-    cursor: pointer;
-    height: 1.2rem;
+.setupProfileModalSelectedItemDeleteButton {
+  display: inline;
+  margin-left: 0.5rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.setupProfileModalSelectedItemDeleteButton > svg {
+  height: 1.2rem;
+  vertical-align: middle;
 }
 
 .setupProfileModalAvailableCategory {
-    margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
+  border-bottom: 1px solid var(--color-text-gray);
 }
 
 .setupProfileModalAvailableCategoryTitle {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #6C757D;
+  position: relative;
+  margin-bottom: 0;
+  color: var(--color-text-gray);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableCategoryTitle > button {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.2rem;
+  width: 100%;
+  color: var(--color-text-gray);
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableCategoryTitle > button:hover {
+  cursor: pointer;
+  background-color: var(--color-main-20);
+}
+
+.setupProfileModalAvailableCategoryTitle > button[aria-expanded='true'] {
+  background-color: var(--color-main-20);
+}
+
+.setupProfileModalAvailableCategoryTitle > button::after {
+  content: '';
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0.5rem;
+  border-right: 1px solid var(--color-text-gray);
+  border-bottom: 1px solid var(--color-text-gray);
+  transform: rotate(45deg);
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableCategoryTitle > button[aria-expanded='true']::after {
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+.setupProfileModalAvailableCategoryContent {
+  padding-left: 0.5rem;
+  overflow-y: hidden;
+  height: 0;
+  transition: height 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableCategoryContent[aria-hidden='false'] {
+  overflow-y: visible;
+  height: auto;
+  margin-top: 0.5rem;
 }
 
 .setupProfileModalAvailableItem {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-text, #383838);
-    border: 1px solid var(--color-text-lighter, #C4C4C4);
-    background-color: #fafafa;
-    border-radius: 8px;
-    padding: 0.5rem 0.8rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-main);
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid var(--color-text-lighter);
+  background-color: var(--color-text-light);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableItem:hover {
+  background-color: var(--color-main);
+  color: var(--color-white);
 }
 
 .setupProfileModalAvailableItemLabelIcon {
@@ -155,19 +231,22 @@
   justify-content: flex-start;
   gap: 1rem;
 }
-.setupProfileModalAvailableItemLabelIcon span {
-  color: var(--color-main, #476C9B);
-}
 
 .setupProfileModalAvailableItemLabelIcon svg {
-  border: 1px solid var(--color-text-lighter, #C4C4C4);
+  border: 1px solid var(--color-text-lighter);
   height: 2.2rem;
   border-radius: 50%;
   padding: 0.3rem;
+  border-color: var(--color-text-white);
 }
 
 .setupProfileModalAvailableItem svg {
-    color: var(--color-text, #383838);
+  color: var(--color-text);
+  transition: color 0.3s ease-in-out;
+}
+
+.setupProfileModalAvailableItem:hover svg {
+  color: var(--color-white);
 }
 
 .setupProfileModalAvailableItemAddIcon {
@@ -181,29 +260,32 @@
     font-size: 13px;
   }
 
-  .setupProfileModal {
-    overflow-y: hidden;
-  }
-
   .setupProfileModalContainer {
-    height: calc(90vh - 70px);
-    padding: 0.5rem;
-    overflow-y: auto;
+    height: 100%;
   }
 
   .setupProfileModalBody {
     flex-direction: column-reverse;
-    height: auto;
+    gap: 1rem;
+    min-height: 0;
   }
 
   .setupProfileModalBloc {
     width: 100%;
-    margin-bottom: 1rem;
-    min-height: 220px;
-    max-height: calc(45vh - 70px);
+    height: auto;
+    min-height: 0;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .setupProfileModalBlocContent {
-    max-height: calc(100% - 45px);
+    flex: 1 1 0;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .setupProfileModalFooter {
+    margin-top: 0.5rem;
   }
 }

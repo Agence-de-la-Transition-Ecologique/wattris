@@ -1,22 +1,22 @@
-import React, { useContext } from 'react'
-import styled, { keyframes } from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
-import Occurrence from 'components/views/home/appliances/Occurrence'
-import Button from 'components/base/Button'
+import React, { useContext } from 'react';
+import styled, { keyframes } from 'styled-components';
+import DataContext from 'components/providers/DataProvider';
+import ModalContext from 'components/providers/ModalProvider';
+import Occurrence from 'components/views/home/appliances/Occurrence';
+import Button from 'components/base/Button';
 
 const blink = keyframes`
-  from,
-  25%,
-  50% {
-    opacity: 1;
-  }
-  12.5%,
-  37.5% {
-    opacity: 0;
-  }
+    from,
+    25%,
+    50% {
+        opacity: 1;
+    }
+    12.5%,
+    37.5% {
+        opacity: 0;
+    }
 
-`
+`;
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -27,15 +27,16 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     grid-template-columns: repeat(3, 1fr);
   }
+
   ${(props) => props.theme.mq.small} {
     grid-template-columns: repeat(2, 1fr);
   }
-`
+`;
 const AddOccurrenceWrapper = styled.div`
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
   display: flex;
   flex-direction: column;
-`
+`;
 
 const AddOccurrenceButton = styled(Button)`
   display: flex;
@@ -45,42 +46,29 @@ const AddOccurrenceButton = styled(Button)`
   height: 100%;
   padding: 0.75rem 0.75rem;
   text-align: left;
-  color: ${(props) => props.theme.colors[props.blink ? 'background' : 'main']};
-  background-color: ${(props) =>
-    props.theme.colors[props.blink ? 'main' : 'background']};
+  color: ${(props) => props.theme.colors[props.$blink ? 'white' : 'main']};
+  background-color: ${(props) => props.theme.colors[props.$blink ? 'main' : 'white']};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.75rem;
   box-shadow: none;
-  transition: all 300ms ease-out;
   cursor: pointer;
   transition: opacity 500ms 300ms;
-  animation: ${(props) => (props.blink ? blink : '')} 2000ms infinite 3000ms;
+  animation: ${(props) => (props.$blink ? blink : '')} 2000ms infinite 3000ms;
 
   svg {
     width: 1.5rem;
     height: auto;
-    path {
-      fill: ${(props) =>
-        props.theme.colors[props.blink ? 'background' : 'main']};
-    }
   }
 
   &:hover {
-    color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.white};
     background-color: ${(props) => props.theme.colors.main};
-
-    path {
-      fill: ${(props) => props.theme.colors.background};
-    }
   }
-`
+`;
 
 export default function Appliances() {
-  const { occurrences, appliancesListOpen, setAppliancesListOpen } =
-    useContext(DataContext)
-  const {
-    introductionOpen
-  } = useContext(ModalContext)
+  const { occurrences, appliancesListOpen, setAppliancesListOpen } = useContext(DataContext);
+  const { introductionOpen } = useContext(ModalContext);
 
   const occurrencesByAppliance =
     occurrences.length &&
@@ -92,7 +80,7 @@ export default function Appliances() {
             ? { ...acc, [cur.slug]: [...acc[cur.slug], cur] }
             : { ...acc, [cur.slug]: [cur] },
         {}
-      )
+      );
 
   return (
     <Wrapper>
@@ -107,18 +95,20 @@ export default function Appliances() {
           />
         ))
       )}
-      <AddOccurrenceWrapper
-        visible={
-          !introductionOpen || occurrences.length > 0
-        }
-      >
+      <AddOccurrenceWrapper $visible={!introductionOpen || occurrences.length > 0}>
         <AddOccurrenceButton
-          to='#home'
+          to="#home"
           onClick={() => setAppliancesListOpen(true)}
-          blink={!occurrences.length && !appliancesListOpen}
+          $blink={!occurrences.length && !appliancesListOpen}
         >
-          <svg width='14' height='15' viewBox='0 0 14 15'>
-            <path d='M14 6.16472V8.83528C14 9.03631 13.8371 9.19945 13.6358 9.19945H8.69947V14.1358C8.69947 14.3371 8.53634 14.5 8.3353 14.5H5.66474C5.46382 14.5 5.30057 14.3371 5.30057 14.1358V9.19945H0.364169C0.162972 9.19945 0 9.03631 0 8.83528V6.16472C0 5.96364 0.162972 5.80055 0.364169 5.80055H5.30057V0.864146C5.30057 0.662869 5.46378 0.499977 5.66474 0.499977H8.3353C8.53634 0.499977 8.69947 0.662869 8.69947 0.864146V5.80055H13.6358C13.8371 5.80055 14 5.96364 14 6.16472Z' />
+          <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M14 6.16472V8.83528C14 9.03631 13.8371 9.19945 13.6358 9.19945H8.69947V14.1358C8.69947 14.3371 8.53634 14.5 8.3353 14.5H5.66474C5.46382 14.5 5.30057 14.3371 5.30057 14.1358V9.19945H0.364169C0.162972 9.19945 0 9.03631 0 8.83528V6.16472C0 5.96364 0.162972 5.80055 0.364169 5.80055H5.30057V0.864146C5.30057 0.662869 5.46378 0.499977 5.66474 0.499977H8.3353C8.53634 0.499977 8.69947 0.662869 8.69947 0.864146V5.80055H13.6358C13.8371 5.80055 14 5.96364 14 6.16472Z" />
           </svg>
           Ajouter
           <br />
@@ -126,5 +116,5 @@ export default function Appliances() {
         </AddOccurrenceButton>
       </AddOccurrenceWrapper>
     </Wrapper>
-  )
+  );
 }

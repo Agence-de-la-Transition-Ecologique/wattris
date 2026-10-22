@@ -1,23 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import MagicLink from 'components/base/MagicLink'
-import Marianne from 'components/base/Marianne'
-import Ademe from 'components/base/Ademe'
+import MagicLink from 'components/base/MagicLink';
+import Marianne from 'components/base/Marianne';
+import Ademe from 'components/base/Ademe';
 
 const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 const StyledMagicLink = styled(MagicLink)`
   display: block;
   margin: 0.75rem auto;
   font-size: 0.75rem;
   font-weight: 300;
   text-align: center;
-`
+`;
 const Logos = styled(MagicLink)`
   display: flex;
   justify-content: center;
@@ -30,21 +30,19 @@ const Logos = styled(MagicLink)`
     padding: 0 0.25rem;
     font-size: ${(props) => (props.iframe ? 0.75 : 1)}rem;
   }
-`
+`;
 export default function IframeFooter() {
   return (
     <Wrapper>
-      <StyledMagicLink to='https://wattris.ademe.fr/'>
-        Voir la version détaillée
-      </StyledMagicLink>
+      <StyledMagicLink to="https://wattris.ademe.fr/">Voir la version détaillée</StyledMagicLink>
       <Logos
-        to='https://beta.gouv.fr/startups/?incubateur=ademe'
-        aria-label='beta.gouv.incubateur-ademe'
+        to="https://beta.gouv.fr/startups/?incubateur=ademe"
+        aria-label="beta.gouv.incubateur-ademe"
         noIcon
       >
         <Marianne />
         <Ademe />
       </Logos>
     </Wrapper>
-  )
+  );
 }

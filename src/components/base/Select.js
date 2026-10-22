@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margin-bottom: 1.5rem;
-`
+`;
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-`
+`;
 const Input = styled.select`
   padding: 0.5rem 2rem 0.5rem 1rem;
   color: ${(props) => props.theme.colors.text};
@@ -26,7 +26,7 @@ const Input = styled.select`
       ''
     )}' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
   cursor: pointer;
-`
+`;
 export default function Select(props) {
   return (
     <Wrapper className={props.className}>
@@ -36,11 +36,11 @@ export default function Select(props) {
         name={props.name}
         value={props.value}
         onChange={(e) => {
-          props.onChange({ value: e.currentTarget.value, name: props.name })
+          props.onChange({ value: e.currentTarget.value, name: props.name });
         }}
       >
         {props.children}
       </Input>
     </Wrapper>
-  )
+  );
 }
